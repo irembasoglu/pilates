@@ -72,7 +72,7 @@ p + p { margin-top: .8rem; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .logo { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
 .logo span { font-size: 1.35rem; }
-.menu { display: flex; gap: 1.8rem; align-items: center; }
+.menu { display: flex; gap: 1.4rem; align-items: center; }
 .menu a { text-decoration: none; font-size: .95rem; font-weight: 500; }
 .menu a:not(.btn):hover { color: var(--blue-text); }
 .menu-btn { display: none; background: none; border: 0; font-size: 1.6rem; cursor: pointer; color: var(--text); }
@@ -143,12 +143,12 @@ p + p { margin-top: .8rem; }
 }
 
 /* Tablet */
-@media (max-width: 960px) {
+@media (max-width: 1000px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Telefon görünümü */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .menu-btn { display: block; }
   .menu {
     display: none;
@@ -166,8 +166,70 @@ p + p { margin-top: .8rem; }
   .hero-logo img { max-width: 180px; }
   .section { padding: 64px 0; }
   .two-col, .about { grid-template-columns: 1fr; gap: 36px; }
+}
+
+@media (max-width: 640px) {
   .cards { grid-template-columns: 1fr; }
 }
 
 /* Logonun beyaz zeminini sayfayla kaynaştır */
 .logo img, .hero-logo img { mix-blend-mode: multiply; }
+
+/* Ekibimiz */
+.section-intro { color: var(--muted); max-width: 36em; margin: 0 auto; }
+.trainer { text-align: center; }
+.avatar, .photo {
+  background: linear-gradient(135deg, var(--blue-soft), var(--blue));
+  color: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; opacity: .8;
+}
+.avatar { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.2rem; }
+.role { color: var(--blue-text) !important; font-weight: 500; }
+
+/* Galeri */
+.gallery {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-top: 2.5rem;
+}
+.photo { aspect-ratio: 1; border-radius: var(--radius); max-width: 100%; }
+.photo img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); }
+.more-link { margin-top: 1.5rem; }
+.more-link a { color: var(--blue-text); font-weight: 600; }
+
+/* SSS */
+.narrow { max-width: 780px; }
+.faq { margin-top: 2.5rem; display: grid; gap: 12px; }
+.faq details {
+  background: var(--white);
+  border: 1px solid var(--blue-soft);
+  border-radius: 12px;
+  padding: 0 1.4rem;
+}
+.faq summary {
+  cursor: pointer; list-style: none;
+  padding: 1.1rem 2rem 1.1rem 0; position: relative;
+  font-weight: 600;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  font-size: 1.5rem; font-weight: 400; color: var(--blue-text);
+}
+.faq details[open] summary::after { content: "–"; }
+.faq details p { color: var(--muted); padding-bottom: 1.2rem; }
+
+/* Blog */
+.blog-list { align-items: start; }
+.post-tag { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 600; color: var(--blue-text) !important; margin-bottom: .4rem; }
+.post summary { cursor: pointer; color: var(--blue-text); font-weight: 600; margin-top: .8rem; }
+.post details[open] summary { margin-bottom: .8rem; }
+.post-body p { font-size: .95rem; }
+
+/* Alt bilgi */
+.footer-inner { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.footer-ig { color: var(--blue); display: flex; }
+
+@media (max-width: 640px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
