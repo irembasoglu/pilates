@@ -13,7 +13,7 @@ aciklama: Pilates, hamile pilatesi, yoga, özel ders, düet ders ve diyetisyen h
       <h2>{{ h.ad }}</h2>
       <div>
         <p>{{ h.uzun }}</p>
-        <a href="https://wa.me/905374989178?text={{ 'Merhaba, ' | append: h.ad | append: ' hakkında bilgi almak istiyorum.' | uri_escape }}" class="link-arrow" target="_blank" rel="noopener">{{ h.ad }} hakkında bilgi al →</a>
+        <a href="https://wa.me/905374989178?text={{ 'Merhaba, ' | append: h.ad | append: ' hakkında bilgi almak istiyorum.' | uri_escape }}" class="btn-soft" target="_blank" rel="noopener">{{ h.ad }} hakkında bilgi al</a>
       </div>
     </div>
     {% endfor %}

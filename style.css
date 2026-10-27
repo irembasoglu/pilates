@@ -66,12 +66,19 @@ p + p { margin-top: .9rem; }
 .btn-dark { background: var(--navy); color: var(--white); }
 .btn-dark:hover { background: var(--navy-2); }
 .btn-small { padding: .55rem 1.2rem; font-size: .95rem; }
-.link-arrow {
-  display: inline-flex; align-items: center; gap: .4rem;
-  font-weight: 600; text-decoration: none; color: var(--ink);
-  border-bottom: 2px solid var(--blue); padding-bottom: 2px;
+/* İkincil buton: yumuşak dolgulu. Zemine göre tonu değişir. */
+.btn-soft {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .95rem 1.6rem; border-radius: 999px;
+  background: #e4f5fb; color: var(--navy);
+  text-decoration: none; font-weight: 600; font-size: 1rem;
+  transition: background .2s;
 }
-.link-arrow:hover { color: var(--blue-text); }
+.btn-soft:hover { background: #d0eef8; }
+.section-mist .btn-soft { background: var(--white); }
+.section-mist .btn-soft:hover { background: #dcf3fb; }
+.section-navy .btn-soft { background: #0e3448; color: var(--white); }
+.section-navy .btn-soft:hover { background: #164660; }
 
 /* ---------- Üst menü ---------- */
 .nav {
@@ -109,7 +116,7 @@ p + p { margin-top: .9rem; }
 .hero h1 { margin-bottom: 1.4rem; }
 .hero h1 em { font-style: normal; color: var(--blue-text); }
 .lead { font-size: 1.15rem; color: var(--muted); max-width: 32em; }
-.hero-actions { display: flex; gap: 1.6rem; align-items: center; flex-wrap: wrap; margin-top: 2.2rem; }
+.hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 2.2rem; }
 .hero-media { position: relative; }
 .hero-media .sail { aspect-ratio: 4 / 5; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -138,7 +145,7 @@ p + p { margin-top: .9rem; }
 .sec-head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 56px; }
 .sec-head h2 { max-width: 13ch; }
 .sec-head p { color: var(--muted); max-width: 30em; justify-self: end; }
-.sec-head .link-arrow { justify-self: end; }
+.sec-head .btn-soft { justify-self: end; }
 .sec-foot { margin-top: 44px; }
 
 /* Ana sayfa: hakkımızda */
@@ -147,7 +154,7 @@ p + p { margin-top: .9rem; }
 .intro-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .intro-text h2 { margin-bottom: 1.4rem; }
 .intro-text p { color: var(--muted); max-width: 34em; }
-.intro-text .link-arrow { margin-top: 2rem; }
+.intro-text .btn-soft { margin-top: 2rem; }
 
 /* Hizmet satırları */
 .service-rows { border-top: 1px solid var(--line); }
@@ -250,7 +257,7 @@ p + p { margin-top: .9rem; }
 .service-detail:last-child { border-bottom: 0; }
 .service-detail h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
 .service-detail p { color: var(--muted); font-size: 1.06rem; max-width: 38em; }
-.service-detail .link-arrow { margin-top: 1.5rem; }
+.service-detail .btn-soft { margin-top: 1.5rem; }
 
 /* Blog yazısı */
 .article { font-size: 1.1rem; }
@@ -358,7 +365,7 @@ p + p { margin-top: .9rem; }
   .badge-logo { width: 78px; height: 78px; left: auto; right: 16px; bottom: -28px; }
   .hero-actions { margin-top: 1.6rem; }
   .sec-head { gap: 14px; margin-bottom: 36px; }
-  .sec-head p, .sec-head .link-arrow { justify-self: start; }
+  .sec-head p, .sec-head .btn-soft { justify-self: start; }
   .intro-photo, .about-photo { aspect-ratio: 4 / 3; }
   .service-row { grid-template-columns: 1fr 36px; gap: 6px 16px; padding: 20px 0; }
   .service-row p { grid-column: 1; font-size: .95rem; }
