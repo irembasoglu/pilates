@@ -114,30 +114,30 @@
       <div class="cards">
         <button class="trainer" data-video="video/hilal.mp4" data-poster="foto/ekip-hilal.jpg">
           <span class="trainer-photo">
-            <img src="foto/ekip-hilal.jpg" alt="Hilal Hoca" loading="lazy" width="480" height="600">
-            <span class="play" aria-hidden="true">▶</span>
+            <video src="video/hilal.mp4" poster="foto/ekip-hilal.jpg" muted autoplay loop playsinline aria-label="Hilal Hoca videosu"></video>
+            <span class="sound" aria-hidden="true">🔊</span>
           </span>
           <span class="trainer-name">Hilal Hoca</span>
           <span class="role">Pilates Eğitmeni</span>
-          <span class="watch">Videoyu izle</span>
+          <span class="watch">Sesli izlemek için dokun</span>
         </button>
         <button class="trainer" data-video="video/yagmur.mp4" data-poster="foto/ekip-yagmur.jpg">
           <span class="trainer-photo">
-            <img src="foto/ekip-yagmur.jpg" alt="Yağmur Hoca" loading="lazy" width="480" height="600">
-            <span class="play" aria-hidden="true">▶</span>
+            <video src="video/yagmur.mp4" poster="foto/ekip-yagmur.jpg" muted autoplay loop playsinline aria-label="Yağmur Hoca videosu"></video>
+            <span class="sound" aria-hidden="true">🔊</span>
           </span>
           <span class="trainer-name">Yağmur Hoca</span>
           <span class="role">Yoga Eğitmeni</span>
-          <span class="watch">Videoyu izle</span>
+          <span class="watch">Sesli izlemek için dokun</span>
         </button>
         <button class="trainer" data-video="video/diyetisyen.mp4" data-poster="foto/ekip-diyetisyen.jpg">
           <span class="trainer-photo">
-            <img src="foto/ekip-diyetisyen.jpg" alt="Diyetisyenimiz" loading="lazy" width="480" height="600">
-            <span class="play" aria-hidden="true">▶</span>
+            <video src="video/diyetisyen.mp4" poster="foto/ekip-diyetisyen.jpg" muted autoplay loop playsinline aria-label="Diyetisyenimiz videosu"></video>
+            <span class="sound" aria-hidden="true">🔊</span>
           </span>
           <span class="trainer-name">Diyetisyenimiz</span>
           <span class="role">Sporcu Beslenmesi</span>
-          <span class="watch">Videoyu izle</span>
+          <span class="watch">Sesli izlemek için dokun</span>
         </button>
       </div>
     </div>
@@ -311,6 +311,10 @@
         openBox('<img src="' + img.src + '" alt="' + img.alt + '">');
       };
     });
+    // Hareket azaltma tercihi olanlarda kapak videoları durur
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.trainer-photo video').forEach(function (v) { v.pause(); });
+    }
     box.onclick = function (e) { if (e.target === box || e.target.className === 'lightbox-close') closeBox(); };
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeBox(); });
   </script>
