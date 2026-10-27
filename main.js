@@ -22,3 +22,8 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('.trainer-photo video').forEach(function (v) { v.pause(); });
 }
+
+// Kaydırınca menü incelir ve buzlu cama döner
+function navDurumu() { document.body.classList.toggle('scrolled', window.scrollY > 40); }
+window.addEventListener('scroll', navDurumu, { passive: true });
+navDurumu();

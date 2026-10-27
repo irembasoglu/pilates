@@ -81,10 +81,17 @@ p + p { margin-top: .9rem; }
 .section-navy .btn-soft:hover { background: #164660; }
 
 /* ---------- Üst menü: lacivert şerit ---------- */
-.nav { position: sticky; top: 0; z-index: 30; background: var(--navy); color: var(--white); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+.nav { position: sticky; top: 0; z-index: 30; background: var(--navy); color: var(--white); transition: background .35s; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; transition: height .35s; }
+/* Kaydırınca: incelir, yarı şeffaf buzlu cam olur */
+.scrolled .nav {
+  background: rgba(0, 28, 42, .72);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
+}
+.scrolled .nav-inner { height: 64px; }
+.scrolled .logo img { width: 36px; height: 36px; }
 .logo { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--white); }
-.logo img { background: var(--white); border-radius: 50%; padding: 4px; }
+.logo img { width: 44px; height: 44px; background: var(--white); border-radius: 50%; padding: 4px; transition: width .35s, height .35s; }
 .logo span { font-family: var(--display); font-weight: 600; font-size: 1.3rem; letter-spacing: -0.02em; line-height: 1; }
 .logo small { display: block; font-family: var(--body); font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: #8fa9b5; margin-top: 4px; }
 .menu { display: flex; gap: 4px; align-items: center; }
@@ -335,7 +342,7 @@ p + p { margin-top: .9rem; }
 @media (max-width: 1040px) {
   .menu-btn { display: block; }
   .menu {
-    display: none; position: absolute; top: 80px; left: 0; right: 0;
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 4px;
     background: var(--navy); border-top: 1px solid var(--navy-2);
     padding: .8rem 20px 1.5rem;
@@ -393,6 +400,9 @@ p + p { margin-top: .9rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px 24px; padding-top: 56px; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }
 }
+
+/* Telefonda menü açıkken şerit tam lacivert olsun */
+.menu-open .nav { background: var(--navy); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
