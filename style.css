@@ -177,23 +177,52 @@ p + p { margin-top: .8rem; }
 
 /* Ekibimiz */
 .section-intro { color: var(--muted); max-width: 36em; margin: 0 auto; }
-.trainer { text-align: center; }
-.avatar, .photo {
-  background: linear-gradient(135deg, var(--blue-soft), var(--blue));
-  color: var(--navy);
-  display: flex; align-items: center; justify-content: center;
-  font-size: .9rem; opacity: .8;
+.trainer {
+  font: inherit; color: inherit; text-align: center;
+  background: var(--white); border: 1px solid var(--blue-soft); border-radius: var(--radius);
+  padding: 12px 12px 1.4rem; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: .2rem;
+  transition: transform .2s, box-shadow .2s;
 }
-.avatar { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.2rem; }
-.role { color: var(--blue-text) !important; font-weight: 500; }
+.trainer:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 28, 42, .1); }
+.trainer-photo { position: relative; display: block; width: 100%; margin-bottom: .8rem; }
+.trainer-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; }
+.play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 60px; height: 60px; border-radius: 50%;
+  background: rgba(91, 212, 243, .92); color: var(--navy);
+  display: flex; align-items: center; justify-content: center; font-size: 1.3rem; padding-left: 4px;
+}
+.trainer-name { font-family: "Outfit", sans-serif; font-size: 1.3rem; font-weight: 600; }
+.role { color: var(--blue-text); font-weight: 500; }
+.watch { font-size: .85rem; color: var(--muted); }
 
 /* Galeri */
 .gallery {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
   margin-top: 2.5rem;
 }
-.photo { aspect-ratio: 1; border-radius: var(--radius); max-width: 100%; }
-.photo img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); }
+.photo { border: 0; padding: 0; background: none; cursor: zoom-in; border-radius: var(--radius); overflow: hidden; }
+.photo img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform .4s; }
+.photo:hover img { transform: scale(1.04); }
+
+/* Hakkımızda fotoğrafı */
+.about-side { display: grid; gap: 1.5rem; }
+.about-photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+
+/* Büyütme penceresi */
+.lightbox {
+  position: fixed; inset: 0; z-index: 50;
+  background: rgba(0, 20, 30, .9);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.lightbox[hidden] { display: none; }
+.lightbox-content video, .lightbox-content img { max-width: 100%; max-height: 85vh; border-radius: 10px; display: block; }
+.lightbox-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 44px; height: 44px; border-radius: 50%; border: 0;
+  background: var(--white); color: var(--navy); font-size: 1.1rem; cursor: pointer;
+}
 .more-link { margin-top: 1.5rem; }
 .more-link a { color: var(--blue-text); font-weight: 600; }
 
@@ -231,5 +260,6 @@ p + p { margin-top: .8rem; }
 .footer-ig { color: var(--blue); display: flex; }
 
 @media (max-width: 640px) {
-  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .trainer { max-width: 360px; width: 100%; margin: 0 auto; }
 }

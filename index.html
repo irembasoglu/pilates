@@ -60,11 +60,14 @@
         <p>Marin Pilates & Yoga Stüdyo, Orhantepe'de sağlıklı ve hareketli bir yaşam isteyen herkes için kuruldu. Uluslararası sertifikalı eğitmenlerimizle, her yaşa ve her seviyeye uygun dersler veriyoruz.</p>
         <p>Sadece egzersiz değil, beslenme danışmanlığıyla da yanındayız. Hedefin ister ağrısız bir sırt, ister daha esnek bir beden olsun, sana uygun bir program birlikte hazırlıyoruz.</p>
       </div>
+      <div class="about-side">
+      <img class="about-photo" src="foto/studyo-giris.jpg" alt="Marin Pilates stüdyo girişi" loading="lazy">
       <ul class="facts">
         <li><strong>2016</strong><span>yılından beri hizmetteyiz</span></li>
         <li><strong>Uluslararası</strong><span>sertifikalı eğitmenler</span></li>
         <li><strong>Egzersiz + Beslenme</strong><span>danışmanlığı bir arada</span></li>
       </ul>
+      </div>
     </div>
   </section>
 
@@ -109,21 +112,33 @@
       <h2 class="center">Eğitmenlerimizle tanış</h2>
       <p class="section-intro center">Uluslararası sertifikalı eğitmenlerimiz, her derste seni yakından takip eder.</p>
       <div class="cards">
-        <div class="card trainer">
-          <div class="avatar">Fotoğraf</div>
-          <h3>Eğitmen Adı</h3>
-          <p class="role">Pilates Eğitmeni</p>
-        </div>
-        <div class="card trainer">
-          <div class="avatar">Fotoğraf</div>
-          <h3>Eğitmen Adı</h3>
-          <p class="role">Yoga Eğitmeni</p>
-        </div>
-        <div class="card trainer">
-          <div class="avatar">Fotoğraf</div>
-          <h3>Eğitmen Adı</h3>
-          <p class="role">Diyetisyen</p>
-        </div>
+        <button class="trainer" data-video="video/hilal.mp4" data-poster="foto/ekip-hilal.jpg">
+          <span class="trainer-photo">
+            <img src="foto/ekip-hilal.jpg" alt="Hilal Hoca" loading="lazy" width="480" height="600">
+            <span class="play" aria-hidden="true">▶</span>
+          </span>
+          <span class="trainer-name">Hilal Hoca</span>
+          <span class="role">Pilates Eğitmeni</span>
+          <span class="watch">Videoyu izle</span>
+        </button>
+        <button class="trainer" data-video="video/yagmur.mp4" data-poster="foto/ekip-yagmur.jpg">
+          <span class="trainer-photo">
+            <img src="foto/ekip-yagmur.jpg" alt="Yağmur Hoca" loading="lazy" width="480" height="600">
+            <span class="play" aria-hidden="true">▶</span>
+          </span>
+          <span class="trainer-name">Yağmur Hoca</span>
+          <span class="role">Yoga Eğitmeni</span>
+          <span class="watch">Videoyu izle</span>
+        </button>
+        <button class="trainer" data-video="video/diyetisyen.mp4" data-poster="foto/ekip-diyetisyen.jpg">
+          <span class="trainer-photo">
+            <img src="foto/ekip-diyetisyen.jpg" alt="Diyetisyenimiz" loading="lazy" width="480" height="600">
+            <span class="play" aria-hidden="true">▶</span>
+          </span>
+          <span class="trainer-name">Diyetisyenimiz</span>
+          <span class="role">Sporcu Beslenmesi</span>
+          <span class="watch">Videoyu izle</span>
+        </button>
       </div>
     </div>
   </section>
@@ -134,12 +149,12 @@
       <p class="eyebrow center">Galeri</p>
       <h2 class="center">Stüdyomuzdan kareler</h2>
       <div class="gallery">
-        <div class="photo">Fotoğraf</div>
-        <div class="photo">Fotoğraf</div>
-        <div class="photo">Fotoğraf</div>
-        <div class="photo">Fotoğraf</div>
-        <div class="photo">Fotoğraf</div>
-        <div class="photo">Fotoğraf</div>
+        <button class="photo"><img src="foto/galeri-1.jpg" alt="Cadillac aletinde pilates" loading="lazy"></button>
+        <button class="photo"><img src="foto/galeri-2.jpg" alt="Cadillac aletinde ters duruş" loading="lazy"></button>
+        <button class="photo"><img src="foto/galeri-3.jpg" alt="Mat pilates dersi" loading="lazy"></button>
+        <button class="photo"><img src="foto/galeri-4.jpg" alt="Yoga dersi" loading="lazy"></button>
+        <button class="photo"><img src="foto/galeri-5.jpg" alt="Cadillac aletinde esneme" loading="lazy"></button>
+        <button class="photo"><img src="foto/galeri-6.jpg" alt="Stüdyoda pilates" loading="lazy"></button>
       </div>
       <p class="center more-link">
         Daha fazlası için <a href="https://www.instagram.com/marinpilates/" target="_blank" rel="noopener">Instagram'da @marinpilates</a>
@@ -274,6 +289,31 @@
       </a>
     </div>
   </footer>
+
+  <!-- Video / fotoğraf büyütme penceresi -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" aria-label="Kapat">✕</button>
+    <div class="lightbox-content" id="lightbox-content"></div>
+  </div>
+  <script>
+    var box = document.getElementById('lightbox');
+    var content = document.getElementById('lightbox-content');
+    function openBox(html) { content.innerHTML = html; box.hidden = false; }
+    function closeBox() { content.innerHTML = ''; box.hidden = true; }
+    document.querySelectorAll('.trainer').forEach(function (b) {
+      b.onclick = function () {
+        openBox('<video src="' + b.dataset.video + '" poster="' + b.dataset.poster + '" controls autoplay playsinline></video>');
+      };
+    });
+    document.querySelectorAll('.photo').forEach(function (b) {
+      b.onclick = function () {
+        var img = b.querySelector('img');
+        openBox('<img src="' + img.src + '" alt="' + img.alt + '">');
+      };
+    });
+    box.onclick = function (e) { if (e.target === box || e.target.className === 'lightbox-close') closeBox(); };
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeBox(); });
+  </script>
 
   <!-- Sabit WhatsApp butonu -->
   <a href="https://wa.me/905374989178?text=Merhaba%2C%20bilgi%20almak%20istiyorum." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
