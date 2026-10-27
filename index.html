@@ -5,77 +5,90 @@ menu: anasayfa
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-text">
-      <p class="eyebrow">Kartal · Pilates & Yoga Stüdyo</p>
-      <h1>Güçlü, esnek ve ağrısız bir beden için buradayız.</h1>
-      <p class="lead">2016'dan beri uluslararası sertifikalı eğitmenlerle pilates, yoga, egzersiz ve beslenme danışmanlığı.</p>
-      <div class="hero-buttons">
-        <a href="{{ site.whatsapp }}" class="btn" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
-        <a href="hizmetlerimiz.html" class="btn btn-outline">Hizmetlerimiz</a>
+      <p class="place">Orhantepe, Kartal · 2016'dan beri</p>
+      <h1>Güçlü, esnek ve <em>ağrısız</em> bir beden için buradayız.</h1>
+      <p class="lead">Uluslararası sertifikalı eğitmenlerle pilates, yoga, hamile pilatesi ve beslenme danışmanlığı. Hepsi aynı çatı altında.</p>
+      <div class="hero-actions">
+        <a href="{{ site.whatsapp }}" class="btn" target="_blank" rel="noopener">WhatsApp'tan yaz</a>
+        <a href="hizmetlerimiz.html" class="link-arrow">Hizmetlerimiz →</a>
       </div>
     </div>
-    <div class="hero-logo">
-      <img src="logo.jpg" alt="" width="320" height="320">
+    <div class="hero-media">
+      <div class="sail"><img src="foto/galeri-1.jpg" alt="Marin Pilates'te cadillac aletinde pilates"></div>
+      <div class="badge-logo"><img src="logo.jpg" alt=""></div>
     </div>
   </div>
 </section>
+
+<div class="strip">
+  <div class="container strip-inner">
+    <div class="strip-item"><strong>2016</strong><span>yılından beri Kartal'da</span></div>
+    <div class="strip-item"><strong>Sertifikalı</strong><span>uluslararası eğitmenler</span></div>
+    <div class="strip-item"><strong>6 hizmet</strong><span>pilatesten beslenmeye</span></div>
+    <div class="strip-item"><strong>08:00 – 22:30</strong><span>arası açığız</span></div>
+  </div>
+</div>
 
 <section class="section">
-  <div class="container about">
-    <div class="about-text">
-      <p class="eyebrow">Hakkımızda</p>
-      <h2>2016'dan beri Kartal'da</h2>
-      <p>Marin Pilates & Yoga Stüdyo, Orhantepe'de sağlıklı ve hareketli bir yaşam isteyen herkes için kuruldu. Uluslararası sertifikalı eğitmenlerimizle, her yaşa ve her seviyeye uygun dersler veriyoruz.</p>
-      <a href="hakkimizda.html" class="text-link">Bizi daha yakından tanı →</a>
+  <div class="container intro">
+    <div class="intro-photo sail"><img src="foto/galeri-3.jpg" alt="Mat pilates dersi" loading="lazy"></div>
+    <div class="intro-text">
+      <h2>Kendine ayırdığın en iyi saat.</h2>
+      <p>Marin Pilates & Yoga Stüdyo, Orhantepe'de sağlıklı ve hareketli bir yaşam isteyen herkes için kuruldu. Uluslararası sertifikalı eğitmenlerimizle her yaşa ve her seviyeye uygun dersler veriyoruz.</p>
+      <p>Sadece egzersiz değil, beslenme danışmanlığıyla da yanındayız. Hedefin ister ağrısız bir sırt, ister daha esnek bir beden olsun, programını birlikte hazırlıyoruz.</p>
+      <a href="hakkimizda.html" class="link-arrow">Bizi tanı →</a>
     </div>
-    <ul class="facts">
-      <li><strong>2016</strong><span>yılından beri hizmetteyiz</span></li>
-      <li><strong>Uluslararası</strong><span>sertifikalı eğitmenler</span></li>
-      <li><strong>Egzersiz + Beslenme</strong><span>danışmanlığı bir arada</span></li>
-    </ul>
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-mist">
   <div class="container">
-    <p class="eyebrow center">Hizmetlerimiz</p>
-    <h2 class="center">Sana uygun olanı seç</h2>
-    <div class="cards">
+    <div class="sec-head">
+      <h2>Ne yapıyoruz?</h2>
+      <p>Grup derslerinden birebir programlara, hamilelikten sporcu beslenmesine kadar sana uygun bir seçenek mutlaka var.</p>
+    </div>
+    <div class="service-rows">
       {% for h in site.data.hizmetler %}
-      <a href="hizmetlerimiz.html#{{ h.id }}" class="card card-link">
+      <a href="hizmetlerimiz.html#{{ h.id }}" class="service-row">
         <h3>{{ h.ad }}</h3>
         <p>{{ h.kisa }}</p>
+        <span class="arrow" aria-hidden="true">→</span>
       </a>
       {% endfor %}
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-navy">
   <div class="container">
-    <p class="eyebrow center">Ekibimiz</p>
-    <h2 class="center">Eğitmenlerimizle tanış</h2>
+    <div class="sec-head">
+      <h2>Eğitmenlerimizle tanış</h2>
+      <a href="ekibimiz.html" class="link-arrow" style="color:#fff">Ekibimiz →</a>
+    </div>
     {% include egitmenler.html %}
-    <p class="center more-link"><a href="ekibimiz.html">Ekibimizin sayfasına git →</a></p>
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section">
   <div class="container">
-    <p class="eyebrow center">Galeri</p>
-    <h2 class="center">Stüdyomuzdan kareler</h2>
-    <div class="gallery">
-      {% for g in site.data.galeri limit: 3 %}
+    <div class="sec-head">
+      <h2>Stüdyomuzdan kareler</h2>
+      <a href="galeri.html" class="link-arrow">Tüm galeri →</a>
+    </div>
+    <div class="gallery-mosaic">
+      {% for g in site.data.galeri limit: 5 %}
       <button class="photo"><img src="foto/{{ g.dosya }}" alt="{{ g.aciklama }}" loading="lazy"></button>
       {% endfor %}
     </div>
-    <p class="center more-link"><a href="galeri.html">Tüm fotoğrafları gör →</a></p>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-mist">
   <div class="container">
-    <p class="eyebrow center">Blog</p>
-    <h2 class="center">Sağlıklı yaşam için yazılar</h2>
+    <div class="sec-head">
+      <h2>Blogdan</h2>
+      <a href="blog.html" class="link-arrow">Tüm yazılar →</a>
+    </div>
     {% include yazilar.html %}
   </div>
 </section>

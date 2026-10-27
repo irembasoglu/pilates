@@ -8,7 +8,7 @@
   <link rel="icon" href="logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,9 +17,9 @@
     <div class="container nav-inner">
       <a href="index.html" class="logo">
         <img src="logo.jpg" alt="Marin Pilates logosu" width="44" height="44">
-        <span>Marin Pilates</span>
+        <span>Marin Pilates<small>Pilates & Yoga · Kartal</small></span>
       </a>
-      <button class="menu-btn" aria-label="Menüyü aç" onclick="document.body.classList.toggle('menu-open')">☰</button>
+      <button class="menu-btn" aria-label="Menüyü aç" onclick="document.body.classList.toggle('menu-open')"><span></span></button>
       <nav class="menu">
         {% assign menu = "hakkimizda|Hakkımızda,hizmetlerimiz|Hizmetlerimiz,ekibimiz|Ekibimiz,galeri|Galeri,blog|Blog,sss|SSS" | split: "," %}
         {% for m in menu %}{% assign p = m | split: "|" %}
@@ -37,8 +37,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <a href="index.html" class="logo footer-logo"><span>Marin Pilates & Yoga Stüdyo</span></a>
-        <p>Güçlü, esnek ve ağrısız bir beden için buradayız.</p>
+        <p class="footer-brand">Güçlü, esnek ve ağrısız bir beden için.</p>
       </div>
       <div>
         <strong>Sayfalar</strong>
@@ -48,16 +47,17 @@
         <a href="galeri.html">Galeri</a>
         <a href="blog.html">Blog</a>
         <a href="sss.html">SSS</a>
+        <a href="iletisim.html">İletişim</a>
       </div>
       <div>
-        <strong>İletişim</strong>
+        <strong>Stüdyo</strong>
         <span>Orhantepe Mah. Sema Sk. 39C<br>Kartal / İstanbul</span>
         <a href="{{ site.telefon_link }}">{{ site.telefon }}</a>
-        <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram: @marinpilates</a>
+        <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram · @marinpilates</a>
         <span>Çalışma saatleri: 08:00 – 22:30</span>
       </div>
     </div>
-    <div class="container footer-bottom">© 2026 Marin Pilates & Yoga Stüdyo · Kartal, İstanbul</div>
+    <div class="container footer-bottom">© 2026 Marin Pilates & Yoga Stüdyo</div>
   </footer>
 
   <a href="{{ site.whatsapp }}" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">

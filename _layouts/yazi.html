@@ -1,17 +1,11 @@
 ---
 layout: default
 ---
-<section class="page-hero">
-  <div class="container narrow">
-    <p class="eyebrow"><a href="blog.html">Blog</a> · {{ page.etiket }}</p>
-    <h1>{{ page.baslik }}</h1>
-    <p class="lead">{{ page.ozet }}</p>
-  </div>
-</section>
+{% include sayfa-basi.html ust="Blog" ust_link="blog.html" yer=page.etiket baslik=page.baslik lead=page.ozet %}
 <article class="section">
   <div class="container narrow article">
 {{ content }}
-    <a href="blog.html" class="back-link">← Tüm yazılar</a>
+    <a href="blog.html" class="link-arrow back-link">← Tüm yazılar</a>
   </div>
 </article>
 {% include cta.html %}
