@@ -106,11 +106,6 @@ p + p { margin-top: .9rem; }
 .hero { padding: 36px 0 90px; }
 .hero-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
 .hero-text { min-width: 0; }
-.place {
-  display: inline-flex; align-items: center; gap: .5rem;
-  font-size: .92rem; font-weight: 500; color: var(--muted); margin-bottom: 1.4rem;
-}
-.place::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
 .hero h1 { margin-bottom: 1.4rem; }
 .hero h1 em { font-style: normal; color: var(--blue-text); }
 .lead { font-size: 1.15rem; color: var(--muted); max-width: 32em; }
@@ -207,7 +202,6 @@ p + p { margin-top: .9rem; }
 /* Blog listesi */
 .post-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 .post-item { text-decoration: none; border-top: 2px solid var(--navy); padding-top: 22px; display: flex; flex-direction: column; gap: .6rem; }
-.post-tag { font-size: .85rem; font-weight: 600; color: var(--blue-text); }
 .post-item h3 { font-size: 1.5rem; transition: color .2s; }
 .post-item p { color: var(--muted); }
 .post-item:hover h3 { color: var(--blue-text); }
@@ -234,9 +228,6 @@ p + p { margin-top: .9rem; }
   border-radius: 70% 0 0 0 / 55% 0 0 0;
 }
 .page-hero .container { position: relative; z-index: 1; }
-.crumb { font-size: .9rem; color: var(--muted); margin-bottom: 1.2rem; }
-.crumb a { text-decoration: none; }
-.crumb a:hover { color: var(--blue-text); }
 .page-hero h1 { max-width: 14ch; margin-bottom: 1.2rem; }
 .page-hero .lead { max-width: 36em; }
 

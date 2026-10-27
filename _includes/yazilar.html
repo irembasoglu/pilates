@@ -2,7 +2,6 @@
 <div class="post-list">
   {% for y in yazilar %}
   <a href="{{ y.url | remove_first: '/' }}" class="post-item">
-    <span class="post-tag">{{ y.etiket }}</span>
     <h3>{{ y.baslik }}</h3>
     <p>{{ y.ozet }}</p>
     <span class="read-more">Yazıyı oku →</span>
