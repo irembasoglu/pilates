@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pilates Stüdyo | Reformer & Mat Pilates</title>
-  <meta name="description" content="Reformer ve mat pilates dersleri. Grup, birebir ve düet seanslar. Deneme dersi için hemen iletişime geçin.">
+  <title>Marin Pilates & Yoga Stüdyo | Kartal, İstanbul</title>
+  <meta name="description" content="Kartal Orhantepe'de pilates, hamile pilatesi, yoga, özel ve düet dersler, diyetisyen desteği. 2016'dan beri uluslararası sertifikalı eğitmenler.">
+  <link rel="icon" href="logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,14 +16,15 @@
   <!-- ÜST MENÜ -->
   <header class="nav">
     <div class="container nav-inner">
-      <a href="#" class="logo">Pilates Stüdyo</a>
+      <a href="#" class="logo">
+        <img src="logo.jpg" alt="Marin Pilates logosu" width="44" height="44">
+        <span>Marin Pilates</span>
+      </a>
       <button class="menu-btn" aria-label="Menüyü aç" onclick="document.body.classList.toggle('menu-open')">☰</button>
       <nav class="menu" onclick="document.body.classList.remove('menu-open')">
         <a href="#hakkimizda">Hakkımızda</a>
         <a href="#dersler">Dersler</a>
-        <a href="#program">Program</a>
-        <a href="#fiyatlar">Fiyatlar</a>
-        <a href="#egitmenler">Eğitmenler</a>
+        <a href="#saatler">Çalışma Saatleri</a>
         <a href="#iletisim" class="btn btn-small">İletişim</a>
       </nav>
     </div>
@@ -31,125 +33,81 @@
   <!-- GİRİŞ -->
   <section class="hero">
     <div class="container hero-inner">
-      <p class="eyebrow">Reformer · Mat · Birebir</p>
-      <h1>Bedenini güçlendir,<br>zihnini dinlendir.</h1>
-      <p class="lead">Küçük gruplar ve uzman eğitmenlerle, her seviyeye uygun pilates dersleri. İlk dersini ücretsiz dene.</p>
-      <div class="hero-buttons">
-        <a href="https://wa.me/905000000000" class="btn" target="_blank" rel="noopener">Deneme Dersi Al</a>
-        <a href="#program" class="btn btn-outline">Ders Programı</a>
+      <div class="hero-text">
+        <p class="eyebrow">Kartal · Pilates & Yoga Stüdyo</p>
+        <h1>Güçlü, esnek ve ağrısız bir beden için buradayız.</h1>
+        <p class="lead">2016'dan beri uluslararası sertifikalı eğitmenlerle pilates, yoga, egzersiz ve beslenme danışmanlığı.</p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/905374989178" class="btn" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
+          <a href="#dersler" class="btn btn-outline">Dersleri İncele</a>
+        </div>
+      </div>
+      <div class="hero-logo">
+        <img src="logo.jpg" alt="" width="320" height="320">
       </div>
     </div>
   </section>
 
   <!-- HAKKIMIZDA -->
   <section id="hakkimizda" class="section">
-    <div class="container two-col">
-      <div class="photo-placeholder">Stüdyo fotoğrafı</div>
-      <div>
+    <div class="container about">
+      <div class="about-text">
         <p class="eyebrow">Hakkımızda</p>
-        <h2>Kendine ayırdığın bir saat</h2>
-        <p>Stüdyomuz, şehrin koşturmacasından uzak, ferah ve sakin bir ortamda pilates yapabilmen için tasarlandı. Dersler en fazla 6 kişilik gruplarla yapılır; böylece eğitmenin her hareketini takip eder, seni doğru yönlendirir.</p>
-        <p>İster yeni başla, ister deneyimli ol — sana uygun bir ders mutlaka var.</p>
+        <h2>2016'dan beri Kartal'da</h2>
+        <p>Marin Pilates & Yoga Stüdyo, Orhantepe'de sağlıklı ve hareketli bir yaşam isteyen herkes için kuruldu. Uluslararası sertifikalı eğitmenlerimizle, her yaşa ve her seviyeye uygun dersler veriyoruz.</p>
+        <p>Sadece egzersiz değil, beslenme danışmanlığıyla da yanındayız. Hedefin ister ağrısız bir sırt, ister daha esnek bir beden olsun, sana uygun bir program birlikte hazırlıyoruz.</p>
       </div>
+      <ul class="facts">
+        <li><strong>2016</strong><span>yılından beri hizmetteyiz</span></li>
+        <li><strong>Uluslararası</strong><span>sertifikalı eğitmenler</span></li>
+        <li><strong>Egzersiz + Beslenme</strong><span>danışmanlığı bir arada</span></li>
+      </ul>
     </div>
   </section>
 
   <!-- DERSLER -->
   <section id="dersler" class="section section-alt">
     <div class="container">
-      <p class="eyebrow center">Dersler</p>
-      <h2 class="center">Sana uygun dersi seç</h2>
+      <p class="eyebrow center">Dersler ve Hizmetler</p>
+      <h2 class="center">Sana uygun olanı seç</h2>
       <div class="cards">
         <div class="card">
-          <h3>Reformer Pilates</h3>
-          <p>Yaylı aletlerle yapılan, tüm vücudu çalıştıran ve duruşu düzelten dersler.</p>
-        </div>
-        <div class="card">
-          <h3>Mat Pilates</h3>
-          <p>Minder üzerinde, kendi vücut ağırlığınla core bölgeni güçlendir.</p>
-        </div>
-        <div class="card">
-          <h3>Birebir Ders</h3>
-          <p>Sadece sana özel program; sakatlık sonrası veya hızlı ilerleme için ideal.</p>
+          <h3>Pilates</h3>
+          <p>Core bölgeni güçlendiren, duruşunu düzelten ve vücudunu esneten dersler.</p>
         </div>
         <div class="card">
           <h3>Hamile Pilatesi</h3>
           <p>Hamilelik dönemine uygun, güvenli ve rahatlatıcı hareketler.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAM -->
-  <section id="program" class="section">
-    <div class="container">
-      <p class="eyebrow center">Program</p>
-      <h2 class="center">Haftalık ders programı</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>Saat</th><th>Pzt</th><th>Sal</th><th>Çar</th><th>Per</th><th>Cum</th><th>Cmt</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>09:00</td><td>Reformer</td><td>Mat</td><td>Reformer</td><td>Mat</td><td>Reformer</td><td>Reformer</td></tr>
-            <tr><td>11:00</td><td>Hamile</td><td>Reformer</td><td>Hamile</td><td>Reformer</td><td>Mat</td><td>Mat</td></tr>
-            <tr><td>18:00</td><td>Reformer</td><td>Reformer</td><td>Mat</td><td>Reformer</td><td>Reformer</td><td>—</td></tr>
-            <tr><td>19:30</td><td>Mat</td><td>Reformer</td><td>Reformer</td><td>Mat</td><td>—</td><td>—</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note center">Birebir dersler için saatleri birlikte belirliyoruz.</p>
-    </div>
-  </section>
-
-  <!-- FİYATLAR -->
-  <section id="fiyatlar" class="section section-alt">
-    <div class="container">
-      <p class="eyebrow center">Fiyatlar</p>
-      <h2 class="center">Paketler</h2>
-      <div class="cards">
-        <div class="card price">
-          <h3>Tek Ders</h3>
-          <p class="amount">₺000</p>
-          <p>Grup reformer veya mat</p>
+        <div class="card">
+          <h3>Yoga</h3>
+          <p>Nefes, denge ve esneklik çalışmalarıyla bedenini ve zihnini dinlendir.</p>
         </div>
-        <div class="card price featured">
-          <span class="badge">En çok tercih edilen</span>
-          <h3>8 Ders</h3>
-          <p class="amount">₺0.000</p>
-          <p>Ayda 8 grup dersi</p>
+        <div class="card">
+          <h3>Özel Ders</h3>
+          <p>Sadece sana özel, birebir program. Hedefine göre hazırlanır.</p>
         </div>
-        <div class="card price">
-          <h3>Birebir</h3>
-          <p class="amount">₺000</p>
-          <p>Ders başı, kişiye özel</p>
+        <div class="card">
+          <h3>Düet Ders</h3>
+          <p>Bir arkadaşınla, eşinle ya da ailenden biriyle birlikte iki kişilik ders.</p>
+        </div>
+        <div class="card">
+          <h3>Diyetisyen</h3>
+          <p>Egzersizine uygun beslenme danışmanlığı ile hedefine daha hızlı ulaş.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EĞİTMENLER -->
-  <section id="egitmenler" class="section">
-    <div class="container">
-      <p class="eyebrow center">Eğitmenler</p>
-      <h2 class="center">Ekibimizle tanış</h2>
-      <div class="cards">
-        <div class="card trainer">
-          <div class="avatar">Fotoğraf</div>
-          <h3>Eğitmen Adı</h3>
-          <p>Kurucu & reformer eğitmeni. 10 yıllık deneyim.</p>
-        </div>
-        <div class="card trainer">
-          <div class="avatar">Fotoğraf</div>
-          <h3>Eğitmen Adı</h3>
-          <p>Mat ve hamile pilatesi uzmanı.</p>
-        </div>
-        <div class="card trainer">
-          <div class="avatar">Fotoğraf</div>
-          <h3>Eğitmen Adı</h3>
-          <p>Fizyoterapist, birebir dersler.</p>
-        </div>
+  <!-- ÇALIŞMA SAATLERİ -->
+  <section id="saatler" class="section">
+    <div class="container hours">
+      <div>
+        <p class="eyebrow">Çalışma Saatleri</p>
+        <h2>08:00 – 22:30 arası açığız</h2>
+        <p>Sabah erkenden akşam geç saate kadar açığız. Ders programı ve fiyat bilgisi için bize WhatsApp'tan ya da telefonla ulaşabilirsin.</p>
       </div>
+      <a href="https://wa.me/905374989178" class="btn" target="_blank" rel="noopener">Ders Programını Sor</a>
     </div>
   </section>
 
@@ -158,25 +116,27 @@
     <div class="container two-col">
       <div>
         <p class="eyebrow">İletişim</p>
-        <h2>Deneme dersine gel</h2>
-        <p>Bize WhatsApp'tan yaz, sana uygun bir saat ayarlayalım.</p>
-        <a href="https://wa.me/905000000000" class="btn" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
+        <h2>Seni stüdyomuzda görelim</h2>
+        <p>Sorularını WhatsApp'tan yazabilir ya da bizi arayabilirsin.</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/905374989178" class="btn" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Marin+Pilates+Orhantepe+Sema+Sokak+39C+Kartal+Istanbul" class="btn btn-outline-light" target="_blank" rel="noopener">Yol Tarifi Al</a>
+        </div>
       </div>
       <ul class="contact-list">
-        <li><strong>Adres</strong>Örnek Mah. Örnek Sok. No:1, İlçe / Şehir</li>
-        <li><strong>Telefon</strong><a href="tel:+905000000000">0500 000 00 00</a></li>
-        <li><strong>E-posta</strong><a href="mailto:info@ornek.com">info@ornek.com</a></li>
-        <li><strong>Instagram</strong><a href="https://instagram.com/" target="_blank" rel="noopener">@pilatesstudyo</a></li>
+        <li><strong>Adres</strong>Orhantepe Mahallesi, Sema Sokak 39C<br>Kartal / İstanbul</li>
+        <li><strong>Telefon</strong><a href="tel:+905374989178">0537 498 91 78</a></li>
+        <li><strong>Çalışma Saatleri</strong>08:00 – 22:30</li>
       </ul>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">© 2026 Pilates Stüdyo</div>
+    <div class="container">© 2026 Marin Pilates & Yoga Stüdyo · Kartal, İstanbul</div>
   </footer>
 
   <!-- Sabit WhatsApp butonu -->
-  <a href="https://wa.me/905000000000" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <a href="https://wa.me/905374989178" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
   </a>
 
