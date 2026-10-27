@@ -80,25 +80,25 @@ p + p { margin-top: .9rem; }
 .section-navy .btn-soft { background: #0e3448; color: var(--white); }
 .section-navy .btn-soft:hover { background: #164660; }
 
-/* ---------- Üst menü ---------- */
-.nav {
-  position: sticky; top: 0; z-index: 30;
-  background: rgba(255, 255, 255, .94);
-  backdrop-filter: blur(10px);
-}
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 78px; }
-.logo { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
-.logo img { mix-blend-mode: multiply; }
+/* ---------- Üst menü: lacivert şerit ---------- */
+.nav { position: sticky; top: 0; z-index: 30; background: var(--navy); color: var(--white); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+.logo { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--white); }
+.logo img { background: var(--white); border-radius: 50%; padding: 4px; }
 .logo span { font-family: var(--display); font-weight: 600; font-size: 1.3rem; letter-spacing: -0.02em; line-height: 1; }
-.logo small { display: block; font-family: var(--body); font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
-.menu { display: flex; gap: 1.6rem; align-items: center; }
-.menu a { text-decoration: none; font-size: .96rem; font-weight: 500; position: relative; }
-.menu a:not(.btn)::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px;
-  background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform .25s;
+.logo small { display: block; font-family: var(--body); font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: #8fa9b5; margin-top: 4px; }
+.menu { display: flex; gap: 4px; align-items: center; }
+.menu a {
+  text-decoration: none; font-size: .96rem; font-weight: 500; white-space: nowrap;
+  color: #c5d7df; padding: .55rem 1rem; border-radius: 999px;
+  transition: background .2s, color .2s;
 }
-.menu a:not(.btn):hover::after, .menu a.active:not(.btn)::after { transform: scaleX(1); }
-.menu-btn { display: none; background: none; border: 0; cursor: pointer; color: var(--ink); width: 44px; height: 44px; }
+.menu a:hover { color: var(--white); background: #0e3448; }
+.menu a.active { color: var(--navy); background: var(--blue); }
+.menu a.btn { color: var(--navy); background: var(--white); margin-left: 12px; font-weight: 600; }
+.menu a.btn:hover { background: #e4f5fb; }
+.menu a.btn.active { background: var(--blue); }
+.menu-btn { display: none; background: none; border: 0; cursor: pointer; color: var(--white); width: 44px; height: 44px; }
 .menu-btn span, .menu-btn span::before, .menu-btn span::after {
   display: block; width: 24px; height: 2px; background: currentColor; position: relative; margin: 0 auto; transition: transform .2s;
 }
@@ -335,15 +335,14 @@ p + p { margin-top: .9rem; }
 @media (max-width: 1040px) {
   .menu-btn { display: block; }
   .menu {
-    display: none; position: absolute; top: 78px; left: 0; right: 0;
-    flex-direction: column; align-items: stretch; gap: 0;
-    background: var(--white); border-bottom: 1px solid var(--line);
-    padding: .5rem 24px 1.5rem;
+    display: none; position: absolute; top: 80px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 4px;
+    background: var(--navy); border-top: 1px solid var(--navy-2);
+    padding: .8rem 20px 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 20, 30, .25);
   }
-  .menu a { padding: .9rem 0; border-bottom: 1px solid var(--line); font-size: 1.1rem; }
-  .menu a::after { display: none; }
-  .menu a.active { color: var(--blue-text); }
-  .menu .btn { margin-top: 1rem; justify-content: center; border-bottom: 0; }
+  .menu a { padding: .85rem 1.1rem; font-size: 1.1rem; }
+  .menu a.btn { margin: .6rem 0 0; justify-content: center; }
   .menu-open .menu { display: flex; }
   .hero-inner, .intro, .about-page, .contact-layout { gap: 48px; }
   .strip-inner, .big-facts { grid-template-columns: repeat(2, 1fr); }
