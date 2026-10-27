@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.baslik %}{{ page.baslik }} | {% endif %}Marin Pilates & Yoga Stüdyo Kartal</title>
+  <meta name="description" content="{{ page.aciklama | default: "Kartal Orhantepe'de pilates, hamile pilatesi, yoga, özel ve düet dersler, diyetisyen desteği. 2016'dan beri uluslararası sertifikalı eğitmenler." }}">
+  <link rel="icon" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Marin Pilates logosu" width="44" height="44">
+        <span>Marin Pilates</span>
+      </a>
+      <button class="menu-btn" aria-label="Menüyü aç" onclick="document.body.classList.toggle('menu-open')">☰</button>
+      <nav class="menu">
+        {% assign menu = "hakkimizda|Hakkımızda,hizmetlerimiz|Hizmetlerimiz,ekibimiz|Ekibimiz,galeri|Galeri,blog|Blog,sss|SSS" | split: "," %}
+        {% for m in menu %}{% assign p = m | split: "|" %}
+        <a href="{{ p[0] }}.html"{% if page.menu == p[0] %} class="active" aria-current="page"{% endif %}>{{ p[1] }}</a>
+        {% endfor %}
+        <a href="iletisim.html" class="btn btn-small{% if page.menu == 'iletisim' %} active{% endif %}">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+{{ content }}
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="logo footer-logo"><span>Marin Pilates & Yoga Stüdyo</span></a>
+        <p>Güçlü, esnek ve ağrısız bir beden için buradayız.</p>
+      </div>
+      <div>
+        <strong>Sayfalar</strong>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+        <a href="ekibimiz.html">Ekibimiz</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="blog.html">Blog</a>
+        <a href="sss.html">SSS</a>
+      </div>
+      <div>
+        <strong>İletişim</strong>
+        <span>Orhantepe Mah. Sema Sk. 39C<br>Kartal / İstanbul</span>
+        <a href="{{ site.telefon_link }}">{{ site.telefon }}</a>
+        <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram: @marinpilates</a>
+        <span>Çalışma saatleri: 08:00 – 22:30</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">© 2026 Marin Pilates & Yoga Stüdyo · Kartal, İstanbul</div>
+  </footer>
+
+  <a href="{{ site.whatsapp }}" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
+  </a>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" aria-label="Kapat">✕</button>
+    <div class="lightbox-content" id="lightbox-content"></div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

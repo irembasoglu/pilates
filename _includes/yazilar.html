@@ -1,0 +1,11 @@
+{% assign yazilar = site.pages | where: "layout", "yazi" | sort: "sira" %}
+<div class="cards">
+  {% for y in yazilar %}
+  <a href="{{ y.url | remove_first: '/' }}" class="card card-link post">
+    <p class="post-tag">{{ y.etiket }}</p>
+    <h3>{{ y.baslik }}</h3>
+    <p>{{ y.ozet }}</p>
+    <span class="text-link">Devamını oku →</span>
+  </a>
+  {% endfor %}
+</div>

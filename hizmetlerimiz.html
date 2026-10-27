@@ -1,0 +1,29 @@
+---
+layout: default
+menu: hizmetlerimiz
+baslik: Hizmetlerimiz
+aciklama: Pilates, hamile pilatesi, yoga, özel ders, düet ders ve diyetisyen hizmetleri. Kartal, İstanbul.
+---
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Hizmetlerimiz</p>
+    <h1>Sana uygun olanı seç</h1>
+    <p class="lead">Her yaşa ve her seviyeye uygun dersler, egzersizine uygun beslenme danışmanlığı.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container service-list">
+    {% for h in site.data.hizmetler %}
+    <div class="service" id="{{ h.id }}">
+      <h2>{{ h.ad }}</h2>
+      <div>
+        <p>{{ h.uzun }}</p>
+        <a href="https://wa.me/905374989178?text={{ 'Merhaba, ' | append: h.ad | append: ' hakkında bilgi almak istiyorum.' | uri_escape }}" class="text-link" target="_blank" rel="noopener">{{ h.ad }} hakkında bilgi al →</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% include cta.html %}

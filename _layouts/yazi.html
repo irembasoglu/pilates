@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<section class="page-hero">
+  <div class="container narrow">
+    <p class="eyebrow"><a href="blog.html">Blog</a> · {{ page.etiket }}</p>
+    <h1>{{ page.baslik }}</h1>
+    <p class="lead">{{ page.ozet }}</p>
+  </div>
+</section>
+<article class="section">
+  <div class="container narrow article">
+{{ content }}
+    <a href="blog.html" class="back-link">← Tüm yazılar</a>
+  </div>
+</article>
+{% include cta.html %}

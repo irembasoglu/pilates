@@ -1,0 +1,24 @@
+---
+layout: default
+menu: galeri
+baslik: Galeri
+aciklama: Marin Pilates & Yoga Stüdyo'dan fotoğraflar.
+---
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Galeri</p>
+    <h1>Stüdyomuzdan kareler</h1>
+    <p class="lead">Büyük halini görmek için fotoğrafa dokun.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="gallery">
+      {% for g in site.data.galeri %}
+      <button class="photo"><img src="foto/{{ g.dosya }}" alt="{{ g.aciklama }}" loading="lazy"></button>
+      {% endfor %}
+    </div>
+    <p class="center more-link">Daha fazlası için <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram'da @marinpilates</a></p>
+  </div>
+</section>
+{% include cta.html %}

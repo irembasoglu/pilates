@@ -1,0 +1,16 @@
+<div class="cards">
+  {% assign ekip = "hilal|Hilal Hoca|Pilates Eğitmeni,yagmur|Yağmur Hoca|Yoga Eğitmeni,diyetisyen|Diyetisyenimiz|Sporcu Beslenmesi" | split: "," %}
+  {% for kisi in ekip %}{% assign k = kisi | split: "|" %}
+  <button class="trainer" data-video="video/{{ k[0] }}.mp4" data-poster="foto/ekip-{{ k[0] }}.jpg">
+    <span class="trainer-photo">
+      <video src="video/{{ k[0] }}.mp4" poster="foto/ekip-{{ k[0] }}.jpg" muted autoplay loop playsinline aria-label="{{ k[1] }} videosu"></video>
+      <span class="sound-pill" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Sesli izle
+      </span>
+    </span>
+    <span class="trainer-name">{{ k[1] }}</span>
+    <span class="role">{{ k[2] }}</span>
+  </button>
+  {% endfor %}
+</div>

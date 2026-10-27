@@ -1,0 +1,8 @@
+# Marin Pilates sitesi ayarları
+title: Marin Pilates & Yoga Stüdyo
+whatsapp: "https://wa.me/905374989178?text=Merhaba%2C%20bilgi%20almak%20istiyorum."
+telefon: "0537 498 91 78"
+telefon_link: "tel:+905374989178"
+instagram: "https://www.instagram.com/marinpilates/"
+harita: "https://www.google.com/maps/search/?api=1&query=Marin+Pilates+Orhantepe+Sema+Sokak+39C+Kartal+Istanbul"
+exclude: [README.md, video/README.md]

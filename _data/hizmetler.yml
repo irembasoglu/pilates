@@ -1,0 +1,24 @@
+- id: pilates
+  ad: Pilates
+  kisa: Core bölgeni güçlendiren, duruşunu düzelten ve vücudunu esneten dersler.
+  uzun: Pilates, karın, bel ve sırt kaslarını (core bölgesi) güçlendirerek duruşunu düzeltir, bel ve boyun ağrılarını azaltmaya yardımcı olur. Stüdyomuzda reformer ve cadillac gibi pilates aletleriyle, eğitmen eşliğinde çalışırsın. Yeni başlayan da, deneyimli olan da kendi seviyesine uygun bir derste yer alır.
+- id: hamile-pilatesi
+  ad: Hamile Pilatesi
+  kisa: Hamilelik dönemine uygun, güvenli ve rahatlatıcı hareketler.
+  uzun: Hamilelik döneminde bedenini güçlü ve rahat tutmak için, bu döneme uygun ve güvenli hareketlerle çalışırız. Bel ve sırt ağrılarını hafifletmeye, nefes kontrolünü geliştirmeye ve pelvik taban kaslarını güçlendirmeye odaklanırız. Derslere başlamadan önce doktorundan onay almanı öneririz.
+- id: yoga
+  ad: Yoga
+  kisa: Nefes, denge ve esneklik çalışmalarıyla bedenini ve zihnini dinlendir.
+  uzun: Yoga derslerimizde nefes, denge ve esneklik çalışmalarıyla bedenini güçlendirirken zihnini de dinlendirirsin. Grup derslerinde sınırlarını güvenle keşfeder, gün içinde biriken stresten uzaklaşırsın.
+- id: ozel-ders
+  ad: Özel Ders
+  kisa: Sadece sana özel, birebir program. Hedefine göre hazırlanır.
+  uzun: Özel derste eğitmen yalnızca seninle çalışır. Program tamamen senin hedefine, seviyene ve varsa ağrı ya da sakatlıklarına göre hazırlanır. Daha hızlı ilerlemek ya da kendine özel bir saat istiyorsan en uygun seçenektir.
+- id: duet-ders
+  ad: Düet Ders
+  kisa: Bir arkadaşınla, eşinle ya da ailenden biriyle birlikte iki kişilik ders.
+  uzun: Düet derste bir arkadaşın, eşin ya da ailenden biriyle birlikte iki kişi ders alırsınız. Özel dersin yakın takibini, birlikte spor yapmanın motivasyonuyla birleştirir.
+- id: diyetisyen
+  ad: Diyetisyen
+  kisa: Egzersizine uygun beslenme danışmanlığı ile hedefine daha hızlı ulaş.
+  uzun: Diyetisyenimiz, egzersiz programına ve hedefine uygun bir beslenme planı hazırlar. Egzersiz ve beslenmeyi birlikte planlamak, hedefine daha hızlı ulaşmanı sağlar.

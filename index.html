@@ -1,328 +1,83 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marin Pilates & Yoga Stüdyo | Kartal, İstanbul</title>
-  <meta name="description" content="Kartal Orhantepe'de pilates, hamile pilatesi, yoga, özel ve düet dersler, diyetisyen desteği. 2016'dan beri uluslararası sertifikalı eğitmenler.">
-  <link rel="icon" href="logo.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- ÜST MENÜ -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#" class="logo">
-        <img src="logo.jpg" alt="Marin Pilates logosu" width="44" height="44">
-        <span>Marin Pilates</span>
-      </a>
-      <button class="menu-btn" aria-label="Menüyü aç" onclick="document.body.classList.toggle('menu-open')">☰</button>
-      <nav class="menu" onclick="document.body.classList.remove('menu-open')">
-        <a href="#hakkimizda">Hakkımızda</a>
-        <a href="#hizmetler">Hizmetlerimiz</a>
-        <a href="#ekibimiz">Ekibimiz</a>
-        <a href="#galeri">Galeri</a>
-        <a href="#blog">Blog</a>
-        <a href="#sss">SSS</a>
-        <a href="#iletisim" class="btn btn-small">İletişim</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- GİRİŞ -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Kartal · Pilates & Yoga Stüdyo</p>
-        <h1>Güçlü, esnek ve ağrısız bir beden için buradayız.</h1>
-        <p class="lead">2016'dan beri uluslararası sertifikalı eğitmenlerle pilates, yoga, egzersiz ve beslenme danışmanlığı.</p>
-        <div class="hero-buttons">
-          <a href="https://wa.me/905374989178?text=Merhaba%2C%20bilgi%20almak%20istiyorum." class="btn" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
-          <a href="#hizmetler" class="btn btn-outline">Hizmetlerimiz</a>
-        </div>
-      </div>
-      <div class="hero-logo">
-        <img src="logo.jpg" alt="" width="320" height="320">
+---
+layout: default
+menu: anasayfa
+---
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Kartal · Pilates & Yoga Stüdyo</p>
+      <h1>Güçlü, esnek ve ağrısız bir beden için buradayız.</h1>
+      <p class="lead">2016'dan beri uluslararası sertifikalı eğitmenlerle pilates, yoga, egzersiz ve beslenme danışmanlığı.</p>
+      <div class="hero-buttons">
+        <a href="{{ site.whatsapp }}" class="btn" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
+        <a href="hizmetlerimiz.html" class="btn btn-outline">Hizmetlerimiz</a>
       </div>
     </div>
-  </section>
-
-  <!-- HAKKIMIZDA -->
-  <section id="hakkimizda" class="section">
-    <div class="container about">
-      <div class="about-text">
-        <p class="eyebrow">Hakkımızda</p>
-        <h2>2016'dan beri Kartal'da</h2>
-        <p>Marin Pilates & Yoga Stüdyo, Orhantepe'de sağlıklı ve hareketli bir yaşam isteyen herkes için kuruldu. Uluslararası sertifikalı eğitmenlerimizle, her yaşa ve her seviyeye uygun dersler veriyoruz.</p>
-        <p>Sadece egzersiz değil, beslenme danışmanlığıyla da yanındayız. Hedefin ister ağrısız bir sırt, ister daha esnek bir beden olsun, sana uygun bir program birlikte hazırlıyoruz.</p>
-      </div>
-      <div class="about-side">
-      <img class="about-photo" src="foto/studyo-giris.jpg" alt="Marin Pilates stüdyo girişi" loading="lazy">
-      <ul class="facts">
-        <li><strong>2016</strong><span>yılından beri hizmetteyiz</span></li>
-        <li><strong>Uluslararası</strong><span>sertifikalı eğitmenler</span></li>
-        <li><strong>Egzersiz + Beslenme</strong><span>danışmanlığı bir arada</span></li>
-      </ul>
-      </div>
+    <div class="hero-logo">
+      <img src="logo.jpg" alt="" width="320" height="320">
     </div>
-  </section>
-
-  <!-- HİZMETLERİMİZ -->
-  <section id="hizmetler" class="section section-alt">
-    <div class="container">
-      <p class="eyebrow center">Hizmetlerimiz</p>
-      <h2 class="center">Sana uygun olanı seç</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Pilates</h3>
-          <p>Core bölgeni güçlendiren, duruşunu düzelten ve vücudunu esneten dersler.</p>
-        </div>
-        <div class="card">
-          <h3>Hamile Pilatesi</h3>
-          <p>Hamilelik dönemine uygun, güvenli ve rahatlatıcı hareketler.</p>
-        </div>
-        <div class="card">
-          <h3>Yoga</h3>
-          <p>Nefes, denge ve esneklik çalışmalarıyla bedenini ve zihnini dinlendir.</p>
-        </div>
-        <div class="card">
-          <h3>Özel Ders</h3>
-          <p>Sadece sana özel, birebir program. Hedefine göre hazırlanır.</p>
-        </div>
-        <div class="card">
-          <h3>Düet Ders</h3>
-          <p>Bir arkadaşınla, eşinle ya da ailenden biriyle birlikte iki kişilik ders.</p>
-        </div>
-        <div class="card">
-          <h3>Diyetisyen</h3>
-          <p>Egzersizine uygun beslenme danışmanlığı ile hedefine daha hızlı ulaş.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EKİBİMİZ (eğitmen bilgileri gelince doldurulacak) -->
-  <section id="ekibimiz" class="section">
-    <div class="container">
-      <p class="eyebrow center">Ekibimiz</p>
-      <h2 class="center">Eğitmenlerimizle tanış</h2>
-      <p class="section-intro center">Uluslararası sertifikalı eğitmenlerimiz, her derste seni yakından takip eder.</p>
-      <div class="cards">
-        <button class="trainer" data-video="video/hilal.mp4" data-poster="foto/ekip-hilal.jpg">
-          <span class="trainer-photo">
-            <video src="video/hilal.mp4" poster="foto/ekip-hilal.jpg" muted autoplay loop playsinline aria-label="Hilal Hoca videosu"></video>
-            <span class="sound" aria-hidden="true">🔊</span>
-          </span>
-          <span class="trainer-name">Hilal Hoca</span>
-          <span class="role">Pilates Eğitmeni</span>
-          <span class="watch">Sesli izlemek için dokun</span>
-        </button>
-        <button class="trainer" data-video="video/yagmur.mp4" data-poster="foto/ekip-yagmur.jpg">
-          <span class="trainer-photo">
-            <video src="video/yagmur.mp4" poster="foto/ekip-yagmur.jpg" muted autoplay loop playsinline aria-label="Yağmur Hoca videosu"></video>
-            <span class="sound" aria-hidden="true">🔊</span>
-          </span>
-          <span class="trainer-name">Yağmur Hoca</span>
-          <span class="role">Yoga Eğitmeni</span>
-          <span class="watch">Sesli izlemek için dokun</span>
-        </button>
-        <button class="trainer" data-video="video/diyetisyen.mp4" data-poster="foto/ekip-diyetisyen.jpg">
-          <span class="trainer-photo">
-            <video src="video/diyetisyen.mp4" poster="foto/ekip-diyetisyen.jpg" muted autoplay loop playsinline aria-label="Diyetisyenimiz videosu"></video>
-            <span class="sound" aria-hidden="true">🔊</span>
-          </span>
-          <span class="trainer-name">Diyetisyenimiz</span>
-          <span class="role">Sporcu Beslenmesi</span>
-          <span class="watch">Sesli izlemek için dokun</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERİ (stüdyo fotoğrafları gelince doldurulacak) -->
-  <section id="galeri" class="section section-alt">
-    <div class="container">
-      <p class="eyebrow center">Galeri</p>
-      <h2 class="center">Stüdyomuzdan kareler</h2>
-      <div class="gallery">
-        <button class="photo"><img src="foto/galeri-1.jpg" alt="Cadillac aletinde pilates" loading="lazy"></button>
-        <button class="photo"><img src="foto/galeri-2.jpg" alt="Cadillac aletinde ters duruş" loading="lazy"></button>
-        <button class="photo"><img src="foto/galeri-3.jpg" alt="Mat pilates dersi" loading="lazy"></button>
-        <button class="photo"><img src="foto/galeri-4.jpg" alt="Yoga dersi" loading="lazy"></button>
-        <button class="photo"><img src="foto/galeri-5.jpg" alt="Cadillac aletinde esneme" loading="lazy"></button>
-        <button class="photo"><img src="foto/galeri-6.jpg" alt="Stüdyoda pilates" loading="lazy"></button>
-      </div>
-      <p class="center more-link">
-        Daha fazlası için <a href="https://www.instagram.com/marinpilates/" target="_blank" rel="noopener">Instagram'da @marinpilates</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ÇALIŞMA SAATLERİ -->
-  <section id="saatler" class="section">
-    <div class="container hours">
-      <div>
-        <p class="eyebrow">Çalışma Saatleri</p>
-        <h2>08:00 – 22:30 arası açığız</h2>
-        <p>Sabah erkenden akşam geç saate kadar açığız. Ders programı ve fiyat bilgisi için bize WhatsApp'tan ya da telefonla ulaşabilirsin.</p>
-      </div>
-      <a href="https://wa.me/905374989178?text=Merhaba%2C%20bilgi%20almak%20istiyorum." class="btn" target="_blank" rel="noopener">Ders Programını Sor</a>
-    </div>
-  </section>
-
-  <!-- SSS -->
-  <section id="sss" class="section section-alt">
-    <div class="container narrow">
-      <p class="eyebrow center">SSS</p>
-      <h2 class="center">Sıkça sorulan sorular</h2>
-      <div class="faq">
-        <details>
-          <summary>Daha önce hiç pilates yapmadım, başlayabilir miyim?</summary>
-          <p>Elbette. Derslerimiz her seviyeye uygundur. Eğitmenlerimiz hareketleri senin seviyene göre uyarlar, sen de kendi hızında ilerlersin.</p>
-        </details>
-        <details>
-          <summary>Pilates ile yoga arasındaki fark nedir?</summary>
-          <p>Pilates daha çok core (karın, bel, sırt) kaslarını güçlendirmeye ve duruşu düzeltmeye odaklanır. Yoga ise nefes, esneklik ve denge çalışmalarıyla bedenle birlikte zihni de dinlendirir. İkisi birbirini çok iyi tamamlar.</p>
-        </details>
-        <details>
-          <summary>Hamileyken pilates yapabilir miyim?</summary>
-          <p>Doktorunun onayıyla evet. Hamile pilatesi derslerimiz hamilelik dönemine uygun, güvenli hareketlerle yapılır.</p>
-        </details>
-        <details>
-          <summary>Özel ders ile düet ders arasındaki fark nedir?</summary>
-          <p>Özel derste eğitmen sadece seninle çalışır ve program tamamen sana göre hazırlanır. Düet derste ise bir arkadaşın, eşin ya da ailenden biriyle birlikte iki kişi ders alırsınız.</p>
-        </details>
-        <details>
-          <summary>Derse gelirken yanımda ne getirmeliyim?</summary>
-          <p>Rahat hareket edebileceğin spor kıyafetleri ve bir şişe su yeterli.</p>
-        </details>
-        <details>
-          <summary>Diyetisyen desteği nasıl işliyor?</summary>
-          <p>Diyetisyenimiz, egzersiz programına ve hedefine uygun bir beslenme planı hazırlar. Detaylar için bize WhatsApp'tan yazabilirsin.</p>
-        </details>
-        <details>
-          <summary>Ders programını ve fiyatları nasıl öğrenebilirim?</summary>
-          <p>Bize WhatsApp'tan ya da 0537 498 91 78 numaralı telefondan ulaşabilirsin. Sana uygun saatleri ve paketleri birlikte belirleyelim.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG -->
-  <section id="blog" class="section">
-    <div class="container">
-      <p class="eyebrow center">Blog</p>
-      <h2 class="center">Sağlıklı yaşam için yazılar</h2>
-      <div class="cards blog-list">
-        <article class="card post">
-          <p class="post-tag">Pilates</p>
-          <h3>Pilatese yeni başlayanlar için 5 öneri</h3>
-          <details>
-            <summary>Devamını oku</summary>
-            <div class="post-body">
-              <p><strong>1. Acele etme.</strong> İlk derslerde hareketleri doğru yapmak, çok tekrar yapmaktan daha önemlidir.</p>
-              <p><strong>2. Nefesine dikkat et.</strong> Pilateste her hareket nefesle birlikte yapılır. Nefesini tutmamaya çalış.</p>
-              <p><strong>3. Düzenli gel.</strong> Haftada 2-3 ders, birkaç hafta içinde farkı hissetmeni sağlar.</p>
-              <p><strong>4. Eğitmenine durumunu anlat.</strong> Bel, boyun ya da diz ağrın varsa dersten önce mutlaka söyle.</p>
-              <p><strong>5. Kendini başkalarıyla kıyaslama.</strong> Herkesin bedeni farklıdır. Önemli olan senin ilerlemen.</p>
-            </div>
-          </details>
-        </article>
-        <article class="card post">
-          <p class="post-tag">Hamilelik</p>
-          <h3>Hamilelikte pilatesin faydaları</h3>
-          <details>
-            <summary>Devamını oku</summary>
-            <div class="post-body">
-              <p>Hamilelik boyunca bedende büyük değişiklikler olur. Doktor onayıyla yapılan pilates, bu döneme daha rahat uyum sağlamaya yardımcı olur.</p>
-              <p>Bel ve sırt kaslarını güçlendirerek hamilelikte sık görülen bel ağrılarını azaltabilir. Doğru nefes tekniklerini öğrenmek doğum sürecinde de işe yarar.</p>
-              <p>Pelvik taban kaslarını çalıştırmak hem hamilelik sırasında hem de doğumdan sonra toparlanma döneminde destek olur.</p>
-            </div>
-          </details>
-        </article>
-        <article class="card post">
-          <p class="post-tag">Yoga</p>
-          <h3>Masa başı çalışanlar için yoga ve pilates</h3>
-          <details>
-            <summary>Devamını oku</summary>
-            <div class="post-body">
-              <p>Gün boyu bilgisayar başında oturmak boyun, omuz ve bel ağrılarına yol açabilir. Kaslar zamanla kısalır ve duruş bozulur.</p>
-              <p>Pilates, duruşu taşıyan kasları güçlendirir. Yoga ise kısalan kasları esnetir ve gün içinde biriken stresi azaltır.</p>
-              <p>Haftada birkaç ders, ağrıların azalmasına ve kendini daha enerjik hissetmene yardımcı olabilir.</p>
-            </div>
-          </details>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- İLETİŞİM -->
-  <section id="iletisim" class="section section-dark">
-    <div class="container two-col">
-      <div>
-        <p class="eyebrow">İletişim</p>
-        <h2>Seni stüdyomuzda görelim</h2>
-        <p>Sorularını WhatsApp'tan yazabilir ya da bizi arayabilirsin.</p>
-        <div class="contact-buttons">
-          <a href="https://wa.me/905374989178?text=Merhaba%2C%20bilgi%20almak%20istiyorum." class="btn" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Marin+Pilates+Orhantepe+Sema+Sokak+39C+Kartal+Istanbul" class="btn btn-outline-light" target="_blank" rel="noopener">Yol Tarifi Al</a>
-        </div>
-      </div>
-      <ul class="contact-list">
-        <li><strong>Adres</strong>Orhantepe Mahallesi, Sema Sokak 39C<br>Kartal / İstanbul</li>
-        <li><strong>Telefon</strong><a href="tel:+905374989178">0537 498 91 78</a></li>
-        <li><strong>Instagram</strong><a href="https://www.instagram.com/marinpilates/" target="_blank" rel="noopener">@marinpilates</a></li>
-        <li><strong>Çalışma Saatleri</strong>08:00 – 22:30</li>
-      </ul>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© 2026 Marin Pilates & Yoga Stüdyo · Kartal, İstanbul</span>
-      <a href="https://www.instagram.com/marinpilates/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-ig">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      </a>
-    </div>
-  </footer>
-
-  <!-- Video / fotoğraf büyütme penceresi -->
-  <div class="lightbox" id="lightbox" hidden>
-    <button class="lightbox-close" aria-label="Kapat">✕</button>
-    <div class="lightbox-content" id="lightbox-content"></div>
   </div>
-  <script>
-    var box = document.getElementById('lightbox');
-    var content = document.getElementById('lightbox-content');
-    function openBox(html) { content.innerHTML = html; box.hidden = false; }
-    function closeBox() { content.innerHTML = ''; box.hidden = true; }
-    document.querySelectorAll('.trainer').forEach(function (b) {
-      b.onclick = function () {
-        openBox('<video src="' + b.dataset.video + '" poster="' + b.dataset.poster + '" controls autoplay playsinline></video>');
-      };
-    });
-    document.querySelectorAll('.photo').forEach(function (b) {
-      b.onclick = function () {
-        var img = b.querySelector('img');
-        openBox('<img src="' + img.src + '" alt="' + img.alt + '">');
-      };
-    });
-    // Hareket azaltma tercihi olanlarda kapak videoları durur
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('.trainer-photo video').forEach(function (v) { v.pause(); });
-    }
-    box.onclick = function (e) { if (e.target === box || e.target.className === 'lightbox-close') closeBox(); };
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeBox(); });
-  </script>
+</section>
 
-  <!-- Sabit WhatsApp butonu -->
-  <a href="https://wa.me/905374989178?text=Merhaba%2C%20bilgi%20almak%20istiyorum." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
-  </a>
+<section class="section">
+  <div class="container about">
+    <div class="about-text">
+      <p class="eyebrow">Hakkımızda</p>
+      <h2>2016'dan beri Kartal'da</h2>
+      <p>Marin Pilates & Yoga Stüdyo, Orhantepe'de sağlıklı ve hareketli bir yaşam isteyen herkes için kuruldu. Uluslararası sertifikalı eğitmenlerimizle, her yaşa ve her seviyeye uygun dersler veriyoruz.</p>
+      <a href="hakkimizda.html" class="text-link">Bizi daha yakından tanı →</a>
+    </div>
+    <ul class="facts">
+      <li><strong>2016</strong><span>yılından beri hizmetteyiz</span></li>
+      <li><strong>Uluslararası</strong><span>sertifikalı eğitmenler</span></li>
+      <li><strong>Egzersiz + Beslenme</strong><span>danışmanlığı bir arada</span></li>
+    </ul>
+  </div>
+</section>
 
-</body>
-</html>
+<section class="section section-alt">
+  <div class="container">
+    <p class="eyebrow center">Hizmetlerimiz</p>
+    <h2 class="center">Sana uygun olanı seç</h2>
+    <div class="cards">
+      {% for h in site.data.hizmetler %}
+      <a href="hizmetlerimiz.html#{{ h.id }}" class="card card-link">
+        <h3>{{ h.ad }}</h3>
+        <p>{{ h.kisa }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow center">Ekibimiz</p>
+    <h2 class="center">Eğitmenlerimizle tanış</h2>
+    {% include egitmenler.html %}
+    <p class="center more-link"><a href="ekibimiz.html">Ekibimizin sayfasına git →</a></p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <p class="eyebrow center">Galeri</p>
+    <h2 class="center">Stüdyomuzdan kareler</h2>
+    <div class="gallery">
+      {% for g in site.data.galeri limit: 3 %}
+      <button class="photo"><img src="foto/{{ g.dosya }}" alt="{{ g.aciklama }}" loading="lazy"></button>
+      {% endfor %}
+    </div>
+    <p class="center more-link"><a href="galeri.html">Tüm fotoğrafları gör →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow center">Blog</p>
+    <h2 class="center">Sağlıklı yaşam için yazılar</h2>
+    {% include yazilar.html %}
+  </div>
+</section>
+
+{% include cta.html %}
