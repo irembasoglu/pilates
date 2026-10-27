@@ -15,7 +15,7 @@
   --muted: #4d6674;
   --line: #d7ecf3;
 
-  --display: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+  --display: "Fraunces", Georgia, serif;
   --body: "DM Sans", system-ui, sans-serif;
 
   --sail: 0 0 0 0;        /* yelken köşesi (bkz. .sail) */
@@ -36,9 +36,9 @@ a { color: inherit; }
 img, video { max-width: 100%; }
 h1, h2, h3 {
   font-family: var(--display);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 h1 { font-size: clamp(2.6rem, 6.2vw, 5rem); }
