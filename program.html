@@ -1,0 +1,76 @@
+---
+layout: default
+menu: program
+baslik: Ders Programı
+aciklama: Marin Pilates haftalık grup ders programı. Aletli pilates, yoga ve zumba saatleri. Kartal, İstanbul.
+---
+{% include sayfa-basi.html yer="Ders Programı" baslik="Haftalık ders programı" lead="Grup derslerimizin saatleri. Katılmak istediğin derse dokun, WhatsApp'tan yerini ayırtalım." %}
+
+<section class="section program-section">
+  <div class="container">
+    <div class="filters" role="group" aria-label="Derslere göre filtrele">
+      <button type="button" class="filter on" data-f="hepsi">Tüm dersler</button>
+      <button type="button" class="filter" data-f="pilates"><i class="dot dot-pilates"></i>Aletli Pilates</button>
+      <button type="button" class="filter" data-f="yoga"><i class="dot dot-yoga"></i>Yoga</button>
+      <button type="button" class="filter" data-f="zumba"><i class="dot dot-zumba"></i>Zumba</button>
+    </div>
+
+    <div class="week">
+      {% for gun in site.data.program.gunler %}
+      <div class="day">
+        <h2 class="day-name">{{ gun }}</h2>
+        <div class="slots">
+          {% assign gunun = site.data.program.dersler | where: "gun", gun %}
+          {% for d in gunun %}
+          {% capture mesaj %}Merhaba, {{ gun }} {{ d.saat }} {{ d.ders }} dersine katılmak istiyorum.{% endcapture %}
+          <a href="https://wa.me/905374989178?text={{ mesaj | uri_escape }}" class="slot slot-{{ d.tur }}" data-tur="{{ d.tur }}" target="_blank" rel="noopener">
+            <span class="slot-time">{{ d.saat }}</span>
+            <span class="slot-name">{{ d.ders }}</span>
+            {% if d.not %}<span class="slot-note">{{ d.not }}</span>{% endif %}
+            <span class="slot-go" aria-hidden="true">Yer ayırt →</span>
+          </a>
+          {% endfor %}
+          <p class="empty" hidden>Bu gün bu ders yok.</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="program-info">
+      <div class="info-card info-pilates">
+        <h3>Aletli Pilates</h3>
+        <p>Reformer ve cadillac gibi aletlerle grup dersleri. Programdaki saatler <strong>indirimli saatlerdir</strong>.</p>
+        <p class="price"><span>8 ders</span> 3.800 ₺</p>
+      </div>
+      <div class="info-card info-yoga">
+        <h3>Yoga Grupları</h3>
+        <p>Salı 19:00 başlangıç seviyesi, Salı 20:00 bir süredir yoga yapanlar için. Çarşamba 20:40 her seviyeye uygun.</p>
+      </div>
+      <div class="info-card info-zumba">
+        <span class="new">Yeni</span>
+        <h3>Zumba</h3>
+        <p>Her çarşamba 20:00'de müzik eşliğinde, enerjisi yüksek bir ders. Bilgi ve kayıt için bize yaz.</p>
+      </div>
+    </div>
+    <p class="program-note">Özel ve düet derslerin saatlerini birlikte belirliyoruz. Diğer saatler için bize <a href="{{ site.whatsapp }}" target="_blank" rel="noopener">WhatsApp'tan yazabilirsin</a>.</p>
+  </div>
+</section>
+
+{% include cta.html %}
+
+<script>
+  document.querySelectorAll('.filter').forEach(function (b) {
+    b.onclick = function () {
+      var f = b.dataset.f;
+      document.querySelectorAll('.filter').forEach(function (x) { x.classList.toggle('on', x === b); });
+      document.querySelectorAll('.day').forEach(function (day) {
+        var shown = 0;
+        day.querySelectorAll('.slot').forEach(function (s) {
+          var ok = f === 'hepsi' || s.dataset.tur === f;
+          s.hidden = !ok; if (ok) shown++;
+        });
+        day.querySelector('.empty').hidden = shown > 0;
+      });
+    };
+  });
+</script>

@@ -1,0 +1,22 @@
+# Haftalık grup dersleri. tur: pilates | yoga | zumba
+gunler: [Pazartesi, Salı, Çarşamba, Perşembe, Cuma]
+dersler:
+  - { gun: Pazartesi, saat: "10:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Pazartesi, saat: "11:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Pazartesi, saat: "12:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Salı, saat: "19:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Salı, saat: "19:00", ders: Yoga, tur: yoga, not: Başlangıç seviye }
+  - { gun: Salı, saat: "20:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Salı, saat: "20:00", ders: Yoga, tur: yoga, not: Bir süredir yoga yapanlar }
+  - { gun: Salı, saat: "20:45", ders: Aletli Pilates, tur: pilates }
+  - { gun: Çarşamba, saat: "10:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Çarşamba, saat: "11:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Çarşamba, saat: "12:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Çarşamba, saat: "20:00", ders: Zumba, tur: zumba, not: Yeni }
+  - { gun: Çarşamba, saat: "20:40", ders: Yoga, tur: yoga, not: Her seviyeye uygun }
+  - { gun: Perşembe, saat: "19:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Perşembe, saat: "20:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Perşembe, saat: "20:45", ders: Aletli Pilates, tur: pilates }
+  - { gun: Cuma, saat: "17:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Cuma, saat: "18:00", ders: Aletli Pilates, tur: pilates }
+  - { gun: Cuma, saat: "19:00", ders: Aletli Pilates, tur: pilates }
