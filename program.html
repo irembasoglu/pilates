@@ -4,37 +4,36 @@ menu: program
 baslik: Ders Programı
 aciklama: Marin Pilates haftalık grup ders programı. Aletli pilates, yoga ve zumba saatleri. Kartal, İstanbul.
 ---
-{% include sayfa-basi.html yer="Ders Programı" baslik="Haftalık ders programı" lead="Grup derslerimizin saatleri. Katılmak istediğin derse dokun, WhatsApp'tan yerini ayırtalım." %}
+{% include sayfa-basi.html yer="Ders Programı" baslik="Haftalık ders programı" lead="Grup derslerimizin saatleri. Günü seç, katılmak istediğin derste \"Yer ayırt\"a dokun; WhatsApp'tan yerini ayırtalım." %}
 
 <section class="section program-section">
   <div class="container">
-    <div class="filters" role="group" aria-label="Derslere göre filtrele">
-      <button type="button" class="filter on" data-f="hepsi">Tüm dersler</button>
-      <button type="button" class="filter" data-f="pilates"><i class="dot dot-pilates"></i>Aletli Pilates</button>
-      <button type="button" class="filter" data-f="yoga"><i class="dot dot-yoga"></i>Yoga</button>
-      <button type="button" class="filter" data-f="zumba"><i class="dot dot-zumba"></i>Zumba</button>
-    </div>
-
-    <div class="week">
+    <div class="tabs" role="tablist" aria-label="Günler">
       {% for gun in site.data.program.gunler %}
-      <div class="day">
-        <h2 class="day-name">{{ gun }}</h2>
-        <div class="slots">
-          {% assign gunun = site.data.program.dersler | where: "gun", gun %}
-          {% for d in gunun %}
-          {% capture mesaj %}Merhaba, {{ gun }} {{ d.saat }} {{ d.ders }} dersine katılmak istiyorum.{% endcapture %}
-          <a href="https://wa.me/905374989178?text={{ mesaj | uri_escape }}" class="slot slot-{{ d.tur }}" data-tur="{{ d.tur }}" target="_blank" rel="noopener">
-            <span class="slot-time">{{ d.saat }}</span>
-            <span class="slot-name">{{ d.ders }}</span>
-            {% if d.not %}<span class="slot-note">{{ d.not }}</span>{% endif %}
-            <span class="slot-go" aria-hidden="true">Yer ayırt →</span>
-          </a>
-          {% endfor %}
-          <p class="empty" hidden>Bu gün bu ders yok.</p>
-        </div>
-      </div>
+      {% assign gunun = site.data.program.dersler | where: "gun", gun %}
+      <button type="button" class="tab{% if forloop.first %} on{% endif %}" role="tab" id="sekme-{{ forloop.index }}" data-gun="{{ gun }}" aria-controls="gun-{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">{{ gun }}<small>{{ gunun.size }} ders</small></button>
       {% endfor %}
     </div>
+
+    {% for gun in site.data.program.gunler %}
+    {% assign gunun = site.data.program.dersler | where: "gun", gun %}
+    <div class="day-table" role="tabpanel" id="gun-{{ forloop.index }}" aria-labelledby="sekme-{{ forloop.index }}" data-gun="{{ gun }}"{% unless forloop.first %} hidden{% endunless %}>
+      <table class="schedule">
+        <thead><tr><th scope="col">Saat</th><th scope="col">Ders</th><th scope="col">Seviye</th><th scope="col"><span class="sr-only">Yer ayırt</span></th></tr></thead>
+        <tbody>
+          {% for d in gunun %}
+          {% capture mesaj %}Merhaba, {{ gun }} {{ d.saat }} {{ d.ders }} dersine katılmak istiyorum.{% endcapture %}
+          <tr class="{{ d.tur }}">
+            <td class="c-time">{{ d.saat }}</td>
+            <td class="c-class"><span><i class="dot"></i>{{ d.ders }}</span></td>
+            <td class="c-note">{{ d.not }}</td>
+            <td class="c-go"><a href="https://wa.me/905374989178?text={{ mesaj | uri_escape }}" class="go-btn" target="_blank" rel="noopener" aria-label="{{ gun }} {{ d.saat }} {{ d.ders }} için yer ayırt">Yer ayırt →</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endfor %}
 
     <div class="program-info">
       <div class="info-card info-pilates">
@@ -93,18 +92,15 @@ aciklama: Marin Pilates haftalık grup ders programı. Aletli pilates, yoga ve z
 {% include cta.html %}
 
 <script>
-  document.querySelectorAll('.filter').forEach(function (b) {
-    b.onclick = function () {
-      var f = b.dataset.f;
-      document.querySelectorAll('.filter').forEach(function (x) { x.classList.toggle('on', x === b); });
-      document.querySelectorAll('.day').forEach(function (day) {
-        var shown = 0;
-        day.querySelectorAll('.slot').forEach(function (s) {
-          var ok = f === 'hepsi' || s.dataset.tur === f;
-          s.hidden = !ok; if (ok) shown++;
-        });
-        day.querySelector('.empty').hidden = shown > 0;
-      });
-    };
-  });
+  // Gün sekmeleri: sayfa bugünün gününde açılır
+  (function () {
+    var tabs = document.querySelectorAll('.tab'), panels = document.querySelectorAll('.day-table');
+    function goster(gun) {
+      tabs.forEach(function (t) { var on = t.dataset.gun === gun; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); });
+      panels.forEach(function (p) { p.hidden = p.dataset.gun !== gun; });
+    }
+    tabs.forEach(function (t) { t.onclick = function () { goster(t.dataset.gun); }; });
+    var bugun = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'][new Date().getDay()];
+    if (document.querySelector('.tab[data-gun="' + bugun + '"]')) goster(bugun);
+  })();
 </script>
