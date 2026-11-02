@@ -1,0 +1,16 @@
+# Google Haritalar yorumları (ekran görüntülerinden). Adlar soyadı baş harfiyle kısaltıldı.
+puan: "4,8"
+sayi: 30
+liste:
+  - ad: Meryem T.
+    yildiz: 5
+    metin: "Birkaç aydır bireysel ders alarak haftada iki gün devam ediyorum. Masa başı çalışanım. Omuz, boyun, sırt ağrılarım vardı, fark edilir bir azalma oldu. Hocalar deneyimli, sıcakkanlı ve işlerinde çok iyiler. Stüdyo ortamı temiz ve düzenli. Başlayacak olanlara rahatlıkla tavsiye ediyorum."
+  - ad: Burcu A.
+    yildiz: 5
+    metin: "Aralık ayından beri Zeynep Hoca ile birebir çalışıyorum ve bu süreçte kendimde gördüğüm değişim inanılmaz. Yıllardır şikayetçi olduğum vücut ağrılarım ve duruş bozukluğum ortadan kalktı. Sadece sağlık anlamında değil, vücudumun sıkılaştığını görmek de motivasyonumu çok artırıyor. Zeynep Hoca sadece bir eğitmen değil, her sorununuzda yanınızda olan, çözüm odaklı ve çok samimi bir rehber. Güler yüzü ve içtenliği için kendisine çok teşekkür ederim, kesinlikle tavsiye ediyorum 🌺"
+  - ad: Reyyan A.
+    yildiz: 5
+    metin: "Daha önce hiç aletli pilates yapmadığım için, sürece bireysel ders alarak başlamayı tercih ettim. Ardından grup derslerine geçmek benim için çok daha kolay ve verimli oldu. Zeynep Hoca'nın samimiyeti ve ders sırasında birebir ilgilenmesi sayesinde kısa sürede adapte oldum. Keyifle devam ettiğim bir deneyim oldu."
+  - ad: İrem B.
+    yildiz: 5
+    metin: "Bütün dertlerin uçup gittiği, yenilenmiş bir şekilde bir sonraki güne devam etmemi sağlayan işte o stüdyo. Canım Zeynep hocamın bilgisiyle samimiyetiyle derslerimiz çok güzel ilerledi. Kendinize yapabileceğiniz en iyi yatırımlardan bir tanesidir pilates."

@@ -73,7 +73,38 @@ menu: anasayfa
   </div>
 </section>
 
-<section class="section">
+<section class="section reviews">
+  <div class="container reviews-wrap">
+    <div class="rating">
+      <p class="rating-num">{{ site.data.yorumlar.puan }}</p>
+      <div class="rating-stars" role="img" aria-label="5 üzerinden {{ site.data.yorumlar.puan }} yıldız">
+        <span class="stars-bg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span>
+        <span class="stars-fill" style="width: 96%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span>
+      </div>
+      <p class="rating-count">Google'da {{ site.data.yorumlar.sayi }} yorum</p>
+      <h2>Öğrencilerimiz <em>anlatıyor</em></h2>
+      <a href="{{ site.harita }}" class="btn-soft" target="_blank" rel="noopener">Tüm yorumları oku</a>
+      <div class="review-nav">
+        <button type="button" class="review-btn" data-yon="-1" aria-label="Önceki yorumlar">←</button>
+        <button type="button" class="review-btn" data-yon="1" aria-label="Sonraki yorumlar">→</button>
+      </div>
+    </div>
+    <div class="review-track" tabindex="0" aria-label="Google yorumları">
+      {% for y in site.data.yorumlar.liste %}
+      <figure class="review">
+        <div class="review-stars" aria-label="{{ y.yildiz }} yıldız"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div>
+        <blockquote>{{ y.metin }}</blockquote>
+        <figcaption>
+          <span class="review-avatar">{{ y.ad | slice: 0 }}</span>
+          <span><b>{{ y.ad }}</b><small>Google yorumu</small></span>
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-mist">
   <div class="container ig-wrap">
     <div class="ig-profile">
       <div class="ig-who">
@@ -95,7 +126,7 @@ menu: anasayfa
   </div>
 </section>
 
-<section class="section section-mist">
+<section class="section">
   <div class="container">
     <div class="sec-head">
       <h2>Blogdan</h2>

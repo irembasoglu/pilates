@@ -221,6 +221,42 @@ p + p { margin-top: .9rem; }
 .gallery-masonry .photo img { height: auto; }
 .photo:hover img { transform: scale(1.03); }
 
+/* Google yorumları */
+.reviews-wrap { display: grid; grid-template-columns: 1fr 2.2fr; gap: 56px; align-items: start; }
+.rating { position: sticky; top: 110px; display: flex; flex-direction: column; align-items: flex-start; gap: .4rem; }
+.rating-num { font-family: var(--display); font-size: clamp(4.5rem, 9vw, 6.5rem); font-weight: 500; line-height: .9; letter-spacing: -0.04em; }
+.rating-stars { position: relative; display: inline-block; line-height: 0; }
+.rating-stars svg, .review-stars svg { width: 22px; height: 22px; }
+.stars-bg svg { fill: var(--line); }
+.stars-fill { position: absolute; inset: 0 auto 0 0; overflow: hidden; white-space: nowrap; }
+.stars-fill svg { fill: #f2b33a; }
+.rating-count { color: var(--muted); font-weight: 500; margin-bottom: 1.4rem; }
+.rating h2 { margin-bottom: 1.4rem; }
+.rating h2 em { font-style: italic; font-weight: 400; color: var(--blue-text); }
+.review-nav { display: flex; gap: 8px; margin-top: 1.2rem; }
+.review-btn {
+  width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--white);
+  font-size: 1.1rem; color: var(--navy); cursor: pointer; transition: background .2s, border-color .2s, opacity .2s;
+}
+.review-btn:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.review-btn:disabled { opacity: .35; pointer-events: none; }
+.review-track {
+  display: grid; grid-auto-flow: column; grid-auto-columns: calc(50% - 8px); gap: 16px;
+  overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px; scrollbar-width: thin;
+}
+.review {
+  scroll-snap-align: start; margin: 0; background: var(--mist); border-radius: 18px; padding: 28px;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.review:first-child { border-radius: 60% 18px 18px 18px / 18% 18px 18px 18px; padding-top: 44px; }
+.review-stars { display: flex; gap: 2px; line-height: 0; }
+.review-stars svg { width: 18px; height: 18px; fill: #f2b33a; }
+.review blockquote { margin: 0; font-size: 1.02rem; line-height: 1.65; color: var(--ink); flex: 1; }
+.review figcaption { display: flex; align-items: center; gap: 12px; }
+.review-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--navy); color: var(--white); display: inline-flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 600; flex: none; }
+.review figcaption b { display: block; font-weight: 600; }
+.review figcaption small { color: var(--muted); font-size: .85rem; }
+
 /* Instagram bölümü */
 .ig-wrap { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: center; }
 .ig-profile { display: flex; flex-direction: column; gap: 1.2rem; align-items: flex-start; }
@@ -522,6 +558,11 @@ p + p { margin-top: .9rem; }
   .program-info { grid-template-columns: 1fr; }
   .program-faq { grid-template-columns: 1fr; gap: 24px; margin-top: 72px; }
   .ig-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .reviews-wrap { grid-template-columns: 1fr; gap: 28px; }
+  .rating { position: static; }
+  .review-nav { display: none; }
+  .review-track { grid-auto-columns: 86%; margin: 0 -20px; padding: 0 20px 14px; scroll-padding: 0 20px; }
+  .review { padding: 22px; }
   .ig-grid { gap: 6px; }
   .ig-tile { border-radius: 8px; }
   .service-box { aspect-ratio: auto; min-height: 190px; padding: 18px; border-radius: 14px; }

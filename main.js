@@ -27,3 +27,19 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 function navDurumu() { document.body.classList.toggle('scrolled', window.scrollY > 40); }
 window.addEventListener('scroll', navDurumu, { passive: true });
 navDurumu();
+
+// Google yorumları: ileri-geri butonları
+var yorumlar = document.querySelector('.review-track');
+if (yorumlar) {
+  var btns = document.querySelectorAll('.review-btn');
+  function yorumButonlari() {
+    var max = yorumlar.scrollWidth - yorumlar.clientWidth - 4;
+    btns[0].disabled = yorumlar.scrollLeft <= 4;
+    btns[1].disabled = yorumlar.scrollLeft >= max;
+  }
+  btns.forEach(function (b) {
+    b.onclick = function () { yorumlar.scrollBy({ left: Number(b.dataset.yon) * yorumlar.clientWidth, behavior: 'smooth' }); };
+  });
+  yorumlar.addEventListener('scroll', yorumButonlari, { passive: true });
+  yorumButonlari();
+}
