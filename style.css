@@ -236,7 +236,10 @@ p + p { margin-top: .9rem; }
 .post-item h3 { font-size: 1.5rem; transition: color .2s; }
 .post-item p { color: var(--muted); }
 .post-item:hover h3 { color: var(--blue-text); }
-.read-more { font-weight: 600; font-size: .95rem; margin-top: auto; padding-top: .4rem; }
+.read-more { font-weight: 600; font-size: .95rem; margin-top: auto; padding-top: .4rem; display: inline-flex; gap: .4rem; transition: color .2s; }
+.read-more i { font-style: normal; transition: transform .25s; }
+.post-item:hover .read-more { color: var(--blue-text); }
+.post-item:hover .read-more i { transform: translateX(5px); }
 
 /* Ortak "bize ulaş" bandı */
 .cta { background: var(--blue); color: var(--navy); position: relative; overflow: hidden; }
