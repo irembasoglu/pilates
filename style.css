@@ -167,34 +167,25 @@ p + p { margin-top: .9rem; }
 .intro-text p { color: var(--muted); max-width: 34em; }
 .intro-text .btn-soft { margin-top: 2rem; }
 
-/* Hizmet satırları: üzerine gelince alttan lacivertle dolar, sağda ok belirir */
-.service-rows { border-top: 1px solid var(--line); }
-.service-row {
-  position: relative; isolation: isolate; overflow: hidden;
-  display: grid; grid-template-columns: 1fr 1.3fr auto; gap: 32px; align-items: center;
-  padding: 26px 24px; border-bottom: 1px solid var(--line); text-decoration: none;
+/* Hizmet kutuları: 3×2 beyaz kare, üzerine gelince lacivert */
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.service-box {
+  aspect-ratio: 1 / .82; background: var(--white); border-radius: 18px; padding: 28px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  text-decoration: none; transition: background .3s, transform .3s, box-shadow .3s;
 }
-.service-row::before {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: var(--navy); transform: scaleY(0); transform-origin: bottom;
-  transition: transform .35s ease;
+.box-top { display: flex; justify-content: flex-end; }
+.service-box .arrow {
+  width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--line);
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background .25s, border-color .25s, color .25s, transform .3s;
 }
-.service-row h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); transition: color .3s; }
-.service-row p { color: var(--muted); transition: color .3s; }
-.service-row .go {
-  display: inline-flex; align-items: center; gap: 12px;
-  font-weight: 600; font-size: .92rem; white-space: nowrap; color: var(--blue);
-  opacity: 0; transform: translateX(-10px); transition: opacity .3s, transform .3s;
-}
-.service-row .arrow {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: var(--blue); color: var(--navy);
-  display: inline-flex; align-items: center; justify-content: center; font-size: 1.05rem;
-}
-.service-row:hover::before, .service-row:focus-visible::before { transform: scaleY(1); }
-.service-row:hover h3, .service-row:focus-visible h3 { color: var(--white); }
-.service-row:hover p, .service-row:focus-visible p { color: #a9c1cc; }
-.service-row:hover .go, .service-row:focus-visible .go { opacity: 1; transform: none; }
+.service-box h3 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); transition: color .3s; }
+.service-box p { color: var(--muted); font-size: .97rem; margin-top: .4rem; transition: color .3s; }
+.service-box:hover, .service-box:focus-visible { background: var(--navy); transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0, 28, 42, .18); }
+.service-box:hover h3, .service-box:focus-visible h3 { color: var(--white); }
+.service-box:hover p, .service-box:focus-visible p { color: #a9c1cc; }
+.service-box:hover .arrow, .service-box:focus-visible .arrow { background: var(--blue); border-color: var(--blue); color: var(--navy); transform: rotate(-45deg); }
 
 /* Eğitmenler */
 .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -439,11 +430,11 @@ p + p { margin-top: .9rem; }
   .sec-head { gap: 14px; margin-bottom: 36px; }
   .sec-head p, .sec-head .btn-soft { justify-self: start; }
   .intro-photo, .about-photo { aspect-ratio: 4 / 3; }
-  .service-row { grid-template-columns: 1fr auto; gap: 4px 16px; padding: 20px 4px; }
-  .service-row p { grid-column: 1; font-size: .95rem; }
-  .service-row .go { grid-row: 1 / span 2; grid-column: 2; }
-  .service-row .go-text { display: none; }
-  .service-row .arrow { width: 36px; height: 36px; }
+  .service-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .service-box { aspect-ratio: auto; min-height: 190px; padding: 18px; border-radius: 14px; }
+  .service-box h3 { font-size: 1.3rem; }
+  .service-box p { font-size: .85rem; }
+  .service-box .arrow { width: 32px; height: 32px; }
   .team {
     display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
     margin: 0 -20px; padding: 0 20px 8px; scrollbar-width: none;
@@ -469,13 +460,6 @@ p + p { margin-top: .9rem; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }
   .footer-grid > div:last-child { grid-column: 1 / -1; }
   .seal-footer { width: 96px; height: 96px; }
-}
-
-/* Dokunmatik ekranlarda üzerine gelme yok: ok hep görünsün */
-@media (hover: none) {
-  .service-row .go { opacity: 1; transform: none; }
-  .service-row .arrow { background: var(--white); border: 1.5px solid var(--line); }
-  .service-row:active::before { transform: scaleY(1); }
 }
 
 /* Telefonda menü açıkken şerit tam lacivert olsun */

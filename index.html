@@ -49,12 +49,14 @@ menu: anasayfa
       <h2>Ne yapıyoruz?</h2>
       <p>Grup derslerinden birebir programlara, hamilelikten sporcu beslenmesine kadar sana uygun bir seçenek mutlaka var.</p>
     </div>
-    <div class="service-rows">
+    <div class="service-grid">
       {% for h in site.data.hizmetler %}
-      <a href="hizmetlerimiz.html#{{ h.id }}" class="service-row">
-        <h3>{{ h.ad }}</h3>
-        <p>{{ h.kisa }}</p>
-        <span class="go" aria-hidden="true"><span class="go-text">Detaylar</span><span class="arrow">→</span></span>
+      <a href="hizmetlerimiz.html#{{ h.id }}" class="service-box">
+        <span class="box-top"><span class="arrow" aria-hidden="true">→</span></span>
+        <span>
+          <h3>{{ h.ad }}</h3>
+          <p>{{ h.kisa }}</p>
+        </span>
       </a>
       {% endfor %}
     </div>
