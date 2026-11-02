@@ -4,6 +4,12 @@ layout: default
 {% include sayfa-basi.html ust="Blog" ust_link="blog.html" yer=page.etiket baslik=page.baslik lead=page.ozet %}
 <article class="section">
   <div class="container narrow article">
+    {% if page.gorsel %}
+    <figure class="article-img">
+      <img src="{{ page.gorsel }}" alt=""{% if page.gorsel_konum %} style="object-position: {{ page.gorsel_konum }}"{% endif %}>
+      {% if page.gorsel_kaynak %}<figcaption>Görsel: {{ page.gorsel_kaynak }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
 {{ content }}
     <a href="blog.html" class="btn-soft back-link">Tüm yazılar</a>
   </div>
