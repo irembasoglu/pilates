@@ -19,9 +19,13 @@ aciklama: Marin Pilates & Yoga Stüdyo adres, telefon ve WhatsApp bilgileri. Orh
         <a href="{{ site.whatsapp }}" class="btn" target="_blank" rel="noopener">WhatsApp'tan yaz</a>
         <a href="{{ site.harita }}" class="btn btn-dark" target="_blank" rel="noopener">Yol tarifi al</a>
       </div>
+      <a href="{{ site.harita }}" class="reviews-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        Google'daki yorumlarımızı oku →
+      </a>
     </div>
     <div class="map-box">
-      <iframe title="Marin Pilates harita" src="https://www.google.com/maps?q=Orhantepe+Mahallesi+Sema+Sokak+39C+Kartal+Istanbul&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe title="Marin Pilates ve Yoga Stüdyo, Google Haritalar" src="{{ site.harita_embed }}" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   </div>
 </section>

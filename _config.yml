@@ -4,5 +4,7 @@ whatsapp: "https://wa.me/905374989178?text=Merhaba%2C%20bilgi%20almak%20istiyoru
 telefon: "0537 498 91 78"
 telefon_link: "tel:+905374989178"
 instagram: "https://www.instagram.com/marinpilates/"
-harita: "https://www.google.com/maps/search/?api=1&query=Marin+Pilates+Orhantepe+Sema+Sokak+39C+Kartal+Istanbul"
+# Google Haritalar'daki işletme kaydı (Marin Pilates ve Yoga Stüdyo)
+harita: "https://maps.google.com/?cid=18011543005029969588"
+harita_embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.4048644477575!2d29.16391397542085!3d40.90686797136501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac3f94919353f%3A0xf9f5daef0f7baeb4!2sMarin%20Pilates%20ve%20Yoga%20St%C3%BCdyo!5e0!3m2!1str!2str!4v1793642309209!5m2!1str!2str"
 exclude: [README.md, video/README.md]
