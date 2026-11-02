@@ -21,7 +21,7 @@
       </a>
       <button class="menu-btn" aria-label="Menüyü aç" onclick="document.body.classList.toggle('menu-open')"><span></span></button>
       <nav class="menu">
-        {% assign menu = "hizmetlerimiz|Hizmetlerimiz,program|Ders Programı,ekibimiz|Ekibimiz,blog|Blog,sss|SSS" | split: "," %}
+        {% assign menu = "hizmetlerimiz|Hizmetlerimiz,program|Ders Programı,ekibimiz|Ekibimiz,blog|Blog" | split: "," %}
         {% for m in menu %}{% assign p = m | split: "|" %}
         <a href="{{ p[0] }}.html"{% if page.menu == p[0] %} class="active" aria-current="page"{% endif %}>{{ p[1] }}</a>
         {% endfor %}
@@ -60,7 +60,6 @@
         <a href="program.html">Ders Programı</a>
         <a href="ekibimiz.html">Ekibimiz</a>
         <a href="blog.html">Blog</a>
-        <a href="sss.html">SSS</a>
         <a href="iletisim.html">İletişim</a>
       </div>
       <div>

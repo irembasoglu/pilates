@@ -418,8 +418,10 @@ p + p { margin-top: .9rem; }
 .info-yoga { background: var(--navy); color: var(--white); }
 .info-yoga p { color: #a9c1cc; }
 .new { position: absolute; top: 22px; right: 22px; background: #f2a33a; color: var(--navy); font-size: .75rem; font-weight: 700; padding: .2rem .7rem; border-radius: 999px; }
-.program-note { margin-top: 28px; color: var(--muted); }
-.program-note a { color: var(--blue-text); font-weight: 600; }
+.program-faq { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; margin-top: 110px; align-items: start; }
+.program-faq h2 em { font-style: italic; font-weight: 400; color: var(--blue-text); }
+.program-faq > div:first-child p { color: var(--muted); margin-top: 1rem; max-width: 22em; }
+.program-faq > div:first-child a { color: var(--blue-text); font-weight: 600; }
 
 /* ---------- Alt bilgi ---------- */
 .footer { background: var(--navy); color: #a9c1cc; font-size: .95rem; overflow: hidden; }
@@ -516,6 +518,7 @@ p + p { margin-top: .9rem; }
   .slots { display: grid; grid-template-columns: 1fr 1fr; }
   .slot-go { max-height: none; opacity: 1; margin-top: 4px; }
   .program-info { grid-template-columns: 1fr; }
+  .program-faq { grid-template-columns: 1fr; gap: 24px; margin-top: 72px; }
   .ig-wrap { grid-template-columns: 1fr; gap: 32px; }
   .ig-grid { gap: 6px; }
   .ig-tile { border-radius: 8px; }
