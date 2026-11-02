@@ -65,6 +65,7 @@ p + p { margin-top: .9rem; }
 .btn:hover { background: var(--blue-deep); }
 .btn-dark { background: var(--navy); color: var(--white); }
 .btn-dark:hover { background: var(--navy-2); }
+.btn-lg { font-size: 1.12rem; padding: 1.05rem 1.9rem; }
 .btn-small { padding: .55rem 1.2rem; font-size: .95rem; }
 /* İkincil buton: yumuşak dolgulu. Zemine göre tonu değişir. */
 .btn-soft {
@@ -127,13 +128,16 @@ p + p { margin-top: .9rem; }
 .hero-media { position: relative; }
 .hero-media .sail { aspect-ratio: 4 / 5; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.badge-logo {
-  position: absolute; left: -28px; bottom: 36px;
-  width: 112px; height: 112px; border-radius: 50%;
+/* Dönen yazılı mühür */
+.seal {
+  position: absolute; left: -36px; bottom: 30px;
+  width: 136px; height: 136px; border-radius: 50%;
   background: var(--white); box-shadow: 0 12px 40px rgba(0, 28, 42, .15);
-  display: flex; align-items: center; justify-content: center;
 }
-.badge-logo img { width: 74%; height: auto; mix-blend-mode: multiply; }
+.seal svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: muhur 22s linear infinite; }
+.seal text { font-family: var(--body); font-size: 10.4px; font-weight: 600; fill: var(--navy); }
+.hero-media .seal img { position: absolute; left: 50%; top: 50%; width: 44%; height: auto; transform: translate(-50%, -50%); }
+@keyframes muhur { to { transform: rotate(360deg); } }
 
 /* Girişin altındaki bilgi şeridi */
 .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -368,7 +372,7 @@ p + p { margin-top: .9rem; }
   .hero-inner, .intro, .about-page, .contact-layout, .sec-head, .cta-inner, .service-detail { grid-template-columns: 1fr; }
   .hero-media { order: -1; }
   .hero-media .sail { aspect-ratio: 5 / 4; }
-  .badge-logo { width: 78px; height: 78px; left: auto; right: 16px; bottom: -28px; }
+  .seal { width: 100px; height: 100px; left: auto; right: 16px; bottom: -34px; }
   .hero-actions { margin-top: 1.6rem; }
   .sec-head { gap: 14px; margin-bottom: 36px; }
   .sec-head p, .sec-head .btn-soft { justify-self: start; }
@@ -406,5 +410,6 @@ p + p { margin-top: .9rem; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .seal svg { animation: none; }
   * { transition: none !important; }
 }
