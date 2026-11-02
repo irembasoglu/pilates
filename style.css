@@ -440,18 +440,6 @@ p + p { margin-top: .9rem; }
 }
 .schedule tr:hover .go-btn, .go-btn:focus-visible { background: var(--blue); color: var(--navy); }
 
-.program-info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
-.info-card { position: relative; padding: 28px; border-radius: 18px; background: var(--mist); }
-.info-card h3 { font-size: 1.5rem; margin-bottom: .6rem; }
-.info-card p { color: var(--muted); font-size: .97rem; }
-.info-card strong { color: var(--navy); }
-.info-pilates { background: var(--blue); }
-.info-pilates p { color: var(--navy); }
-.info-card .price { margin-top: 1rem; font-family: var(--display); font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; color: var(--navy) !important; line-height: 1; }
-.price span { font-family: var(--body); font-size: .95rem; font-weight: 600; letter-spacing: 0; margin-right: .3rem; }
-.info-yoga { background: var(--navy); color: var(--white); }
-.info-yoga p { color: #a9c1cc; }
-.new { position: absolute; top: 22px; right: 22px; background: #f2a33a; color: var(--navy); font-size: .75rem; font-weight: 700; padding: .2rem .7rem; border-radius: 999px; }
 .program-faq { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; margin-top: 110px; align-items: start; }
 .program-faq h2 em { font-style: italic; font-weight: 400; color: var(--blue-text); }
 .program-faq > div:first-child p { color: var(--muted); margin-top: 1rem; max-width: 22em; }
@@ -554,7 +542,6 @@ p + p { margin-top: .9rem; }
   .c-note { grid-column: 2; font-size: .85rem; }
   .c-note:empty { display: none; }
   .c-go { grid-column: 1 / -1; text-align: left; margin-top: 8px; }
-  .program-info { grid-template-columns: 1fr; }
   .program-faq { grid-template-columns: 1fr; gap: 24px; margin-top: 72px; }
   .ig-wrap { grid-template-columns: 1fr; gap: 32px; }
   .reviews-wrap { grid-template-columns: 1fr; gap: 28px; }
