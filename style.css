@@ -221,6 +221,33 @@ p + p { margin-top: .9rem; }
 .gallery-masonry .photo img { height: auto; }
 .photo:hover img { transform: scale(1.03); }
 
+/* Instagram bölümü */
+.ig-wrap { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: center; }
+.ig-profile { display: flex; flex-direction: column; gap: 1.2rem; align-items: flex-start; }
+.ig-profile h2 em { font-style: italic; font-weight: 400; color: var(--blue-text); }
+.ig-profile p { color: var(--muted); max-width: 26em; }
+.ig-who { display: flex; align-items: center; gap: 14px; }
+.ig-avatar { width: 64px; height: 64px; border-radius: 50%; padding: 3px; background: conic-gradient(from 200deg, var(--blue), var(--navy), var(--blue)); flex: none; }
+.ig-avatar span { display: flex; width: 100%; height: 100%; border-radius: 50%; background: var(--white); align-items: center; justify-content: center; }
+.ig-avatar img { width: 70%; height: auto; }
+.ig-handle { font-weight: 600; font-size: 1.05rem; line-height: 1.3; }
+.ig-handle small { display: block; color: var(--muted); font-weight: 400; font-size: .9rem; }
+.ig-follow {
+  display: inline-flex; align-items: center; gap: .55rem;
+  background: var(--navy); color: var(--white); padding: .95rem 1.6rem; border-radius: 999px;
+  font-weight: 600; text-decoration: none; transition: background .2s;
+}
+.ig-follow:hover { background: var(--navy-2); }
+.ig-follow svg { width: 20px; height: 20px; }
+.ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.ig-tile { position: relative; display: block; overflow: hidden; border-radius: 12px; aspect-ratio: 1; }
+.ig-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s; }
+.ig-tile::after { content: ""; position: absolute; inset: 0; background: rgba(0, 28, 42, .55); opacity: 0; transition: opacity .3s; }
+.ig-over { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; color: var(--white); opacity: 0; transform: scale(.85); transition: opacity .3s, transform .3s; }
+.ig-over svg { width: 34px; height: 34px; }
+.ig-tile:hover img { transform: scale(1.06); }
+.ig-tile:hover::after, .ig-tile:hover .ig-over, .ig-tile:focus-visible .ig-over, .ig-tile:focus-visible::after { opacity: 1; transform: none; }
+
 /* Blog listesi */
 .post-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 .post-item { text-decoration: none; display: flex; flex-direction: column; gap: .6rem; }
@@ -431,6 +458,9 @@ p + p { margin-top: .9rem; }
   .sec-head p, .sec-head .btn-soft { justify-self: start; }
   .intro-photo, .about-photo { aspect-ratio: 4 / 3; }
   .service-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ig-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .ig-grid { gap: 6px; }
+  .ig-tile { border-radius: 8px; }
   .service-box { aspect-ratio: auto; min-height: 190px; padding: 18px; border-radius: 14px; }
   .service-box h3 { font-size: 1.3rem; }
   .service-box p { font-size: .85rem; }
