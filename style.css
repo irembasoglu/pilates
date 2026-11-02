@@ -242,17 +242,35 @@ p + p { margin-top: .9rem; }
 .post-item:hover .read-more i { transform: translateX(5px); }
 
 /* Ortak "bize ulaş" bandı */
-.cta { background: var(--blue); color: var(--navy); position: relative; overflow: hidden; }
-.cta::after {
-  content: ""; position: absolute; right: -80px; top: -40px; width: 420px; height: 520px;
-  background: rgba(255, 255, 255, .22);
-  border-radius: 70% 0 0 0 / 55% 0 0 0;
+.cta { background: var(--white); padding: 90px 0; }
+.cta-card {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center;
+  background: var(--navy); color: var(--white);
+  border-radius: 70% 24px 24px 24px / 28% 24px 24px 24px;
+  padding: 96px 64px 64px;
 }
-.cta-inner { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: end; padding-top: 96px; padding-bottom: 96px; position: relative; z-index: 1; }
-.cta h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); max-width: 12ch; }
-.cta p { margin-top: 1rem; max-width: 30em; }
-.cta-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-.cta-phone { font-family: var(--display); font-size: 1.6rem; font-weight: 600; text-decoration: none; letter-spacing: -0.01em; }
+.cta h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+.cta h2 em { font-style: italic; font-weight: 400; color: var(--blue); }
+.cta p { margin-top: 1rem; max-width: 30em; color: #a9c1cc; }
+.cta-actions { display: flex; flex-direction: column; gap: 12px; }
+.cta-btn {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 1.05rem 1.1rem 1.05rem 1.4rem; border-radius: 999px;
+  text-decoration: none; font-weight: 600; transition: background .2s;
+}
+.cta-btn > span:first-child { display: inline-flex; align-items: center; gap: .6rem; }
+.cta-btn svg { width: 20px; height: 20px; flex: none; }
+.cta-btn-blue { background: var(--blue); color: var(--navy); }
+.cta-btn-blue:hover { background: var(--blue-deep); }
+.cta-btn-ghost { background: var(--navy-2); color: var(--white); }
+.cta-btn-ghost:hover { background: #0e3448; }
+.cta-arr {
+  width: 36px; height: 36px; border-radius: 50%; flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(0, 28, 42, .12); transition: transform .25s;
+}
+.cta-btn-ghost .cta-arr { background: rgba(255, 255, 255, .1); }
+.cta-btn:hover .cta-arr { transform: rotate(-45deg); }
 
 /* ---------- Alt sayfa başlığı ---------- */
 .page-hero { padding: 72px 0 64px; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
@@ -413,7 +431,7 @@ p + p { margin-top: .9rem; }
   .container { padding-left: 20px; padding-right: 20px; }
   .section { padding: 72px 0; }
   .hero { padding: 12px 0 56px; }
-  .hero-inner, .intro, .about-page, .contact-layout, .sec-head, .cta-inner, .service-detail { grid-template-columns: 1fr; }
+  .hero-inner, .intro, .about-page, .contact-layout, .sec-head, .cta-card, .service-detail { grid-template-columns: 1fr; }
   .hero-media { order: -1; }
   .hero-media .sail { aspect-ratio: 5 / 4; }
   .hero-media .seal { width: 100px; height: 100px; left: auto; right: 16px; bottom: -34px; }
@@ -438,7 +456,8 @@ p + p { margin-top: .9rem; }
   .gallery-masonry { columns: 2; column-gap: 10px; }
   .gallery-masonry .photo { margin-bottom: 10px; }
   .post-list { grid-template-columns: 1fr; gap: 32px; }
-  .cta-inner { padding-top: 72px; padding-bottom: 72px; gap: 28px; }
+  .cta { padding: 48px 0; }
+  .cta-card { gap: 28px; padding: 64px 22px 24px; border-radius: 70% 18px 18px 18px / 12% 18px 18px 18px; }
   .page-hero { padding: 48px 0 44px; }
   .page-hero::after { width: 120px; height: 150px; right: 0; }
   .service-detail { gap: 14px; padding: 40px 0; }
