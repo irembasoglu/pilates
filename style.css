@@ -407,16 +407,35 @@ p + p { margin-top: .9rem; }
 .map-box iframe { display: block; width: 100%; height: 520px; border: 0; }
 
 /* ---------- Ders programı ---------- */
-.tabs { display: flex; gap: 6px; padding: 6px; background: var(--mist); border-radius: 999px; width: max-content; max-width: 100%; overflow-x: auto; margin-bottom: 28px; }
-.tab {
-  font: inherit; border: 0; background: none; cursor: pointer; color: var(--muted);
-  padding: .7rem 1.35rem; border-radius: 999px; font-weight: 600; white-space: nowrap;
-  display: inline-flex; flex-direction: column; align-items: center; line-height: 1.2;
-  transition: background .2s, color .2s;
+/* Gün kartları: takvim gibi */
+.date-tabs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 14px; }
+.legend { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 18px; color: var(--muted); font-size: .85rem; margin-bottom: 20px; }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { width: 8px; height: 8px; border-radius: 50%; }
+.date-tab {
+  font: inherit; color: var(--navy); cursor: pointer; position: relative;
+  border: 1.5px solid var(--line); background: var(--white); border-radius: 18px;
+  padding: 16px 10px 14px; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  transition: border-color .2s, background .2s, color .2s, transform .2s;
 }
-.tab small { font-size: .72rem; font-weight: 500; opacity: .8; }
-.tab:hover { color: var(--navy); }
-.tab.on { background: var(--navy); color: var(--white); }
+.date-tab:hover { border-color: var(--blue); transform: translateY(-2px); }
+.date-tab .dn { font-size: .85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.date-tab .num { font-family: var(--display); font-size: 2.2rem; font-weight: 500; line-height: 1; letter-spacing: -0.03em; }
+.date-tab .mo { font-size: .8rem; color: var(--muted); margin-bottom: 6px; min-height: 1.2em; }
+.date-tab .today {
+  position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
+  font-size: .66rem; font-weight: 700; letter-spacing: .04em;
+  background: var(--blue); color: var(--navy); padding: .1rem .45rem; border-radius: 999px;
+}
+.date-tab .today[hidden] { display: none; }
+.date-tab.on { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.date-tab.on .dn, .date-tab.on .mo { color: #a9c1cc; }
+.dots { display: flex; gap: 4px; justify-content: center; }
+.dots i { width: 7px; height: 7px; border-radius: 50%; }
+.d-pilates { background: var(--blue); }
+.d-yoga { background: var(--navy); }
+.d-zumba { background: #f2a33a; }
+.date-tab.on .d-yoga { background: var(--white); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .schedule { width: 100%; border-collapse: collapse; }
@@ -534,6 +553,12 @@ p + p { margin-top: .9rem; }
   .sec-head p, .sec-head .btn-soft { justify-self: start; }
   .intro-photo, .about-photo { aspect-ratio: 4 / 3; }
   .service-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .date-tabs { gap: 6px; }
+  .date-tab { padding: 12px 4px 10px; border-radius: 14px; }
+  .date-tab .num { font-size: 1.6rem; }
+  .date-tab .dn { font-size: .72rem; }
+  .date-tab .mo { display: none; }
+  .legend { justify-content: flex-start; }
   .schedule, .schedule thead, .schedule tbody, .schedule tr, .schedule td { display: block; }
   .schedule thead { display: none; }
   .schedule tbody tr { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; align-items: center; padding: 14px 4px; border-bottom: 1px solid var(--line); }

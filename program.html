@@ -8,12 +8,22 @@ aciklama: Marin Pilates haftalık grup ders programı. Aletli pilates, yoga ve z
 
 <section class="section program-section">
   <div class="container">
-    <div class="tabs" role="tablist" aria-label="Günler">
+    {% assign kisalar = "Pzt,Sal,Çar,Per,Cum" | split: "," %}
+    <div class="date-tabs" role="tablist" aria-label="Günler">
       {% for gun in site.data.program.gunler %}
       {% assign gunun = site.data.program.dersler | where: "gun", gun %}
-      <button type="button" class="tab{% if forloop.first %} on{% endif %}" role="tab" id="sekme-{{ forloop.index }}" data-gun="{{ gun }}" aria-controls="gun-{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">{{ gun }}<small>{{ gunun.size }} ders</small></button>
+      {% assign turler = gunun | map: "tur" | uniq %}
+      {% assign i = forloop.index0 %}
+      <button type="button" class="date-tab{% if forloop.first %} on{% endif %}" role="tab" id="sekme-{{ forloop.index }}" data-gun="{{ gun }}" data-i="{{ i }}" aria-controls="gun-{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ gun }}, {{ gunun.size }} ders">
+        <span class="today" hidden>BUGÜN</span>
+        <span class="dn">{{ kisalar[i] }}</span>
+        <span class="num">{{ gun | slice: 0, 3 }}</span>
+        <span class="mo"></span>
+        <span class="dots">{% for t in turler %}<i class="d-{{ t }}"></i>{% endfor %}</span>
+      </button>
       {% endfor %}
     </div>
+    <p class="legend"><span><i class="d-pilates"></i>Aletli Pilates</span><span><i class="d-yoga"></i>Yoga</span><span><i class="d-zumba"></i>Zumba</span></p>
 
     {% for gun in site.data.program.gunler %}
     {% assign gunun = site.data.program.dersler | where: "gun", gun %}
@@ -76,15 +86,23 @@ aciklama: Marin Pilates haftalık grup ders programı. Aletli pilates, yoga ve z
 {% include cta.html %}
 
 <script>
-  // Gün sekmeleri: sayfa bugünün gününde açılır
+  // Gün kartları: bu haftanın tarihlerini yazar, sayfayı bugünün gününde açar
   (function () {
-    var tabs = document.querySelectorAll('.tab'), panels = document.querySelectorAll('.day-table');
+    var tabs = document.querySelectorAll('.date-tab'), panels = document.querySelectorAll('.day-table');
+    var aylar = ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'];
+    var now = new Date(), wd = now.getDay();
+    var pzt = new Date(now); pzt.setDate(now.getDate() + (wd === 0 ? 1 : wd === 6 ? 2 : 1 - wd));
+    tabs.forEach(function (t) {
+      var d = new Date(pzt); d.setDate(pzt.getDate() + Number(t.dataset.i));
+      t.querySelector('.num').textContent = d.getDate();
+      t.querySelector('.mo').textContent = aylar[d.getMonth()];
+      if (wd >= 1 && wd <= 5 && Number(t.dataset.i) === wd - 1) t.querySelector('.today').hidden = false;
+    });
     function goster(gun) {
       tabs.forEach(function (t) { var on = t.dataset.gun === gun; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); });
       panels.forEach(function (p) { p.hidden = p.dataset.gun !== gun; });
     }
     tabs.forEach(function (t) { t.onclick = function () { goster(t.dataset.gun); }; });
-    var bugun = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'][new Date().getDay()];
-    if (document.querySelector('.tab[data-gun="' + bugun + '"]')) goster(bugun);
+    if (wd >= 1 && wd <= 5) goster(tabs[wd - 1].dataset.gun);
   })();
 </script>
