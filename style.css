@@ -167,21 +167,34 @@ p + p { margin-top: .9rem; }
 .intro-text p { color: var(--muted); max-width: 34em; }
 .intro-text .btn-soft { margin-top: 2rem; }
 
-/* Hizmet satırları */
+/* Hizmet satırları: üzerine gelince alttan lacivertle dolar, sağda ok belirir */
 .service-rows { border-top: 1px solid var(--line); }
 .service-row {
-  display: grid; grid-template-columns: 1fr 1.3fr 40px; gap: 32px; align-items: center;
-  padding: 26px 8px; border-bottom: 1px solid var(--line);
-  text-decoration: none; transition: background .25s, padding .25s;
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1.3fr auto; gap: 32px; align-items: center;
+  padding: 26px 24px; border-bottom: 1px solid var(--line); text-decoration: none;
 }
-.service-row h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
-.service-row p { color: var(--muted); }
+.service-row::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--navy); transform: scaleY(0); transform-origin: bottom;
+  transition: transform .35s ease;
+}
+.service-row h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); transition: color .3s; }
+.service-row p { color: var(--muted); transition: color .3s; }
+.service-row .go {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-weight: 600; font-size: .92rem; white-space: nowrap; color: var(--blue);
+  opacity: 0; transform: translateX(-10px); transition: opacity .3s, transform .3s;
+}
 .service-row .arrow {
-  width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--line);
-  display: flex; align-items: center; justify-content: center; transition: background .25s, border-color .25s, transform .25s;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--blue); color: var(--navy);
+  display: inline-flex; align-items: center; justify-content: center; font-size: 1.05rem;
 }
-.service-row:hover { background: var(--mist); padding-left: 20px; padding-right: 20px; }
-.service-row:hover .arrow { background: var(--blue); border-color: var(--blue); transform: rotate(-45deg); }
+.service-row:hover::before, .service-row:focus-visible::before { transform: scaleY(1); }
+.service-row:hover h3, .service-row:focus-visible h3 { color: var(--white); }
+.service-row:hover p, .service-row:focus-visible p { color: #a9c1cc; }
+.service-row:hover .go, .service-row:focus-visible .go { opacity: 1; transform: none; }
 
 /* Eğitmenler */
 .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -377,10 +390,11 @@ p + p { margin-top: .9rem; }
   .sec-head { gap: 14px; margin-bottom: 36px; }
   .sec-head p, .sec-head .btn-soft { justify-self: start; }
   .intro-photo, .about-photo { aspect-ratio: 4 / 3; }
-  .service-row { grid-template-columns: 1fr 36px; gap: 6px 16px; padding: 20px 0; }
+  .service-row { grid-template-columns: 1fr auto; gap: 4px 16px; padding: 20px 4px; }
   .service-row p { grid-column: 1; font-size: .95rem; }
-  .service-row .arrow { grid-row: 1 / span 2; grid-column: 2; width: 36px; height: 36px; }
-  .service-row:hover { padding-left: 0; padding-right: 0; background: none; }
+  .service-row .go { grid-row: 1 / span 2; grid-column: 2; }
+  .service-row .go-text { display: none; }
+  .service-row .arrow { width: 36px; height: 36px; }
   .team {
     display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
     margin: 0 -20px; padding: 0 20px 8px; scrollbar-width: none;
@@ -403,6 +417,13 @@ p + p { margin-top: .9rem; }
   .faq summary { font-size: 1.1rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px 24px; padding-top: 56px; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }
+}
+
+/* Dokunmatik ekranlarda üzerine gelme yok: ok hep görünsün */
+@media (hover: none) {
+  .service-row .go { opacity: 1; transform: none; }
+  .service-row .arrow { background: var(--white); border: 1.5px solid var(--line); }
+  .service-row:active::before { transform: scaleY(1); }
 }
 
 /* Telefonda menü açıkken şerit tam lacivert olsun */
