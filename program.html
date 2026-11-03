@@ -85,6 +85,22 @@ aciklama: Marin Pilates haftalık grup ders programı. Aletli pilates, yoga ve z
       bugun.classList.add('is-today');
       bugun.querySelector('.today').hidden = false;
     }
+    // Az dersi olan günleri boş bölmelerle tamamla: çizgiler her sütunda aynı yerde biter
+    function tamamla() {
+      var days = document.querySelectorAll('.day'), max = 0;
+      days.forEach(function (day) {
+        day.querySelectorAll('.slot-empty').forEach(function (e) { e.remove(); });
+        max = Math.max(max, day.querySelectorAll('.slot:not([hidden])').length);
+      });
+      days.forEach(function (day) {
+        var n = day.querySelectorAll('.slot:not([hidden])').length, slots = day.querySelector('.slots');
+        for (var i = n; i < max; i++) {
+          var e = document.createElement('span'); e.className = 'slot slot-empty'; e.setAttribute('aria-hidden', 'true');
+          slots.insertBefore(e, day.querySelector('.empty'));
+        }
+      });
+    }
+    tamamla();
     // Derse göre filtre
     document.querySelectorAll('.filter').forEach(function (b) {
       b.onclick = function () {
@@ -92,9 +108,10 @@ aciklama: Marin Pilates haftalık grup ders programı. Aletli pilates, yoga ve z
         document.querySelectorAll('.filter').forEach(function (x) { var on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
         document.querySelectorAll('.day').forEach(function (day) {
           var n = 0;
-          day.querySelectorAll('.slot').forEach(function (sl) { var ok = f === 'hepsi' || sl.dataset.tur === f; sl.hidden = !ok; if (ok) n++; });
+          day.querySelectorAll('.slot:not(.slot-empty)').forEach(function (sl) { var ok = f === 'hepsi' || sl.dataset.tur === f; sl.hidden = !ok; if (ok) n++; });
           day.querySelector('.empty').hidden = n > 0;
         });
+        tamamla();
       };
     });
   })();
