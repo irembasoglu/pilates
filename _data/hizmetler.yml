@@ -75,7 +75,8 @@
 - id: ozel-ders
   ad: Özel Ders
   sayfa_baslik: Özel Ders
-  foto: foto/galeri-6.jpg
+  foto: foto/hizmet-ozel-ders.jpg
+  foto_konum: 55% 40%
   kisa: Sadece sana özel, birebir program. Hedefine göre hazırlanır.
   lead: Eğitmen yalnızca seninle çalışır; program tamamen senin hedefine ve seviyene göre hazırlanır.
   uzun: Özel derste eğitmen yalnızca seninle çalışır. Program tamamen senin hedefine, seviyene ve varsa ağrı ya da sakatlıklarına göre hazırlanır. Aletli pilatese başlamadan önce ilk adım olarak da tercih edilir.
