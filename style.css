@@ -423,10 +423,10 @@ p + p { margin-top: .9rem; }
 .d-zumba { background: #f2a33a; }
 .filter.on .d-yoga { background: var(--white); }
 
-.week { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 2px solid var(--navy); }
+.week { display: grid; grid-template-columns: repeat(5, 1fr); }
 .day { padding: 0 10px 12px; min-width: 0; }
 .day + .day { border-left: 1px solid var(--line); }
-.day-name { font-size: 1.25rem; padding: 18px 10px 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.day-name { font-size: 1.25rem; margin: 0 -10px 10px; padding: 10px 20px 14px; border-bottom: 2px solid var(--navy); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .today { font-family: var(--body); font-size: .68rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--blue-text); }
 .today[hidden] { display: none; }
 .slots { display: flex; flex-direction: column; gap: 2px; }
@@ -537,7 +537,7 @@ p + p { margin-top: .9rem; }
   .week { grid-template-columns: 1fr; }
   .day { padding: 0 0 8px; }
   .day + .day { border-left: 0; border-top: 1px solid var(--line); }
-  .day-name { padding: 16px 0 8px; }
+  .day-name { margin: 0 0 8px; padding: 18px 0 10px; }
   .slots { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
   .slot { padding: 10px 8px; }
   .slot-go { max-height: none; opacity: 1; margin-top: 4px; }
