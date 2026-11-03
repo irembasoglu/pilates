@@ -116,7 +116,8 @@
 - id: diyetisyen
   ad: Diyetisyen
   sayfa_baslik: Diyetisyen
-  foto: foto/ekip-diyetisyen.jpg
+  foto: foto/hizmet-diyetisyen.jpg
+  foto_konum: 50% 45%
   kisa: Egzersizine uygun beslenme danışmanlığı ile hedefine daha hızlı ulaş.
   lead: Egzersizine ve hedefine uygun beslenme planıyla sonuca daha hızlı ulaş.
   uzun: Diyetisyenimiz, egzersiz programına ve hedefine uygun bir beslenme planı hazırlar. Egzersiz ve beslenmeyi birlikte planlamak, hedefine daha hızlı ulaşmanı sağlar.

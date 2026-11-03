@@ -19,7 +19,7 @@ menu: hizmetlerimiz
       </div>
     </div>
     <figure class="s-photo">
-      <div class="sail"><img src="{{ h.foto }}" alt="{{ h.sayfa_baslik }}"></div>
+      <div class="sail"><img src="{{ h.foto }}" alt="{{ h.sayfa_baslik }}"{% if h.foto_konum %} style="object-position: {{ h.foto_konum }}"{% endif %}></div>
       {% if h.foto_kaynak %}<figcaption>Görsel: {{ h.foto_kaynak }}</figcaption>{% endif %}
     </figure>
   </div>
