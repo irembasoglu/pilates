@@ -4,46 +4,37 @@ menu: program
 baslik: Ders Programı
 aciklama: Marin Pilates haftalık grup ders programı. Aletli pilates, yoga ve zumba saatleri. Kartal, İstanbul.
 ---
-{% include sayfa-basi.html yer="Ders Programı" baslik="Haftalık ders programı" lead="Grup derslerimizin saatleri. Günü seç, katılmak istediğin derste \"Yer ayırt\"a dokun; WhatsApp'tan yerini ayırtalım." %}
+{% include sayfa-basi.html yer="Ders Programı" baslik="Haftalık ders programı" lead="Grup derslerimizin haftalık saatleri. Katılmak istediğin derse dokun, WhatsApp'tan yerini ayırtalım." %}
 
 <section class="section program-section">
   <div class="container">
-    {% assign kisalar = "Pzt,Sal,Çar,Per,Cum" | split: "," %}
-    <div class="date-tabs" role="tablist" aria-label="Günler">
+    <div class="filters" role="group" aria-label="Derslere göre filtrele">
+      <button type="button" class="filter on" data-f="hepsi" aria-pressed="true">Tüm dersler</button>
+      <button type="button" class="filter" data-f="pilates" aria-pressed="false"><i class="d-pilates"></i>Aletli Pilates</button>
+      <button type="button" class="filter" data-f="yoga" aria-pressed="false"><i class="d-yoga"></i>Yoga</button>
+      <button type="button" class="filter" data-f="zumba" aria-pressed="false"><i class="d-zumba"></i>Zumba</button>
+    </div>
+
+    <div class="week">
       {% for gun in site.data.program.gunler %}
       {% assign gunun = site.data.program.dersler | where: "gun", gun %}
-      {% assign turler = gunun | map: "tur" | uniq %}
-      {% assign i = forloop.index0 %}
-      <button type="button" class="date-tab{% if forloop.first %} on{% endif %}" role="tab" id="sekme-{{ forloop.index }}" data-gun="{{ gun }}" data-i="{{ i }}" aria-controls="gun-{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ gun }}, {{ gunun.size }} ders">
-        <span class="today" hidden>BUGÜN</span>
-        <span class="dn">{{ kisalar[i] }}</span>
-        <span class="num">{{ gun | slice: 0, 3 }}</span>
-        <span class="mo"></span>
-        <span class="dots">{% for t in turler %}<i class="d-{{ t }}"></i>{% endfor %}</span>
-      </button>
-      {% endfor %}
-    </div>
-    <p class="legend"><span><i class="d-pilates"></i>Aletli Pilates</span><span><i class="d-yoga"></i>Yoga</span><span><i class="d-zumba"></i>Zumba</span></p>
-
-    {% for gun in site.data.program.gunler %}
-    {% assign gunun = site.data.program.dersler | where: "gun", gun %}
-    <div class="day-table" role="tabpanel" id="gun-{{ forloop.index }}" aria-labelledby="sekme-{{ forloop.index }}" data-gun="{{ gun }}"{% unless forloop.first %} hidden{% endunless %}>
-      <table class="schedule">
-        <thead><tr><th scope="col">Saat</th><th scope="col">Ders</th><th scope="col">Seviye</th><th scope="col"><span class="sr-only">Yer ayırt</span></th></tr></thead>
-        <tbody>
+      <div class="day" data-i="{{ forloop.index0 }}">
+        <h2 class="day-name">{{ gun }} <span class="today" hidden>Bugün</span></h2>
+        <div class="slots">
           {% for d in gunun %}
           {% capture mesaj %}Merhaba, {{ gun }} {{ d.saat }} {{ d.ders }} dersine katılmak istiyorum.{% endcapture %}
-          <tr class="{{ d.tur }}">
-            <td class="c-time">{{ d.saat }}</td>
-            <td class="c-class"><span><i class="dot"></i>{{ d.ders }}</span></td>
-            <td class="c-note">{{ d.not }}</td>
-            <td class="c-go"><a href="https://wa.me/905374989178?text={{ mesaj | uri_escape }}" class="go-btn" target="_blank" rel="noopener" aria-label="{{ gun }} {{ d.saat }} {{ d.ders }} için yer ayırt">Yer ayırt →</a></td>
-          </tr>
+          <a href="https://wa.me/905374989178?text={{ mesaj | uri_escape }}" class="slot" data-tur="{{ d.tur }}" target="_blank" rel="noopener" aria-label="{{ gun }} {{ d.saat }} {{ d.ders }}, WhatsApp'tan yer ayırt">
+            <span class="slot-time">{{ d.saat }}</span>
+            <span class="slot-name"><i class="d-{{ d.tur }}"></i>{{ d.ders }}</span>
+            {% if d.not %}<span class="slot-note">{{ d.not }}</span>{% endif %}
+            <span class="slot-go" aria-hidden="true">Yer ayırt →</span>
+          </a>
           {% endfor %}
-        </tbody>
-      </table>
+          <p class="empty" hidden>Bu gün bu ders yok.</p>
+        </div>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
 
     <div class="program-faq">
       <div>
@@ -86,23 +77,25 @@ aciklama: Marin Pilates haftalık grup ders programı. Aletli pilates, yoga ve z
 {% include cta.html %}
 
 <script>
-  // Gün kartları: bu haftanın tarihlerini yazar, sayfayı bugünün gününde açar
   (function () {
-    var tabs = document.querySelectorAll('.date-tab'), panels = document.querySelectorAll('.day-table');
-    var aylar = ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'];
-    var now = new Date(), wd = now.getDay();
-    var pzt = new Date(now); pzt.setDate(now.getDate() + (wd === 0 ? 1 : wd === 6 ? 2 : 1 - wd));
-    tabs.forEach(function (t) {
-      var d = new Date(pzt); d.setDate(pzt.getDate() + Number(t.dataset.i));
-      t.querySelector('.num').textContent = d.getDate();
-      t.querySelector('.mo').textContent = aylar[d.getMonth()];
-      if (wd >= 1 && wd <= 5 && Number(t.dataset.i) === wd - 1) t.querySelector('.today').hidden = false;
-    });
-    function goster(gun) {
-      tabs.forEach(function (t) { var on = t.dataset.gun === gun; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); });
-      panels.forEach(function (p) { p.hidden = p.dataset.gun !== gun; });
+    // Bugünün sütununu işaretle
+    var wd = new Date().getDay();
+    if (wd >= 1 && wd <= 5) {
+      var bugun = document.querySelector('.day[data-i="' + (wd - 1) + '"]');
+      bugun.classList.add('is-today');
+      bugun.querySelector('.today').hidden = false;
     }
-    tabs.forEach(function (t) { t.onclick = function () { goster(t.dataset.gun); }; });
-    if (wd >= 1 && wd <= 5) goster(tabs[wd - 1].dataset.gun);
+    // Derse göre filtre
+    document.querySelectorAll('.filter').forEach(function (b) {
+      b.onclick = function () {
+        var f = b.dataset.f;
+        document.querySelectorAll('.filter').forEach(function (x) { var on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
+        document.querySelectorAll('.day').forEach(function (day) {
+          var n = 0;
+          day.querySelectorAll('.slot').forEach(function (sl) { var ok = f === 'hepsi' || sl.dataset.tur === f; sl.hidden = !ok; if (ok) n++; });
+          day.querySelector('.empty').hidden = n > 0;
+        });
+      };
+    });
   })();
 </script>
