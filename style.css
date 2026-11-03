@@ -141,13 +141,9 @@ p + p { margin-top: .9rem; }
 
 /* Girişin altındaki özellik kartları */
 .features { padding: 8px 0 24px; }
-.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.feature {
-  background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 28px 26px;
-  box-shadow: 0 10px 30px rgba(10, 126, 163, .06);
-  transition: transform .25s, box-shadow .25s;
-}
-.feature:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(10, 126, 163, .12); }
+
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.feature { padding: 4px 8px 4px 0; }
 .feature-ic {
   width: 52px; height: 52px; border-radius: 14px; background: #e4f5fb; color: var(--blue-text);
   display: flex; align-items: center; justify-content: center; margin-bottom: 22px;
@@ -569,7 +565,7 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
   .intro-photo, .about-photo { aspect-ratio: 4 / 3; }
   .service-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .features-grid { gap: 10px; }
-  .feature { padding: 18px 16px; border-radius: 14px; }
+  .features-grid { gap: 28px 18px; }
   .feature-ic { width: 42px; height: 42px; border-radius: 12px; margin-bottom: 14px; }
   .feature h3 { font-size: 1.1rem; }
   .feature p { font-size: .85rem; }
