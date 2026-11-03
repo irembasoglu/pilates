@@ -6,17 +6,19 @@ aciklama: Pilates, hamile pilatesi, yoga, özel ders, düet ders ve diyetisyen h
 ---
 {% include sayfa-basi.html yer="Hizmetlerimiz" baslik="Sana uygun olanı seç" lead="Her yaşa ve her seviyeye uygun dersler, egzersizine uygun beslenme danışmanlığı." %}
 
-<section class="section">
+<section class="section section-mist">
   <div class="container">
-    {% for h in site.data.hizmetler %}
-    <div class="service-detail" id="{{ h.id }}">
-      <h2>{{ h.ad }}</h2>
-      <div>
-        <p>{{ h.uzun }}</p>
-        <a href="https://wa.me/905374989178?text={{ 'Merhaba, ' | append: h.ad | append: ' hakkında bilgi almak istiyorum.' | uri_escape }}" class="btn-soft" target="_blank" rel="noopener">{{ h.ad }} hakkında bilgi al</a>
-      </div>
+    <div class="service-grid">
+      {% for h in site.data.hizmetler %}
+      <a href="hizmet-{{ h.id }}.html" class="service-box">
+        <span class="box-top"><span class="arrow" aria-hidden="true">→</span></span>
+        <span>
+          <h3>{{ h.sayfa_baslik }}</h3>
+          <p>{{ h.kisa }}</p>
+        </span>
+      </a>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </section>
 

@@ -1,0 +1,77 @@
+---
+layout: default
+menu: hizmetlerimiz
+---
+{% assign h = site.data.hizmetler | where: "id", page.hizmet | first %}
+{% capture mesaj %}Merhaba, {{ h.sayfa_baslik }} hakkında bilgi almak istiyorum.{% endcapture %}
+
+<section class="s-hero">
+  <div class="container s-hero-inner">
+    <div class="s-hero-text">
+      <a href="hizmetlerimiz.html" class="s-back">← Tüm hizmetler</a>
+      <h1>{{ h.sayfa_baslik }}</h1>
+      <p class="lead">{{ h.lead }}</p>
+      <p class="s-desc">{{ h.uzun }}</p>
+      {% if h.not %}<p class="s-note">{{ h.not }}</p>{% endif %}
+      <div class="s-actions">
+        <a href="https://wa.me/905374989178?text={{ mesaj | uri_escape }}" class="btn btn-lg" target="_blank" rel="noopener">Bilgi al ve yer ayırt</a>
+        {% if h.program %}<a href="program.html" class="btn-soft">Ders programı</a>{% endif %}
+      </div>
+    </div>
+    <figure class="s-photo">
+      <div class="sail"><img src="{{ h.foto }}" alt="{{ h.sayfa_baslik }}"></div>
+      {% if h.foto_kaynak %}<figcaption>Görsel: {{ h.foto_kaynak }}</figcaption>{% endif %}
+    </figure>
+  </div>
+</section>
+
+<section class="section s-block">
+  <div class="container s-cols">
+    <h2>Bu program <em>neler içerir?</em></h2>
+    <ul class="s-list">
+      {% for i in h.icerik %}
+      <li><span class="s-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>{{ i }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section-mist s-block">
+  <div class="container">
+    <h2 class="s-why-title">Neden <em>bu program?</em></h2>
+    <div class="features-grid s-why">
+      {% for n in h.neden %}
+      <div class="feature">
+        <span class="feature-num">0{{ forloop.index }}</span>
+        <h3>{{ n[0] }}</h3>
+        <p>{{ n[1] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section s-block">
+  <div class="container"><div class="s-info">
+    <div>
+      <h3>Kimler için?</h3>
+      <div class="s-chips">{% for k in h.kimler %}<span>{{ k }}</span>{% endfor %}</div>
+    </div>
+    <div>
+      <h3>Ders saatleri</h3>
+      <div class="s-times">{% for s in h.saatler %}<p><b>{{ s[0] }}</b><span>{{ s[1] }}</span></p>{% endfor %}</div>
+      {% if h.program %}<a href="program.html" class="s-link">Haftalık programın tamamı →</a>{% endif %}
+    </div>
+  </div></div>
+</section>
+
+<section class="s-others">
+  <div class="container">
+    <p>Diğer hizmetlerimiz</p>
+    <div class="s-other-list">
+      {% for o in site.data.hizmetler %}{% unless o.id == h.id %}<a href="hizmet-{{ o.id }}.html" class="btn-soft">{{ o.sayfa_baslik }}</a>{% endunless %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include cta.html %}

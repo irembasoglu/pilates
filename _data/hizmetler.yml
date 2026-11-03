@@ -1,24 +1,134 @@
+# Hizmetler: ana sayfa kutuları, Hizmetlerimiz sayfası ve her hizmetin kendi sayfası buradan beslenir.
 - id: pilates
   ad: Pilates
+  sayfa_baslik: Aletli Pilates
+  foto: foto/galeri-1.jpg
   kisa: Core bölgeni güçlendiren, duruşunu düzelten ve vücudunu esneten dersler.
-  uzun: Pilates, karın, bel ve sırt kaslarını (core bölgesi) güçlendirerek duruşunu düzeltir, bel ve boyun ağrılarını azaltmaya yardımcı olur. Stüdyomuzda reformer ve cadillac gibi pilates aletleriyle, eğitmen eşliğinde çalışırsın. Yeni başlayan da, deneyimli olan da kendi seviyesine uygun bir derste yer alır.
+  lead: Reformer ve cadillac gibi pilates aletleriyle, eğitmen eşliğinde güçlen, esne ve duruşunu düzelt.
+  uzun: Pilates, karın, bel ve sırt kaslarını (core bölgesi) güçlendirerek duruşunu düzeltir, bel ve boyun ağrılarını azaltmaya yardımcı olur. Stüdyomuzda reformer ve cadillac gibi pilates aletleriyle, eğitmen eşliğinde çalışırsın. Hareketler seviyene göre uyarlanır.
+  icerik:
+    - Reformer ve cadillac aletleriyle çalışma
+    - Core (karın, bel, sırt) güçlendirme
+    - Duruş ve omurga sağlığı egzersizleri
+    - Esneklik ve denge çalışmaları
+    - Nefes ve kontrollü hareket teknikleri
+    - Seviyene göre uyarlanan hareketler
+  neden:
+    - [Ağrıları azaltır, "Güçlenen core kasları bel, boyun ve sırt üzerindeki yükü hafifletir."]
+    - [Duruşu düzeltir, "Omurgayı destekleyen kaslar güçlendikçe duruşun da düzelir."]
+    - [Eklemleri yormaz, "Aletlerin yay direnciyle düşük etkili ama verimli bir çalışma yaparsın."]
+  kimler: [Duruşunu düzeltmek isteyenler, "Bel, boyun, sırt ağrısı olanlar", Masa başı çalışanlar]
+  saatler:
+    - ["Pzt · Çar", "10:00 · 11:00 · 12:00"]
+    - ["Sal · Per", "19:00 · 20:00 · 20:45"]
+    - ["Cuma", "17:00 · 18:00 · 19:00"]
+  program: true
+
 - id: hamile-pilatesi
   ad: Hamile Pilatesi
+  sayfa_baslik: Hamile Pilatesi
+  foto: foto/blog-hamilelik.jpg
+  foto_kaynak: Freepik
   kisa: Hamilelik dönemine uygun, güvenli ve rahatlatıcı hareketler.
-  uzun: Hamilelik döneminde bedenini güçlü ve rahat tutmak için, bu döneme uygun ve güvenli hareketlerle çalışırız. Bel ve sırt ağrılarını hafifletmeye, nefes kontrolünü geliştirmeye ve pelvik taban kaslarını güçlendirmeye odaklanırız. Derslere başlamadan önce doktorundan onay almanı öneririz.
+  lead: Hamilelik dönemine uygun, güvenli hareketlerle bedenini güçlü ve rahat tut, doğuma hazırlan.
+  uzun: Hamilelik döneminde bedenini güçlü ve rahat tutmak için, bu döneme uygun ve güvenli hareketlerle çalışırız. Bel ve sırt ağrılarını hafifletmeye, nefes kontrolünü geliştirmeye ve pelvik taban kaslarını güçlendirmeye odaklanırız.
+  not: Derslere başlamadan önce doktorundan onay almanı öneririz.
+  icerik:
+    - Hamileliğe uygun, güvenli egzersizler
+    - Bel ve sırt ağrısını hafifleten çalışmalar
+    - Pelvik taban kaslarını güçlendirme
+    - Doğuma hazırlayan nefes teknikleri
+    - Duruş ve denge çalışmaları
+    - Gevşeme ve esneme
+  neden:
+    - [Ağrıları hafifletir, "Değişen vücut dengesinin bel ve sırtta yarattığı yükü azaltır."]
+    - [Doğuma hazırlar, "Nefes kontrolü ve pelvik taban çalışmaları doğum sürecine destek olur."]
+    - [Toparlanmayı kolaylaştırır, "Hamilelikte güçlenen kaslar doğum sonrası toparlanmana yardımcı olur."]
+  kimler: [Doktor onayı olan anne adayları, Doğuma hazırlanmak isteyenler]
+  saatler:
+    - ["Saat", "Seninle birlikte belirliyoruz"]
+
 - id: yoga
   ad: Yoga
+  sayfa_baslik: Yoga
+  foto: foto/galeri-4.jpg
   kisa: Nefes, denge ve esneklik çalışmalarıyla bedenini ve zihnini dinlendir.
-  uzun: Yoga derslerimizde nefes, denge ve esneklik çalışmalarıyla bedenini güçlendirirken zihnini de dinlendirirsin. Grup derslerinde sınırlarını güvenle keşfeder, gün içinde biriken stresten uzaklaşırsın.
+  lead: Nefes, denge ve esneklik çalışmalarıyla bedenini güçlendir, zihnini dinlendir.
+  uzun: Yoga derslerimizde nefes, denge ve esneklik çalışmalarıyla bedenini güçlendirirken zihnini de dinlendirirsin. Seviyene uygun grupta, sınırlarını güvenle keşfeder, gün içinde biriken stresten uzaklaşırsın.
+  icerik:
+    - Nefes çalışmaları
+    - Esneklik ve denge duruşları
+    - Güç ve dayanıklılık akışları
+    - Gevşeme ve farkındalık
+    - Seviyene uygun grup dersleri
+  neden:
+    - [Zihni dinlendirir, "Nefes ve farkındalık çalışmaları gün içinde biriken stresi azaltır."]
+    - [Esnekliği artırır, "Düzenli pratikle kaslar uzar, hareket açıklığın genişler."]
+    - [Dengeyi geliştirir, "Denge duruşları hem bedeni hem odaklanmayı güçlendirir."]
+  kimler: [Esneklik ve denge isteyenler, Stresten uzaklaşmak isteyenler, Yeni başlayanlar]
+  saatler:
+    - ["Salı 19:00", "Başlangıç seviye"]
+    - ["Salı 20:00", "Bir süredir yoga yapanlar"]
+    - ["Çarşamba 20:40", "Her seviyeye uygun"]
+  program: true
+
 - id: ozel-ders
   ad: Özel Ders
+  sayfa_baslik: Özel Ders
+  foto: foto/galeri-6.jpg
   kisa: Sadece sana özel, birebir program. Hedefine göre hazırlanır.
-  uzun: Özel derste eğitmen yalnızca seninle çalışır. Program tamamen senin hedefine, seviyene ve varsa ağrı ya da sakatlıklarına göre hazırlanır. Daha hızlı ilerlemek ya da kendine özel bir saat istiyorsan en uygun seçenektir.
+  lead: Eğitmen yalnızca seninle çalışır; program tamamen senin hedefine ve seviyene göre hazırlanır.
+  uzun: Özel derste eğitmen yalnızca seninle çalışır. Program tamamen senin hedefine, seviyene ve varsa ağrı ya da sakatlıklarına göre hazırlanır. Aletli pilatese başlamadan önce ilk adım olarak da tercih edilir.
+  icerik:
+    - Hedefine göre hazırlanan program
+    - Eğitmenin birebir takibi
+    - Ağrı ya da sakatlıklara göre uyarlama
+    - Grup derslerine hazırlık
+    - Sana uygun ders saati
+  neden:
+    - [Daha hızlı ilerlersin, "Dersin tamamı senin hedefine ve seviyene odaklanır."]
+    - [Güvenle başlarsın, "Hareketleri doğru öğrenir, grup derslerine hazır geçersin."]
+    - [Zamanını sen seçersin, "Ders saatini programına göre birlikte belirleriz."]
+  kimler: [Yeni başlayanlar, Ağrı ya da sakatlık sonrası, Hızlı ilerlemek isteyenler]
+  saatler:
+    - ["Saat", "Sana uygun saatte, randevuyla"]
+
 - id: duet-ders
   ad: Düet Ders
+  sayfa_baslik: Düet Ders
+  foto: foto/galeri-2.jpg
   kisa: Bir arkadaşınla, eşinle ya da ailenden biriyle birlikte iki kişilik ders.
+  lead: Bir arkadaşınla, eşinle ya da ailenden biriyle birlikte, iki kişiye özel ders.
   uzun: Düet derste bir arkadaşın, eşin ya da ailenden biriyle birlikte iki kişi ders alırsınız. Özel dersin yakın takibini, birlikte spor yapmanın motivasyonuyla birleştirir.
+  icerik:
+    - İki kişiye özel program
+    - Eğitmenin yakın takibi
+    - Birlikte belirlenen hedefler
+    - Size uygun ders saati
+  neden:
+    - [Birlikte motive olursunuz, "Biriyle birlikte spor yapmak düzenli devam etmeyi kolaylaştırır."]
+    - [Yakın takip, "Grup dersine göre çok daha fazla birebir ilgi görürsünüz."]
+    - [Esnek saat, "Ders saatini ikinize göre belirleriz."]
+  kimler: [Arkadaşıyla gelmek isteyenler, Eşiyle ya da ailesiyle gelmek isteyenler]
+  saatler:
+    - ["Saat", "Size uygun saatte, randevuyla"]
+
 - id: diyetisyen
   ad: Diyetisyen
+  sayfa_baslik: Diyetisyen
+  foto: foto/ekip-diyetisyen.jpg
   kisa: Egzersizine uygun beslenme danışmanlığı ile hedefine daha hızlı ulaş.
+  lead: Egzersizine ve hedefine uygun beslenme planıyla sonuca daha hızlı ulaş.
   uzun: Diyetisyenimiz, egzersiz programına ve hedefine uygun bir beslenme planı hazırlar. Egzersiz ve beslenmeyi birlikte planlamak, hedefine daha hızlı ulaşmanı sağlar.
+  icerik:
+    - Beslenme alışkanlıklarının değerlendirilmesi
+    - Hedefine uygun beslenme planı
+    - Sporcu beslenmesi
+    - Egzersizle uyumlu öğün planlaması
+  neden:
+    - [Hedefe daha hızlı, "Egzersiz ve beslenme birlikte planlanınca sonuç hızlanır."]
+    - [Enerjin artar, "Doğru beslenme derslerde daha güçlü ve dinç hissettirir."]
+    - [Kalıcı alışkanlıklar, "Yasaklar yerine sana uyan, uzun vadeli bir düzen kurulur."]
+  kimler: [Sporcu beslenmesi isteyenler, Egzersizini desteklemek isteyenler, Sağlıklı alışkanlık kazanmak isteyenler]
+  saatler:
+    - ["Saat", "Randevuyla"]
