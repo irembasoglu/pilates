@@ -139,7 +139,24 @@ p + p { margin-top: .9rem; }
 .hero-media .seal img { position: absolute; left: 50%; top: 50%; width: 44%; height: auto; transform: translate(-50%, -50%); }
 @keyframes muhur { to { transform: rotate(360deg); } }
 
-/* Girişin altındaki bilgi şeridi */
+/* Girişin altındaki özellik kartları */
+.features { padding: 8px 0 24px; }
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.feature {
+  background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 28px 26px;
+  box-shadow: 0 10px 30px rgba(10, 126, 163, .06);
+  transition: transform .25s, box-shadow .25s;
+}
+.feature:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(10, 126, 163, .12); }
+.feature-ic {
+  width: 52px; height: 52px; border-radius: 14px; background: #e4f5fb; color: var(--blue-text);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 22px;
+}
+.feature-ic svg { width: 24px; height: 24px; }
+.feature h3 { font-size: 1.3rem; margin-bottom: .5rem; }
+.feature p { color: var(--muted); font-size: .97rem; line-height: 1.6; }
+
+/* Girişin altındaki bilgi şeridi (eski) */
 .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .strip-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
 .strip-item { padding: 26px 24px; border-left: 1px solid var(--line); }
@@ -529,6 +546,7 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
   .menu-open .menu { display: flex; }
   .hero-inner, .intro, .about-page, .contact-layout { gap: 48px; }
   .strip-inner, .big-facts { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .strip-item:nth-child(3) { border-left: 0; padding-left: 0; }
   .strip-item:nth-child(n+3) { border-top: 1px solid var(--line); }
   .team { gap: 16px; }
@@ -550,6 +568,11 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
   .sec-head p, .sec-head .btn-soft { justify-self: start; }
   .intro-photo, .about-photo { aspect-ratio: 4 / 3; }
   .service-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .features-grid { gap: 10px; }
+  .feature { padding: 18px 16px; border-radius: 14px; }
+  .feature-ic { width: 42px; height: 42px; border-radius: 12px; margin-bottom: 14px; }
+  .feature h3 { font-size: 1.1rem; }
+  .feature p { font-size: .85rem; }
   .week { grid-template-columns: 1fr; }
   .day { padding: 0 0 8px; }
   .day + .day { border-left: 0; border-top: 1px solid var(--line); }
