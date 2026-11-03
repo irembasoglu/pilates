@@ -10,9 +10,9 @@ aciklama: Pilates, hamile pilatesi, yoga, özel ders, düet ders ve diyetisyen h
   <div class="container">
     <div class="service-grid">
       {% for h in site.data.hizmetler %}
-      <a href="hizmet-{{ h.id }}.html" class="service-box">
-        <span class="box-top"><span class="arrow" aria-hidden="true">→</span></span>
-        <span>
+      <a href="hizmet-{{ h.id }}.html" class="service-card">
+        <span class="sc-photo"><img src="{{ h.foto }}" alt="" loading="lazy"><span class="arrow" aria-hidden="true">→</span></span>
+        <span class="sc-text">
           <h3>{{ h.sayfa_baslik }}</h3>
           <p>{{ h.kisa }}</p>
         </span>
