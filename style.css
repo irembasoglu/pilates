@@ -426,7 +426,7 @@ p + p { margin-top: .9rem; }
 .week { display: grid; grid-template-columns: repeat(5, 1fr); }
 .day { padding: 0 10px 12px; min-width: 0; }
 .day + .day { border-left: 1px solid var(--line); }
-.day-name { font-size: 1.25rem; margin: 0 -10px 10px; padding: 10px 20px 14px; border-bottom: 2px solid var(--navy); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.day-name { font-size: 1.25rem; margin: 0 -10px 10px; padding: 10px 20px 14px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .today { font-family: var(--body); font-size: .68rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--blue-text); }
 .today[hidden] { display: none; }
 .slots { display: flex; flex-direction: column; gap: 2px; }
