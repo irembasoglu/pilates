@@ -1,0 +1,23 @@
+# Ekibimiz sayfası. "ornek: true" olan tanıtımlar geçici; gerçek bilgilerle değiştirilecek.
+- id: hilal
+  ad: Hilal Hoca
+  rol: Pilates Eğitmeni
+  ornek: true
+  bio: Aletli pilates ve birebir derslerde, her öğrencinin seviyesine göre güvenli ve etkili bir program hazırlar. Duruş bozukluğu ve bel-boyun ağrılarıyla çalışmayı sever.
+  uzmanlik: [Aletli pilates, Reformer & cadillac, Duruş ve omurga sağlığı]
+  dersler: [pilates, ozel-ders, duet-ders]
+- id: yagmur
+  ad: Yağmur Hoca
+  rol: Yoga Eğitmeni
+  ornek: true
+  bio: Yoga derslerinde nefes ve hareketi birleştirerek hem bedeni güçlendirmeyi hem zihni dinlendirmeyi hedefler. Başlangıç seviyesinden deneyimli gruplara kadar dersler verir.
+  uzmanlik: [Yoga, Nefes çalışmaları, Esneklik ve denge]
+  dersler: [yoga]
+  program: true
+- id: diyetisyen
+  ad: Diyetisyenimiz
+  rol: Beslenme Danışmanı
+  ornek: true
+  bio: Egzersiz programına ve hedefine uygun beslenme planları hazırlar. Sporcu beslenmesi ve sürdürülebilir, sağlıklı alışkanlıklar üzerine çalışır.
+  uzmanlik: [Sporcu beslenmesi, Kişiye özel beslenme planı]
+  dersler: [diyetisyen]
