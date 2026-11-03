@@ -426,11 +426,12 @@ p + p { margin-top: .9rem; }
 .week { display: grid; grid-template-columns: repeat(5, 1fr); }
 .day { padding: 0 10px 12px; min-width: 0; }
 .day + .day { border-left: 1px solid var(--line); }
-.day-name { font-size: 1.25rem; margin: 0 -10px 10px; padding: 10px 20px 14px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.day-name { font-size: 1.25rem; margin: 0 -10px; padding: 10px 20px 14px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .today { font-family: var(--body); font-size: .68rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--blue-text); }
 .today[hidden] { display: none; }
-.slots { display: flex; flex-direction: column; gap: 2px; }
-.slot { display: flex; flex-direction: column; gap: 1px; padding: 12px 10px; border-radius: 10px; text-decoration: none; transition: background .2s; }
+.slots { display: flex; flex-direction: column; }
+.slot { display: flex; flex-direction: column; gap: 1px; padding: 14px 10px; margin: 0 -10px; padding-left: 20px; padding-right: 20px; border-bottom: 1px solid var(--line); text-decoration: none; transition: background .2s; }
+.slot:last-of-type { border-bottom: 0; }
 .slot[hidden] { display: none; }
 .slot-time { font-family: var(--display); font-size: 1.3rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
 .slot-name { display: inline-flex; align-items: center; gap: 7px; font-weight: 500; font-size: .93rem; }
@@ -538,8 +539,9 @@ p + p { margin-top: .9rem; }
   .day { padding: 0 0 8px; }
   .day + .day { border-left: 0; border-top: 1px solid var(--line); }
   .day-name { margin: 0 0 8px; padding: 18px 0 10px; }
-  .slots { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
-  .slot { padding: 10px 8px; }
+  .slots { display: grid; grid-template-columns: 1fr 1fr; }
+  .slot { margin: 0; padding: 12px 8px; }
+  .slot:last-of-type { border-bottom: 1px solid var(--line); }
   .slot-go { max-height: none; opacity: 1; margin-top: 4px; }
   .program-faq { grid-template-columns: 1fr; gap: 24px; margin-top: 72px; }
   .ig-wrap { grid-template-columns: 1fr; gap: 32px; }
