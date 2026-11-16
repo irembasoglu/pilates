@@ -1,0 +1,8 @@
+{% if site.duyuru.aktif %}
+<div class="announce" id="duyuru" data-id="{{ site.duyuru.id }}">
+  <div class="container announce-inner">
+    <p><span class="announce-tag">{{ site.duyuru.etiket }}</span>{{ site.duyuru.metin }} <a href="{{ site.duyuru.link }}">{{ site.duyuru.link_metin }} →</a></p>
+    <button type="button" class="announce-close" aria-label="Duyuruyu kapat">✕</button>
+  </div>
+</div>
+{% endif %}

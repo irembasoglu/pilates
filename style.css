@@ -553,6 +553,119 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
 .s-others p { color: var(--muted); font-weight: 500; margin-bottom: 12px; }
 .s-other-list { display: flex; flex-wrap: wrap; gap: 8px; }
 
+/* ---------- Duyuru bandı ---------- */
+.announce { background: var(--blue); color: var(--navy); font-size: .92rem; }
+.announce-inner { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 42px; position: relative; padding-right: 48px; }
+.announce p { text-align: center; padding: 8px 0; }
+.announce-tag { display: inline-block; background: var(--navy); color: var(--white); font-size: .72rem; font-weight: 700; padding: .12rem .55rem; border-radius: 999px; margin-right: .6rem; vertical-align: 1px; }
+.announce a { font-weight: 700; color: var(--navy); margin-left: .3rem; text-underline-offset: 3px; }
+.announce-close {
+  position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%);
+  width: 30px; height: 30px; border-radius: 50%; border: 0; background: rgba(0, 28, 42, .1); color: var(--navy);
+  cursor: pointer; font-size: .8rem;
+}
+.announce-close:hover { background: rgba(0, 28, 42, .2); }
+
+/* Girişte "Hangi ders bana uygun?" bağlantısı */
+.hero-quiz { align-self: center; font-weight: 600; color: var(--navy); text-decoration: none; border-bottom: 1.5px solid var(--line); padding-bottom: 2px; transition: border-color .2s, color .2s; }
+.hero-quiz:hover { color: var(--blue-text); border-color: var(--blue); }
+
+/* ---------- Deneme dersi penceresi ---------- */
+.trial { position: fixed; inset: 0; z-index: 60; background: rgba(0, 20, 30, .6); display: flex; align-items: center; justify-content: center; padding: 20px; overflow-y: auto; }
+.trial[hidden] { display: none; }
+.trial-open { overflow: hidden; }
+.trial-box {
+  position: relative; width: 100%; max-width: 620px; margin: auto; background: var(--white);
+  border-radius: 70% 22px 22px 22px / 12% 22px 22px 22px; padding: 48px 36px 32px;
+  box-shadow: 0 30px 80px rgba(0, 20, 30, .3);
+}
+.trial-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--mist); cursor: pointer; font-size: .95rem; color: var(--navy); }
+.trial-close:hover { background: #e4f5fb; }
+.trial-kicker { font-weight: 600; color: var(--blue-text); font-size: .9rem; }
+.trial h2 { font-size: clamp(1.8rem, 4vw, 2.3rem); margin: .3rem 0 1.4rem; }
+.trial h2 em { font-style: italic; font-weight: 400; color: var(--blue-text); }
+.trial-step { border: 0; padding: 0; margin: 0 0 18px; min-width: 0; }
+.trial-step legend { font-weight: 600; margin-bottom: 10px; font-size: .95rem; }
+.trial-step:disabled legend { color: var(--muted); opacity: .6; }
+.trial-chips { display: flex; flex-wrap: wrap; gap: 8px; min-height: 8px; }
+.trial-chips button {
+  font: inherit; font-size: .92rem; font-weight: 600; cursor: pointer; color: var(--navy);
+  display: inline-flex; flex-direction: column; align-items: center; line-height: 1.25;
+  padding: .55rem 1rem; border-radius: 999px; border: 1.5px solid var(--line); background: var(--white);
+  transition: background .2s, border-color .2s, color .2s;
+}
+.trial-chips button small { font-size: .72rem; font-weight: 500; color: var(--muted); }
+.trial-chips button:hover:not(:disabled) { border-color: var(--blue); }
+.trial-chips button.on { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.trial-chips button.on small { color: #a9c1cc; }
+.trial-chips button:disabled { opacity: .35; cursor: not-allowed; text-decoration: line-through; }
+.trial-summary { margin-top: 8px; padding-top: 20px; border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.trial-msg { color: var(--muted); font-size: .95rem; }
+.trial-msg span { display: block; font-size: .78rem; font-weight: 600; color: var(--blue-text); margin-bottom: 4px; }
+.trial-send { justify-content: center; }
+.trial-send.is-disabled { background: var(--line); color: var(--muted); cursor: not-allowed; }
+
+/* ---------- Sana uygun dersi bul ---------- */
+.quiz-teaser {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: center;
+  margin-top: 16px; padding: 22px 26px; border-radius: 18px; background: var(--navy); color: var(--white);
+  text-decoration: none; transition: transform .25s, box-shadow .25s;
+}
+.quiz-teaser:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(0, 28, 42, .2); }
+.qt-ic { width: 48px; height: 48px; border-radius: 50%; background: var(--blue); color: var(--navy); display: inline-flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 1.5rem; font-weight: 600; }
+.quiz-teaser b { display: block; font-family: var(--display); font-size: 1.3rem; font-weight: 500; }
+.quiz-teaser span:nth-child(2) { color: #a9c1cc; }
+.qt-go { font-weight: 600; color: var(--blue); white-space: nowrap; display: inline-flex; gap: .4rem; }
+.qt-go i { font-style: normal; transition: transform .25s; }
+.quiz-teaser:hover .qt-go i { transform: translateX(4px); }
+
+.quiz-page { padding: 56px 0 110px; background: linear-gradient(var(--mist), var(--white) 70%); }
+.quiz-wrap { max-width: 860px; }
+.quiz-intro { text-align: center; max-width: 34em; margin: 0 auto 36px; }
+.quiz-intro h1 em { font-style: italic; font-weight: 400; color: var(--blue-text); }
+.quiz-intro .lead { margin: .8rem auto 0; }
+.quiz { background: var(--white); border: 1px solid var(--line); border-radius: 60% 22px 22px 22px / 10% 22px 22px 22px; padding: 44px 40px 32px; box-shadow: 0 20px 60px rgba(10, 126, 163, .08); }
+.quiz-progress { height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.quiz-progress span { display: block; height: 100%; width: 0; background: var(--blue-deep); transition: width .35s ease; }
+.quiz-count { font-size: .85rem; font-weight: 600; color: var(--muted); margin: 14px 0 6px; }
+.quiz-q h2 { font-size: clamp(1.6rem, 3.5vw, 2.1rem); margin-bottom: 22px; outline: none; }
+.quiz-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.quiz-opts button {
+  font: inherit; color: var(--navy); text-align: left; cursor: pointer;
+  display: flex; flex-direction: column; gap: 2px; padding: 18px 20px;
+  border: 1.5px solid var(--line); border-radius: 14px; background: var(--white);
+  transition: border-color .2s, background .2s, transform .2s;
+}
+.quiz-opts button b { font-weight: 600; font-size: 1.02rem; }
+.quiz-opts button span { color: var(--muted); font-size: .88rem; }
+.quiz-opts button:hover { border-color: var(--blue); background: var(--mist); transform: translateY(-2px); }
+.quiz-opts button.on { border-color: var(--navy); background: var(--navy); color: var(--white); }
+.quiz-opts button.on span { color: #a9c1cc; }
+.quiz-nav { margin-top: 18px; min-height: 24px; }
+.quiz-back, .quiz-restart { font: inherit; font-weight: 600; color: var(--muted); background: none; border: 0; cursor: pointer; padding: 4px 0; }
+.quiz-back:hover, .quiz-restart:hover { color: var(--blue-text); }
+.qr-kicker { font-weight: 600; color: var(--blue-text); margin-bottom: 14px; }
+.qr-main { display: grid; grid-template-columns: .9fr 1.1fr; gap: 28px; align-items: start; }
+.qr-photo { aspect-ratio: 4 / 4.4; border-radius: 60% 12px 12px 12px / 25% 12px 12px 12px; overflow: hidden; background: var(--mist); }
+.qr-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.qr-photo-empty { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f2a33a, #f5c26b); }
+.qr-photo-empty span { font-family: var(--display); font-size: 2.6rem; font-style: italic; color: var(--navy); }
+.qr-text h2 { font-size: clamp(2rem, 4vw, 2.6rem); margin-bottom: .7rem; outline: none; }
+.qr-text p { color: var(--muted); }
+.qr-times { list-style: none; margin: 1rem 0 0; padding: 12px 0 0; border-top: 1px solid var(--line); display: grid; gap: 4px; font-size: .95rem; }
+.qr-times b { font-family: var(--display); font-weight: 600; margin-right: .4rem; }
+.qr-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.4rem; align-items: center; }
+.qr-extra {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  margin-top: 24px; padding: 18px 20px; border-radius: 14px; background: var(--mist); text-decoration: none; color: var(--muted); font-size: .93rem;
+  transition: background .2s;
+}
+.qr-extra small { display: block; font-weight: 600; color: var(--blue-text); font-size: .78rem; }
+.qr-extra b { display: block; font-family: var(--display); font-size: 1.2rem; font-weight: 500; color: var(--navy); }
+.qr-extra i { font-style: normal; font-size: 1.2rem; color: var(--navy); }
+.qr-extra:hover { background: #e4f5fb; }
+.quiz-restart { margin-top: 18px; }
+
 /* ---------- Alt bilgi ---------- */
 .footer { background: var(--navy); color: #a9c1cc; font-size: .95rem; overflow: hidden; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; padding-top: 80px; padding-bottom: 24px; }
@@ -665,6 +778,19 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
   .slot-empty { display: none; }
   .program-faq { grid-template-columns: 1fr; gap: 24px; margin-top: 72px; }
   .ig-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .quiz-teaser { grid-template-columns: auto 1fr; padding: 18px; }
+  .qt-go { grid-column: 2; }
+  .quiz-page { padding: 28px 0 72px; }
+  .quiz { padding: 34px 18px 22px; border-radius: 50% 18px 18px 18px / 6% 18px 18px 18px; }
+  .quiz-opts { grid-template-columns: 1fr; }
+  .qr-main { grid-template-columns: 1fr; gap: 18px; }
+  .qr-photo { aspect-ratio: 5 / 3.4; }
+  .announce { font-size: .82rem; }
+  .announce-inner { justify-content: flex-start; padding-right: 44px; }
+  .announce p { text-align: left; }
+  .trial { padding: 10px; align-items: flex-end; }
+  .trial-box { padding: 40px 20px 22px; border-radius: 60% 18px 18px 18px / 7% 18px 18px 18px; }
+  .trial-chips button { padding: .5rem .85rem; font-size: .88rem; }
   .profile { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
   .profile:nth-child(even) .profile-media { order: 0; }
   .profile-media { aspect-ratio: 4 / 4.2; }

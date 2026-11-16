@@ -1,0 +1,65 @@
+---
+layout: default
+menu: hizmetlerimiz
+baslik: Sana uygun dersi bul
+aciklama: Dört kısa soruyla Marin Pilates'te sana en uygun dersi bul.
+---
+<section class="quiz-page">
+  <div class="container quiz-wrap">
+    <div class="quiz-intro">
+      <h1>Sana uygun dersi <em>bulalım</em></h1>
+      <p class="lead">Dört kısa soru, bir dakika. Hedefine ve durumuna göre sana en uygun dersi önerelim.</p>
+    </div>
+
+    <div class="quiz" id="quiz">
+      <div class="quiz-progress" aria-hidden="true"><span id="quiz-bar"></span></div>
+      <p class="quiz-count" id="quiz-count"></p>
+
+      <div class="quiz-q" data-q="hedef">
+        <h2>Seni en çok ne motive ediyor?</h2>
+        <div class="quiz-opts">
+          <button type="button" data-v="pilates"><b>Güçlenmek ve duruşumu düzeltmek</b><span>Core, sırt ve postür</span></button>
+          <button type="button" data-v="yoga"><b>Esnemek ve rahatlamak</b><span>Nefes, denge, stresten uzaklaşmak</span></button>
+          <button type="button" data-v="zumba"><b>Eğlenerek hareket etmek</b><span>Müzik, enerji, kalori yakmak</span></button>
+          <button type="button" data-v="diyetisyen"><b>Beslenmemi düzene sokmak</b><span>Kilo yönetimi, sağlıklı alışkanlıklar</span></button>
+        </div>
+      </div>
+
+      <div class="quiz-q" data-q="durum" hidden>
+        <h2>Bunlardan biri sana uyuyor mu?</h2>
+        <div class="quiz-opts">
+          <button type="button" data-v="hamile"><b>Hamileyim</b><span>Ya da yakın zamanda doğum yaptım</span></button>
+          <button type="button" data-v="agri"><b>Ağrım ya da sakatlığım var</b><span>Bel, boyun, diz, omuz…</span></button>
+          <button type="button" data-v="yok"><b>Hiçbiri</b><span>Başlamaya hazırım</span></button>
+        </div>
+      </div>
+
+      <div class="quiz-q" data-q="sekil" hidden>
+        <h2>Nasıl çalışmak istersin?</h2>
+        <div class="quiz-opts">
+          <button type="button" data-v="grup"><b>Grup dersinde</b><span>Küçük grupla, motive edici</span></button>
+          <button type="button" data-v="birebir"><b>Birebir</b><span>Eğitmen sadece benimle</span></button>
+          <button type="button" data-v="arkadas"><b>Bir arkadaşımla</b><span>Eşim, arkadaşım ya da ailemden biri</span></button>
+        </div>
+      </div>
+
+      <div class="quiz-q" data-q="deneyim" hidden>
+        <h2>Daha önce pilates ya da yoga yaptın mı?</h2>
+        <div class="quiz-opts">
+          <button type="button" data-v="yeni"><b>Hiç yapmadım</b><span>Yeni başlıyorum</span></button>
+          <button type="button" data-v="biraz"><b>Biraz deneyimim var</b><span>Birkaç ders ya da evde</span></button>
+          <button type="button" data-v="duzenli"><b>Düzenli yapıyorum</b><span>Seviyemi ilerletmek istiyorum</span></button>
+        </div>
+      </div>
+
+      <div class="quiz-result" id="quiz-result" hidden aria-live="polite"></div>
+
+      <div class="quiz-nav">
+        <button type="button" class="quiz-back" id="quiz-back" hidden>← Geri</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>window.HIZMETLER = {{ site.data.hizmetler | jsonify }};</script>
+<script src="ders-bul.js"></script>

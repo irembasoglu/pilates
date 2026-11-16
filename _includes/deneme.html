@@ -1,0 +1,35 @@
+<div class="trial" id="trial" hidden>
+  <div class="trial-box" role="dialog" aria-modal="true" aria-labelledby="trial-title">
+    <button type="button" class="trial-close" aria-label="Kapat">✕</button>
+    <p class="trial-kicker">Ücretsiz deneme dersi</p>
+    <h2 id="trial-title">Sana uygun dersi <em>ayırtalım</em></h2>
+
+    <fieldset class="trial-step">
+      <legend>1. Hangi ders?</legend>
+      <div class="trial-chips" data-alan="ders">
+        <button type="button" data-v="pilates">Aletli Pilates</button>
+        <button type="button" data-v="yoga">Yoga</button>
+        <button type="button" data-v="zumba">Zumba</button>
+        <button type="button" data-v="hamile">Hamile Pilatesi</button>
+        <button type="button" data-v="ozel">Özel Ders</button>
+        <button type="button" data-v="duet">Düet Ders</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="trial-step" disabled>
+      <legend>2. Hangi gün?</legend>
+      <div class="trial-chips" data-alan="gun"></div>
+    </fieldset>
+
+    <fieldset class="trial-step" disabled>
+      <legend>3. Hangi saat?</legend>
+      <div class="trial-chips" data-alan="saat"></div>
+    </fieldset>
+
+    <div class="trial-summary">
+      <p class="trial-msg" id="trial-msg">Ders, gün ve saat seç; mesajın burada hazırlansın.</p>
+      <a href="{{ site.whatsapp }}" class="btn btn-lg trial-send is-disabled" id="trial-send" target="_blank" rel="noopener" aria-disabled="true">WhatsApp'ta gönder</a>
+    </div>
+  </div>
+</div>
+<script>window.PROGRAM = {{ site.data.program.dersler | jsonify }};</script>
