@@ -60,7 +60,7 @@
       '<div class="qr-main">' + foto +
         '<div class="qr-text"><h2>' + h.sayfa_baslik + '</h2><p>' + r.neden + '</p>' +
         (saat ? '<ul class="qr-times">' + saat + '</ul>' : '') +
-        '<div class="qr-actions"><a href="#" class="btn btn-lg" data-deneme="' + DENEME[h.id] + '">Ücretsiz deneme dersi al</a>' +
+        '<div class="qr-actions"><button type="button" class="btn btn-lg" data-deneme="' + DENEME[h.id] + '">Ücretsiz deneme dersi al</button>' +
         '<a href="' + detay + '" class="btn-soft">' + (h.id === 'zumba' ? 'Ders programı' : 'Detayları gör') + '</a></div></div>' +
       '</div>' +
       (r.ek ? '<a class="qr-extra" href="hizmet-' + r.ek.id + '.html"><span><small>Bunu da sevebilirsin</small><b>' + r.ek.sayfa_baslik + '</b>' + r.ekNeden + '</span><i aria-hidden="true">→</i></a>' : '') +
