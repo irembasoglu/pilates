@@ -689,6 +689,19 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
 .qr-extra:hover { background: #e4f5fb; }
 .quiz-restart { margin-top: 18px; }
 
+/* Hizmetlerimiz altındaki hediye / arkadaş bağlantıları */
+.gift-teasers { padding-top: 72px; padding-bottom: 0; }
+.gt-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.gt-card { display: grid; grid-template-columns: 52px 1fr auto; gap: 18px; align-items: center; padding: 28px 28px 28px 0; text-decoration: none; transition: background .2s; }
+.gt-card + .gt-card { border-left: 1px solid var(--line); padding-left: 28px; }
+.gt-ic { width: 52px; height: 52px; border-radius: 14px; background: #e4f5fb; color: var(--blue-text); display: flex; align-items: center; justify-content: center; }
+.gt-ic svg { width: 24px; height: 24px; }
+.gt-text { color: var(--muted); font-size: .95rem; }
+.gt-text b { display: block; font-family: var(--display); font-size: 1.35rem; font-weight: 500; color: var(--navy); }
+.gt-card .arrow { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--line); display: inline-flex; align-items: center; justify-content: center; transition: background .25s, border-color .25s, transform .25s; }
+.gt-card:hover .arrow { background: var(--blue); border-color: var(--blue); transform: rotate(-45deg); }
+.gt-card:hover .gt-text b { color: var(--blue-text); }
+
 /* ---------- Hediye kartı sayfası ---------- */
 .gift-hero { padding: 64px 0 96px; background: linear-gradient(var(--mist), var(--white)); overflow: hidden; }
 .gift-hero-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
@@ -845,6 +858,10 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
   .fl-wrap { grid-template-columns: 1fr; gap: 28px; }
   .fl-photo { aspect-ratio: 5 / 3.6; }
   .gift-hero { padding: 24px 0 56px; }
+  .gt-grid { grid-template-columns: 1fr; }
+  .gt-card, .gt-card + .gt-card { padding: 22px 0; border-left: 0; grid-template-columns: 44px 1fr auto; gap: 14px; }
+  .gt-card + .gt-card { border-top: 1px solid var(--line); }
+  .gt-ic { width: 44px; height: 44px; }
   .gift-hero-inner, .friend { grid-template-columns: 1fr; gap: 32px; }
   .gift-card-wrap { height: 250px; order: -1; }
   .gift-card { inset: 10px 30px auto 10px; padding: 20px 22px; border-radius: 18px; }
