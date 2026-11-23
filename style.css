@@ -569,7 +569,6 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
   background: var(--white); border: 1.5px solid var(--line); color: var(--blue-text);
   display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .95rem;
 }
-.timeline li:last-child .tl-dot { background: var(--blue); border-color: var(--blue); color: var(--navy); }
 .tl-time { font-size: .8rem; font-weight: 600; color: var(--blue-text); }
 .timeline h3 { font-size: 1.3rem; margin: 2px 0 4px; }
 .timeline p { color: var(--muted); font-size: .97rem; }
