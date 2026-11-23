@@ -667,6 +667,47 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
 .qr-extra:hover { background: #e4f5fb; }
 .quiz-restart { margin-top: 18px; }
 
+/* ---------- Hediye kartı sayfası ---------- */
+.gift-hero { padding: 64px 0 96px; background: linear-gradient(var(--mist), var(--white)); overflow: hidden; }
+.gift-hero-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
+.gift-hero h1 { margin-bottom: 1rem; }
+.gift-hero h1 em { font-style: italic; font-weight: 400; color: var(--blue-text); }
+.gift-card-wrap { position: relative; height: 340px; }
+.gift-card {
+  position: absolute; inset: 20px 40px auto 20px; aspect-ratio: 1.6; max-width: 440px;
+  background: var(--navy); color: var(--white); border-radius: 22px; padding: 28px 30px;
+  display: flex; flex-direction: column; justify-content: space-between; z-index: 2;
+  box-shadow: 0 30px 60px rgba(0, 28, 42, .3); transform: rotate(-4deg);
+  background-image: radial-gradient(circle at 100% 0, rgba(91, 212, 243, .35), transparent 55%);
+}
+.gift-card-back { z-index: 1; inset: 60px 0 auto 70px; background: var(--blue); box-shadow: 0 20px 40px rgba(0, 28, 42, .15); transform: rotate(5deg); }
+.gc-top { display: flex; justify-content: space-between; align-items: center; }
+.gc-logo { width: 52px; height: 52px; border-radius: 50%; background: var(--white); display: flex; align-items: center; justify-content: center; }
+.gc-logo img { width: 70%; }
+.gc-label { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); }
+.gc-title { font-family: var(--display); font-size: 2.6rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1; }
+.gc-title em { font-style: italic; font-weight: 400; color: var(--blue); }
+.gc-bottom { display: flex; justify-content: space-between; align-items: flex-end; font-size: .85rem; color: #a9c1cc; }
+.gc-bottom b { font-family: var(--display); font-size: 1.3rem; font-weight: 500; color: var(--white); }
+.gc-amount { font-family: var(--display); font-size: 1.5rem; color: var(--white); }
+.gift-options { grid-template-columns: repeat(3, 1fr); }
+.gift-steps { list-style: none; counter-reset: adim; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+.gift-steps li { counter-increment: adim; color: var(--muted); padding-left: 46px; position: relative; }
+.gift-steps li::before {
+  content: counter(adim); position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%;
+  background: #e4f5fb; color: var(--blue-text); font-weight: 700; display: flex; align-items: center; justify-content: center;
+}
+.gift-steps b { display: block; color: var(--navy); font-weight: 600; margin-bottom: 2px; }
+.friend { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; scroll-margin-top: 90px; }
+.friend h2 em { font-style: italic; font-weight: 400; color: var(--blue); }
+.friend-lead { color: #a9c1cc; margin: 1rem 0 2rem; max-width: 30em; }
+.friend-list { list-style: none; border-top: 1px solid var(--navy-2); }
+.friend-list li { display: flex; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--navy-2); color: #a9c1cc; }
+.friend-list span { flex: none; font-family: var(--display); font-size: 2rem; color: var(--blue); line-height: 1; width: 34px; }
+.friend-list b { display: block; color: var(--white); font-family: var(--display); font-size: 1.25rem; font-weight: 500; margin-bottom: 2px; }
+.gift-note { padding: 18px 0; }
+.gift-note p { font-size: .82rem; color: var(--muted); text-align: center; }
+
 /* ---------- Alt bilgi ---------- */
 .footer { background: var(--navy); color: #a9c1cc; font-size: .95rem; overflow: hidden; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; padding-top: 80px; padding-bottom: 24px; }
@@ -779,6 +820,17 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
   .slot-empty { display: none; }
   .program-faq { grid-template-columns: 1fr; gap: 24px; margin-top: 72px; }
   .ig-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .gift-hero { padding: 24px 0 56px; }
+  .gift-hero-inner, .friend { grid-template-columns: 1fr; gap: 32px; }
+  .gift-card-wrap { height: 250px; order: -1; }
+  .gift-card { inset: 10px 30px auto 10px; padding: 20px 22px; border-radius: 18px; }
+  .gift-card-back { inset: 40px 0 auto 40px; }
+  .gc-title { font-size: 2rem; }
+  .gc-logo { width: 42px; height: 42px; }
+  .gift-options { grid-template-columns: 1fr; }
+  .gift-options .feature + .feature { border-left: 0; border-top: 1px solid var(--line); }
+  .gift-options .feature, .gift-options .feature:nth-child(3) { padding: 24px 0; }
+  .gift-steps { grid-template-columns: 1fr; gap: 18px; margin-top: 32px; }
   .quiz-teaser { grid-template-columns: auto 1fr; padding: 18px; }
   .qt-go { grid-column: 2; }
   .quiz-page { padding: 28px 0 72px; }

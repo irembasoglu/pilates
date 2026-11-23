@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.baslik %}{{ page.baslik }} | {% endif %}Marin Pilates & Yoga Stüdyo Kartal</title>
   <meta name="description" content="{{ page.aciklama | default: "Kartal Orhantepe'de pilates, hamile pilatesi, yoga, özel ve düet dersler, diyetisyen desteği. 2016'dan beri uluslararası sertifikalı eğitmenler." }}">
+  {% capture sayfa_baslik %}{% if page.baslik %}{{ page.baslik }} | {% endif %}Marin Pilates & Yoga Stüdyo Kartal{% endcapture %}
+  {% capture sayfa_aciklama %}{{ page.aciklama | default: "Kartal Orhantepe'de pilates, hamile pilatesi, yoga, özel ve düet dersler, diyetisyen desteği. 2016'dan beri uluslararası sertifikalı eğitmenler." }}{% endcapture %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marin Pilates & Yoga Stüdyo">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="{{ sayfa_baslik | strip | escape }}">
+  <meta property="og:description" content="{{ sayfa_aciklama | strip | escape }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+  <meta property="og:image" content="{{ site.url }}/paylasim.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Marin Pilates: Güçlü, esnek ve ağrısız bir beden için.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#001c2a">
   <link rel="icon" href="logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,6 +74,7 @@
         <a href="program.html">Ders Programı</a>
         <a href="ekibimiz.html">Ekibimiz</a>
         <a href="blog.html">Blog</a>
+        <a href="hediye.html">Hediye kartı</a>
         <a href="iletisim.html">İletişim</a>
       </div>
       <div>

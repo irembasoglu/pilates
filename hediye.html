@@ -1,0 +1,84 @@
+---
+layout: default
+menu: hediye
+baslik: Hediye Kartı ve Arkadaşını Getir
+aciklama: Sevdiğine pilates ve yoga hediye et ya da arkadaşınla birlikte başla. Marin Pilates & Yoga Stüdyo, Kartal.
+---
+{% capture wa_hediye %}https://wa.me/905374989178?text={{ "Merhaba, hediye kartı almak istiyorum." | uri_escape }}{% endcapture %}
+{% capture wa_arkadas %}https://wa.me/905374989178?text={{ "Merhaba, arkadaşımla birlikte deneme dersine gelmek istiyoruz." | uri_escape }}{% endcapture %}
+
+<section class="gift-hero">
+  <div class="container gift-hero-inner">
+    <div>
+      <h1>Sevdiğine <em>iyi hissettiren</em> bir hediye.</h1>
+      <p class="lead">Doğum günü, anneler günü ya da sadece "iyi ki varsın" demek için: Marin Pilates hediye kartıyla sevdiğine kendine ayıracağı zamanı hediye et.</p>
+      <div class="s-actions">
+        <a href="{{ wa_hediye }}" class="btn btn-lg" target="_blank" rel="noopener">Hediye kartı al</a>
+        <a href="#arkadasini-getir" class="btn-soft">Arkadaşını getir</a>
+      </div>
+    </div>
+    <div class="gift-card-wrap" aria-hidden="true">
+      <div class="gift-card">
+        <div class="gc-top">
+          <span class="gc-logo"><img src="logo-seffaf.png" alt=""></span>
+          <span class="gc-label">Hediye Kartı</span>
+        </div>
+        <p class="gc-title">Marin <em>Pilates</em></p>
+        <div class="gc-bottom">
+          <span>Senin için<br><b>Ayşe</b></span>
+          <span class="gc-amount">8 ders</span>
+        </div>
+      </div>
+      <div class="gift-card gift-card-back"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="s-why-title">Hediye kartı <em>seçenekleri</em></h2>
+    <div class="features-grid gift-options">
+      <div class="feature">
+        <span class="feature-num">01</span>
+        <h3>Tanışma paketi</h3>
+        <p>Stüdyoyu ve eğitmenlerimizi tanımak için ideal bir başlangıç. İlk kez pilates deneyecekler için.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-num">02</span>
+        <h3>Aylık grup dersleri</h3>
+        <p>Aletli pilates ya da yoga grup derslerinden dilediği saatleri seçer, bir ay boyunca düzenli gelir.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-num">03</span>
+        <h3>Özel ders paketi</h3>
+        <p>Eğitmenle birebir çalışmak isteyenler için; program tamamen ona göre hazırlanır.</p>
+      </div>
+    </div>
+    <ol class="gift-steps">
+      <li><b>Bize yaz</b>Paketi ve hediye edeceğin kişinin adını söyle.</li>
+      <li><b>Kartını al</b>Kişiye özel kartı dijital olarak gönderelim ya da stüdyodan teslim al.</li>
+      <li><b>Hediye et</b>Sevdiğin kişi bizi arar, ders saatini birlikte belirleriz.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-navy" id="arkadasini-getir">
+  <div class="container friend">
+    <div>
+      <h2>Arkadaşını getir, <em>birlikte</em> başlayın.</h2>
+      <p class="friend-lead">Spora birlikte başlamak devam etmeyi kolaylaştırır. Arkadaşını, eşini ya da ailenden birini getir; deneme dersine birlikte gelin.</p>
+      <a href="{{ wa_arkadas }}" class="btn btn-lg" target="_blank" rel="noopener">Arkadaşımla gelmek istiyorum</a>
+    </div>
+    <ul class="friend-list">
+      <li><span>1</span><div><b>Arkadaşını davet et</b>Birlikte gelmek istediğinizi bize yazın.</div></li>
+      <li><span>2</span><div><b>Deneme dersine birlikte gelin</b>Stüdyoyu ve eğitmenlerimizi birlikte tanıyın.</div></li>
+      <li><span>3</span><div><b>İkiniz de kazanın</b>Birlikte kayıt olursanız ikinize de ilk ayınızda bir ders hediye.</div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="gift-note">
+  <div class="container"><p>Paket içerikleri ve kampanya koşulları örnek olarak gösterilmiştir. Güncel bilgi için bize yazabilirsin.</p></div>
+</section>
+
+{% include cta.html %}

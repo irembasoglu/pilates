@@ -1,5 +1,7 @@
 # Marin Pilates sitesi ayarları
 title: Marin Pilates & Yoga Stüdyo
+# Sitenin yayındaki adresi: link önizlemesindeki görsel buradan bulunur. Cloudflare adresi değişirse burayı güncelle.
+url: "https://marinpilates.pages.dev"
 whatsapp: "https://wa.me/905374989178?text=Merhaba%2C%20bilgi%20almak%20istiyorum."
 telefon: "0537 498 91 78"
 telefon_link: "tel:+905374989178"
