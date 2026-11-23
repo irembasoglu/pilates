@@ -689,18 +689,44 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
 .qr-extra:hover { background: #e4f5fb; }
 .quiz-restart { margin-top: 18px; }
 
-/* Hizmetlerimiz altındaki hediye / arkadaş bağlantıları */
-.gift-teasers { padding-top: 72px; padding-bottom: 0; }
-.gt-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.gt-card { display: grid; grid-template-columns: 52px 1fr auto; gap: 18px; align-items: center; padding: 28px 28px 28px 0; text-decoration: none; transition: background .2s; }
-.gt-card + .gt-card { border-left: 1px solid var(--line); padding-left: 28px; }
-.gt-ic { width: 52px; height: 52px; border-radius: 14px; background: #e4f5fb; color: var(--blue-text); display: flex; align-items: center; justify-content: center; }
-.gt-ic svg { width: 24px; height: 24px; }
-.gt-text { color: var(--muted); font-size: .95rem; }
-.gt-text b { display: block; font-family: var(--display); font-size: 1.35rem; font-weight: 500; color: var(--navy); }
-.gt-card .arrow { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--line); display: inline-flex; align-items: center; justify-content: center; transition: background .25s, border-color .25s, transform .25s; }
-.gt-card:hover .arrow { background: var(--blue); border-color: var(--blue); transform: rotate(-45deg); }
-.gt-card:hover .gt-text b { color: var(--blue-text); }
+/* Hizmetlerimiz altındaki hediye / arkadaş kutuları */
+.gift-teasers { padding-top: 64px; padding-bottom: 0; }
+.gt-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 16px; }
+.gt-card {
+  position: relative; overflow: hidden; display: flex; justify-content: space-between; gap: 20px;
+  min-height: 280px; padding: 40px; border-radius: 22px; text-decoration: none;
+  transition: transform .3s, box-shadow .3s;
+}
+.gt-card:hover { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(0, 28, 42, .18); }
+.gt-text { position: relative; z-index: 1; display: flex; flex-direction: column; gap: .6rem; max-width: 24em; }
+.gt-kicker { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.gt-text b { font-family: var(--display); font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
+.gt-text b em { font-style: italic; font-weight: 400; }
+.gt-go { margin-top: auto; padding-top: .8rem; font-weight: 600; display: inline-flex; gap: .4rem; }
+.gt-go i { font-style: normal; transition: transform .25s; }
+.gt-card:hover .gt-go i { transform: translateX(5px); }
+.gt-gift { background: var(--blue); color: var(--navy); }
+.gt-gift .gt-kicker, .gt-gift .gt-text > span:not(.gt-go) { color: rgba(0, 28, 42, .72); }
+.gt-gift b em { color: var(--white); }
+.gt-mini { flex: none; align-self: center; width: 210px; }
+.gt-mini-card {
+  display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 1.6; padding: 16px 18px;
+  background: var(--navy); color: var(--white); border-radius: 14px; transform: rotate(-6deg);
+  box-shadow: 0 18px 36px rgba(0, 28, 42, .3); transition: transform .4s;
+  background-image: radial-gradient(circle at 100% 0, rgba(91, 212, 243, .35), transparent 55%);
+}
+.gt-card:hover .gt-mini-card { transform: rotate(-2deg) scale(1.04); }
+.gt-mini-card img { width: 30px; height: 30px; border-radius: 50%; background: var(--white); padding: 4px; }
+.gt-mini-card em { font-style: normal; font-family: var(--display); font-size: 1.35rem; line-height: 1; }
+.gt-mini-card em i { font-style: italic; color: var(--blue); }
+.gt-mini-card small { font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); }
+.gt-friend { background: var(--navy); color: var(--white); }
+.gt-friend .gt-kicker { color: var(--blue); }
+.gt-friend .gt-text > span:not(.gt-go):not(.gt-kicker) { color: #a9c1cc; }
+.gt-friend b em { color: var(--blue); }
+.gt-friend .gt-go { color: var(--blue); }
+.gt-people { position: absolute; right: -20px; bottom: -30px; width: 190px; height: 190px; color: var(--navy-2); }
+.gt-people svg { width: 100%; height: 100%; }
 
 /* ---------- Hediye kartı sayfası ---------- */
 .gift-hero { padding: 64px 0 96px; background: linear-gradient(var(--mist), var(--white)); overflow: hidden; }
@@ -858,10 +884,10 @@ a.info-row:hover .info-go i { transform: translateX(4px); }
   .fl-wrap { grid-template-columns: 1fr; gap: 28px; }
   .fl-photo { aspect-ratio: 5 / 3.6; }
   .gift-hero { padding: 24px 0 56px; }
-  .gt-grid { grid-template-columns: 1fr; }
-  .gt-card, .gt-card + .gt-card { padding: 22px 0; border-left: 0; grid-template-columns: 44px 1fr auto; gap: 14px; }
-  .gt-card + .gt-card { border-top: 1px solid var(--line); }
-  .gt-ic { width: 44px; height: 44px; }
+  .gt-grid { grid-template-columns: 1fr; gap: 12px; }
+  .gt-card { min-height: 0; padding: 28px 22px; flex-direction: column; border-radius: 18px; }
+  .gt-mini { width: 170px; align-self: flex-end; margin-top: -10px; }
+  .gt-people { width: 130px; height: 130px; }
   .gift-hero-inner, .friend { grid-template-columns: 1fr; gap: 32px; }
   .gift-card-wrap { height: 250px; order: -1; }
   .gift-card { inset: 10px 30px auto 10px; padding: 20px 22px; border-radius: 18px; }
